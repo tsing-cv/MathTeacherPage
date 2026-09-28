@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340">
+  <defs>
+    <style>
+      text{font-family:"Times New Roman","STSong","SimSun",serif}
+      .ax{stroke:#888;stroke-width:.8}
+      .ell{fill:none;stroke:#222;stroke-width:1.6}
+      .ln{stroke:#333;stroke-width:1}
+      .ln-d{stroke:#c00;stroke-width:1.4;stroke-dasharray:5,3}
+      .ln-v{stroke:#999;stroke-width:.8;stroke-dasharray:3,3}
+      .pt{fill:#222}
+      .pt-r{fill:#c00}
+      .lb{font-size:15px;font-style:italic;fill:#222}
+      .lb-s{font-size:11px;fill:#666}
+    </style>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="520" height="340" fill="#fafaf8" rx="4"/>
+
+  <!-- 坐标轴 -->
+  <line class="ax" x1="40" y1="190" x2="490" y2="190"/>
+  <line class="ax" x1="210" y1="20" x2="210" y2="320"/>
+  <polygon points="490,190 483,187 483,193" fill="#888"/>
+  <polygon points="210,20 207,27 213,27" fill="#888"/>
+  <text x="496" y="194" font-size="13" fill="#666">x</text>
+  <text x="216" y="18" font-size="13" fill="#666">y</text>
+
+  <!-- 椭圆 x²/9+y²=1: cx=210,cy=190, rx=130, ry=45 -->
+  <ellipse class="ell" cx="210" cy="190" rx="130" ry="45"/>
+
+  <!-- 直线 x=6: 画布 x = 210 + 6*(130/3) = 210+260 = 470 -->
+  <line class="ln-v" x1="470" y1="30" x2="470" y2="310"/>
+  <text class="lb-s" x="473" y="40">x=6</text>
+
+  <!-- A(-3,0) → (80,190) -->
+  <circle class="pt" cx="80" cy="190" r="3"/>
+  <text class="lb" x="66" y="210">A</text>
+
+  <!-- B(3,0) → (340,190) -->
+  <circle class="pt" cx="340" cy="190" r="3"/>
+  <text class="lb" x="348" y="210">B</text>
+
+  <!-- G(0,1) → (210,145) -->
+  <circle class="pt" cx="210" cy="145" r="3"/>
+  <text class="lb" x="216" y="140">G</text>
+
+  <!-- O -->
+  <text class="lb-s" x="196" y="208">O</text>
+
+  <!-- P 在 x=6 上, P(6, 2.2) → (470, 190-2.2*45=91) -->
+  <circle class="pt-r" cx="470" cy="91" r="4"/>
+  <text class="lb" x="478" y="87" fill="#c00" font-weight="bold">P</text>
+
+  <!-- PA: 从 P(470,91) 到 A(80,190)，延长交椭圆于 C -->
+  <!-- C 在椭圆上部: 参数化求交 -->
+  <!-- PA方向: (80-470, 190-91) = (-390, 99), 单位化 -->
+  <!-- C 约在 (170, 160) 附近 -->
+  <line class="ln" x1="470" y1="91" x2="80" y2="190"/>
+  <circle class="pt" cx="172" cy="158" r="3" fill="#060"/>
+  <text class="lb" x="178" y="150" fill="#060">C</text>
+
+  <!-- PB: 从 P(470,91) 到 B(340,190)，延长交椭圆于 D -->
+  <!-- D 在椭圆下部: 约在 (310, 218) -->
+  <line class="ln" x1="470" y1="91" x2="340" y2="190"/>
+  <circle class="pt" cx="308" cy="217" r="3" fill="#060"/>
+  <text class="lb" x="314" y="232" fill="#060">D</text>
+
+  <!-- 直线 CD (极线，过定点(3/2,0)) -->
+  <!-- (3/2,0) → (210+1.5*130/3, 190) = (275, 190) -->
+  <line class="ln-d" x1="172" y1="158" x2="308" y2="217"/>
+
+  <!-- 定点 (3/2, 0) → (275, 190) -->
+  <circle class="pt-r" cx="275" cy="190" r="3.5"/>
+  <text class="lb-s" x="280" y="206" fill="#c00">定点(3/2,0)</text>
+
+  <!-- 椭圆方程 -->
+  <text class="lb-s" x="115" y="260">E: x²/9 + y² = 1</text>
+</svg>

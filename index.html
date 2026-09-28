@@ -1,0 +1,2749 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- ══════════════════════════════════════════════════════════════════
+     陈老师 · 高中数学 招生单页（单文件版）
+     ─────────────────────────────────────────────────────────────────
+     ◆ 面向非技术同学的修改指南：
+       1. 页面所有可修改的文案处，均有  ★【修改】  注释标记，
+          在编辑器里全局搜索「★【修改】」即可逐一找到并替换；
+       2. 微信号、二维码路径等集中在本文件底部 <script> 开头的
+          CONFIG 对象里，改一处即可全页生效；
+       3. 图片全部放在 assets/ 文件夹，替换同名文件即可，无需改代码；
+       4. og:image（微信分享缩略图）部署后需改为完整网址，见下方注释。
+     ══════════════════════════════════════════════════════════════════ -->
+<meta charset="UTF-8">
+<!-- viewport-fit=cover：微信 iPhone 全面屏必须，保证底部弹层避开 Home 条 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0E2140">
+
+<!-- ★【改版】标题与 Hero 同步：痛点先行 -->
+<title>课上听懂了，做题还是不会？—— 陈老师高中数学（3-5人小班·一对一·签约课）</title>
+<meta name="description" content="高中数学卡住，多数不是不够努力——是方法没跟上。8 年一线教龄，逐题手写拆解，让孩子看见题目背后的骨架。页内可看 3 分钟上课实录。">
+
+<!-- ── 微信 / 朋友圈分享卡（Open Graph）────────────────────────── -->
+<meta property="og:title" content="课上听懂了，做题还是不会？">
+<meta property="og:description" content="高中数学卡住，多数不是不够努力——是方法没跟上。8 年一线教龄，逐题手写拆解，学一题，通一类。">
+
+<!-- ★【修改】部署上线后，把下面的相对路径改成带域名的绝对网址，
+     例如 https://example.com/assets/og-cover.png （必须是绝对网址，微信才能抓到） -->
+<meta property="og:image" content="assets/og-cover.png">
+<meta property="og:type" content="website">
+
+<!-- 站点图标：内联 SVG，零外链、避免 404（深蓝底 + 金框「陈」字印章） -->
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="%230E2140"/><rect x="6" y="6" width="52" height="52" rx="6" fill="none" stroke="%23C9A961" stroke-width="3"/><text x="32" y="45" font-size="34" text-anchor="middle" fill="%23E3C88A" font-family="Songti SC,STSong,serif" font-weight="600">陈</text></svg>'>
+
+<!-- ★【新增】JSON-LD 结构化数据：帮助 Google/百度收录课程信息 + FAQ 富摘要 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "陈老师数学工作室",
+      "description": "独立数学教师陈老师，3-5人小班直播课。18000道题逐题拆解、串成300串，高一至考研。",
+      "areaServed": "CN",
+      "availableLanguage": "zh-CN"
+    },
+    {
+      "@type": "Course",
+      "name": "高中数学题串直播课",
+      "description": "历年真题逐题拆解，串成300串。课程按教学规律分四段：高一高二同步、高三一轮二轮、延伸考研竞赛强基。3-5人小班直播，每周90分钟。",
+      "provider": { "@type": "EducationalOrganization", "name": "陈老师数学工作室" },
+      "educationalLevel": "高中至研究生",
+      "inLanguage": "zh-CN",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "CNY",
+        "price": "100",
+        "priceSpecification": { "@type": "PriceSpecification", "price": "100-150", "priceCurrency": "CNY" },
+        "availability": "https://schema.org/InStock",
+        "description": "100-150元/课时·90分钟（3-5人小班）；300-450元/课时（一对一）；8800元/学年起（VIP签约课）"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "直播课，孩子挂着屏幕走神怎么办？", "acceptedAnswer": { "@type": "Answer", "text": "三五人的班，谁走神我看得见，我会直接点他名。课中弹幕限时作答、随机开麦板演，连续缺答我会单独跟家长说。" }},
+        { "@type": "Question", "name": "孩子粗心大意，答案算不对，小题总丢分，怎么破？", "acceptedAnswer": { "@type": "Answer", "text": "粗心不是态度问题。破解三件事：①把每串的根练到不用想，脑子腾出来；②收尾三查——查抄题、查符号搬家、查答案代回去；③失误也归档，记下漏的是哪一查。" }},
+        { "@type": "Question", "name": "退费具体怎么退？", "acceptedAnswer": { "@type": "Answer", "text": "未上的课全退。小班和一对一按剩余课时退；签约课只结当期阶段，剩余7日内原路退回，都写在课时协议里。" }},
+        { "@type": "Question", "name": "您和别的数学老师，到底有什么不一样？", "acceptedAnswer": { "@type": "Answer", "text": "三件当面可验的事：一，教材是自己的（18000道题串成300串，真题部分在线可查）；二，验收有四个标准（懂、会、对、熟）；三，课堂敢验货（页内有3分钟实录）。" }}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* ══════════════════════════════════════════════════════════════
+   一、设计变量（色板 / 字体 / 字号 / 间距 / 圆角）
+   改色只需改这里，全页自动同步
+   ══════════════════════════════════════════════════════════════ */
+:root {
+  /* —— 色板（第十轮·臻金墨蓝：更深邃的蓝 + 更温润的金，去工业感，增书卷气） —— */
+  --c-navy:     #0E2140;   /* 墨夜蓝：主背景（更深，压住画面） */
+  --c-card:     #16305C;   /* 层叠蓝：深底卡片 */
+  --c-paper:    #F4F7FA;   /* 暖纸白：浅色区块（微暖，有纸的质感） */
+  --c-gold:     #C2A05F;   /* 主金：线条/描边（降低亮度，去轻奢） */
+  --c-gold-hi:  #E3C88A;   /* 亮金：深底强调文字 */
+  --c-gold-deep:#7A5E2F;   /* 暗金：浅底金色文字 */
+  --c-ink:      #1B2A44;   /* 墨黑：浅底正文（偏暖黑） */
+  --c-snow:     #E8EDF5;   /* 暖雾白：深底正文（微黄调，不冷） */
+  --c-gd:       #8FA0BC;   /* 银灰蓝：深底辅助 */
+  --c-gl:       #5A6B85;   /* 烟灰：浅底辅助 */
+  --c-gd-dim:   #8296B4;   /* 银灰中档 */
+  --c-cinnabar: #B5543B;   /* 朱砂：否定/警示 */
+
+  /* —— 字体 —— */
+  --serif: "Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC",serif;
+  --sans:  -apple-system,"PingFang SC","HarmonyOS Sans SC","MiSans","Noto Sans CJK SC",sans-serif;
+  --num:   Georgia,"Times New Roman",serif;
+
+  /* —— 字号 —— */
+  --fs-hero: 34px;
+  --fs-h2:   24px;
+  --fs-h3:   19px;
+  --fs-body: 15px;
+  --fs-note: 12px;
+
+  /* —— 间距 / 圆角 —— */
+  --sp-sec: 64px;
+  --r-card: 6px;
+  --sp-block:    40px;
+  --sp-block-lg: 56px;
+  --sp-sub:      56px;
+  --pad-chip:    16px 14px;
+  --pad-card:    24px 22px;
+  --pad-banner:  30px 26px;
+  --ls-h: .02em;
+  --ls-m: .06em;
+  --ls-l: .18em;
+}
+@media (min-width: 768px) {
+  :root {
+    --fs-hero: 40px;
+    --fs-h2:   36px;
+    --fs-h3:   24px;
+    --fs-body: 18px;
+    --fs-note: 14px;
+    --sp-sec: 112px;
+    --sp-block:    64px;
+    --sp-block-lg: 80px;
+    --sp-sub:      72px;
+    --pad-chip:    22px 20px;
+    --pad-card:    32px 28px;
+    --pad-banner:  44px 36px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   二、基础重置
+   ══════════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: var(--fs-body);
+  line-height: 1.75;
+  color: var(--c-ink);
+  background: var(--c-navy);
+  overflow-x: hidden;             /* 防横向滚动 */
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1,h2,h3 { margin: 0; font-family: var(--serif); font-weight: 600; line-height: 1.3; }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+button { font-family: inherit; }
+
+/* 键盘焦点可见（金色描边，深浅底都清晰） */
+:focus-visible { outline: 2px solid var(--c-gold); outline-offset: 3px; border-radius: 2px; }
+
+/* 锚点跳转时避开吸顶导航 */
+section[id] { scroll-margin-top: 76px; }
+
+/* 平滑滚动（仅在用户未开启「减弱动态效果」时启用） */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* 内容容器：最大 960px 居中（iPad 4:3 基准下两侧留出呼吸空间） */
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+@media (min-width: 768px) { .wrap { padding: 0 56px; } }
+
+/* 通用区块 */
+.sec { padding: var(--sp-sec) 0; position: relative; overflow: hidden; }
+.sec--deep  { background: var(--c-navy);  color: var(--c-snow); }
+.sec--paper { background: var(--c-paper); color: var(--c-ink); }
+/* 深浅区块交界的「装订线」：1px 金线，精装学术书隐喻 */
+.rule-gold { border: 0; height: 1px; margin: 0;
+             background: rgba(194,160,95,.3); }
+
+/* 坐标纸网格纹理（深底：金色细线，每 4 格加重） */
+.grid-deep {
+  background-image:
+    linear-gradient(rgba(194,160,95,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(194,160,95,.08) 1px, transparent 1px),
+    linear-gradient(rgba(194,160,95,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(194,160,95,.035) 1px, transparent 1px);
+  background-size: 128px 128px, 128px 128px, 32px 32px, 32px 32px;
+}
+
+/* 区块标题组：眉题 + 大标题 + 引导文 */
+.eyebrow {
+  font-size: 12px; letter-spacing: .18em; font-weight: 600;
+  color: var(--c-gold); margin: 0 0 14px;
+}
+@media (min-width:768px){ .eyebrow { font-size: 14px; } }
+.sec--paper .eyebrow { color: var(--c-gold-deep); }
+.h2 { font-size: var(--fs-h2); letter-spacing: .02em; }
+.lede { max-width: 40em; color: var(--c-gd); margin-top: 14px; }
+.sec--paper .lede { color: var(--c-gl); }
+
+/* 背景数学符号（全页仅两处，纯装饰，屏幕阅读器忽略） */
+.bigsym {
+  position: absolute; pointer-events: none; user-select: none;
+  font-family: var(--serif); line-height: 1; z-index: 0;
+}
+.bigsym--sum  { right: -60px; bottom: -110px; font-size: 380px; color: var(--c-gold-hi); opacity: .04; }
+.bigsym--int  { left: -40px;  bottom: -140px; font-size: 420px; color: var(--c-gold-hi); opacity: .035; }
+
+/* ══════════════════════════════════════════════════════════════
+   三、按钮
+   ══════════════════════════════════════════════════════════════ */
+.btn {
+  display: inline-block; border-radius: 3px; cursor: pointer;
+  font-size: 15px; font-weight: 600; line-height: 1;
+  padding: 14px 26px; text-decoration: none; border: 1px solid transparent;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn--gold {
+  background: linear-gradient(135deg, #C9A84C 0%, #C2A05F 48%, #9A7F2E 100%);
+  color: var(--c-navy);
+  box-shadow: 0 2px 8px rgba(194,160,95,.25), inset 0 1px 0 rgba(255,255,255,.15);
+  transition: transform .18s ease, box-shadow .25s ease, background-color .2s ease;
+}
+.btn--gold:hover {
+  background: linear-gradient(135deg, #E3C88A 0%, #C9A84C 48%, #C2A05F 100%);
+  box-shadow: 0 4px 20px rgba(194,160,95,.35), inset 0 1px 0 rgba(255,255,255,.2);
+  transform: translateY(-1px);
+}
+.btn--ghost { background: transparent; color: var(--c-gold-hi); border-color: rgba(194,160,95,.45); }
+.btn--ghost:hover { border-color: var(--c-gold); background: rgba(194,160,95,.06); }
+/* 浅底区块里的次按钮 */
+.sec--paper .btn--ghost { color: var(--c-ink); border-color: rgba(122,100,32,.45); }
+.sec--paper .btn--ghost:hover { background: rgba(122,100,32,.06); border-color: var(--c-gold-deep); }
+
+/* ══════════════════════════════════════════════════════════════
+   四、吸顶导航
+   ══════════════════════════════════════════════════════════════ */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(11,26,46,.94);
+  -webkit-backdrop-filter: saturate(150%) blur(12px);
+  backdrop-filter: saturate(150%) blur(12px);
+  border-bottom: 1px solid rgba(194,160,95,.15);
+}
+.nav-in { display: flex; align-items: center; gap: 18px; height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand svg { width: 30px; height: 30px; flex: none; }
+.brand b { font-family: var(--serif); font-weight: 600; font-size: 17px; color: var(--c-snow); letter-spacing: .04em; }
+.brand small { font-size: 11px; color: var(--c-gd); letter-spacing: .12em; display: block; margin-top: 1px; }
+.nav-links { display: none; gap: 26px; margin-left: auto; }
+.nav-links a { color: var(--c-gd); text-decoration: none; font-size: 14px; letter-spacing: .06em; transition: color .2s; }
+.nav-links a:hover { color: var(--c-snow); }
+.nav .btn { margin-left: auto; padding: 10px 18px; font-size: 14px; }
+@media (min-width: 768px) {
+  .nav-in { height: 68px; }
+  .nav-links { display: flex; }
+  .nav .btn { margin-left: 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   五、Hero 首屏
+   ══════════════════════════════════════════════════════════════ */
+/* ===== Hero 首屏重构：居中堆叠布局 ===== */
+.hero {
+  position: relative;
+  display: flex; flex-direction: column;
+  min-height: calc(100vh - 68px);
+}
+.hero-in {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 140px 0 48px; flex: 1; justify-content: flex-start; text-align: center;
+}
+/* 画布作为绝对背景，降低透明度融入环境 */
+.hero-fig {
+  position: absolute; inset: 0; z-index: 0;
+  min-height: auto; border: 0; border-radius: 0;
+}
+.hero-fig canvas { opacity: .25; }
+.hero-in > div { position: relative; z-index: 1; width: 100%; max-width: 720px; }
+
+.hero h1 {
+  font-size: 17px; color: var(--c-gd); font-weight: 400;
+  letter-spacing: .01em; line-height: 1.55; margin: 0 0 16px;
+  text-align: left;
+}
+@media (min-width: 768px) { .hero h1 { font-size: 19px; line-height: 1.6; margin: 0 0 14px; } }
+
+/* ★【重构】引语：居中展示，金框胶囊感 */
+.hero-quote {
+  margin: 0 auto 32px; max-width: 560px; text-align: left;
+}
+.hero-quote--featured {
+  background: linear-gradient(135deg, rgba(212,184,90,.06) 0%, rgba(194,160,95,.02) 100%);
+  border: 1px solid rgba(212,184,90,.15);
+  border-left: 3px solid var(--c-gold);
+  border-radius: 6px;
+  padding: 28px 32px;
+  font-family: var(--serif);
+  font-size: 24px; line-height: 1.75; letter-spacing: .03em;
+  color: var(--c-gold-hi);
+}
+@media (min-width: 768px) {
+  .hero-quote--featured { font-size: 28px; padding: 32px 36px; margin-bottom: 36px; }
+}
+
+.hero-motto {
+  font-family: var(--serif); color: var(--c-gold-hi);
+  font-size: 15px; letter-spacing: .1em; margin-top: 18px;
+  text-align: left;
+}
+@media (min-width:768px){ .hero-motto { font-size: 18px; margin-top: 14px; } }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; justify-content: flex-start; }
+
+/* 底部数据信任条：四张卡片（统一边框/底色/字号，等宽栅格） */
+.hero-stats { border-top: 1px solid rgba(194,160,95,.2); padding: 26px 0 34px; }
+.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+@media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; } }
+.stat {
+  background: rgba(18,40,74,.5);
+  border: 1px solid rgba(194,160,95,.22);
+  border-radius: var(--r-card);
+  padding: 16px 14px 14px;
+}
+@media (min-width:768px){ .stat { padding: 24px 22px 20px; } }
+.stat b {
+  display: block; font-family: var(--num); font-variant-numeric: tabular-nums;
+  font-size: 30px; font-weight: 700; color: var(--c-gold-hi); line-height: 1.1;
+  letter-spacing: .01em;
+  text-shadow: 0 0 24px rgba(212,184,90,.15);
+}
+@media (min-width:768px){ .stat b { font-size: 44px; } }
+.stat span { display: block; font-size: var(--fs-note); color: var(--c-gd); margin-top: 5px; letter-spacing: .02em; }
+
+/* ══════════════════════════════════════════════════════════════
+   六、导师介绍（浅底）
+   ══════════════════════════════════════════════════════════════ */
+/* ===== 导师区（重构：高级相框感） ===== */
+.mentor-grid { display: grid; gap: 34px; margin-top: 40px; }
+@media (min-width: 768px) { .mentor-grid { grid-template-columns: 320px 1fr; gap: 64px; align-items: start; } }
+.mentor-fig { position: relative; }
+.mentor-fig img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.06),
+    0 4px 16px rgba(0,0,0,.10),
+    0 12px 40px rgba(0,0,0,.08);
+  filter: saturate(1.02) contrast(1.01);
+}
+/* iPad 竖屏：相框 + 双层金色角标 */
+@media (min-width: 768px) {
+  .mentor-fig {
+    padding: 12px;
+    background: linear-gradient(145deg, rgba(194,160,95,.06), rgba(194,160,95,.02));
+    border: 1px solid rgba(194,160,95,.12);
+    border-radius: 6px;
+  }
+  .mentor-fig::before {
+    content: ""; position: absolute; left: 0; top: 0;
+    width: 36px; height: 36px;
+    border-left: 2px solid var(--c-gold); border-top: 2px solid var(--c-gold);
+    border-radius: 4px 0 0 0;
+    opacity: .5;
+  }
+  .mentor-fig::after {
+    content: ""; position: absolute; right: 0; bottom: 0;
+    width: 36px; height: 36px;
+    border-right: 2px solid var(--c-gold); border-bottom: 2px solid var(--c-gold);
+    border-radius: 0 0 4px 0;
+    opacity: .5;
+  }
+}
+.mentor-fig figcaption {
+  font-size: var(--fs-note); color: var(--c-gl);
+  margin-top: 14px; letter-spacing: .06em; text-align: center;
+}
+
+.creed { list-style: none; padding: 0; margin: 22px 0 0; }
+.creed li { position: relative; padding-left: 26px; margin-bottom: 12px; color: var(--c-ink); }
+.creed li::before { content: "—"; position: absolute; left: 0; color: var(--c-gold-deep); font-weight: 600; }
+
+/* ══════════════════════════════════════════════════════════════
+   七、题串库（深底）：痛点 → 三大模型 → 考点频次条形图
+   ══════════════════════════════════════════════════════════════ */
+.pains { list-style: none; padding: 0; margin: 34px 0 0; max-width: 34em; }
+.pains li { position: relative; padding-left: 30px; margin-bottom: 14px; color: var(--c-snow); }
+.pains li::before { content: "—"; position: absolute; left: 0; color: var(--c-gold); }
+.pain-turn { color: var(--c-gd); max-width: 34em; margin-top: 26px; }
+.pain-turn b { color: var(--c-gold-hi); font-weight: 600; }
+
+.models { display: grid; gap: 16px; margin-top: 44px; }
+@media (min-width: 768px) { .models { grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; } }
+.model {
+  background: var(--c-card); border: 1px solid rgba(194,160,95,.20);
+  border-radius: var(--r-card); padding: 26px 24px;
+}
+@media (min-width: 768px) { .model { padding: 34px 30px; } }
+.model svg { width: 44px; height: 44px; margin-bottom: 16px; }
+@media (min-width: 768px) { .model svg { width: 52px; height: 52px; margin-bottom: 20px; } }
+.model h3 { font-size: var(--fs-h3); color: var(--c-snow); letter-spacing: .04em; margin-bottom: 10px; }
+.model p { color: var(--c-gd); font-size: 15px; margin: 0; }
+@media (min-width: 768px) { .model p { font-size: 16px; } }
+
+/* 考点频次条形图 */
+.freq { display: grid; gap: 40px; margin-top: 56px; }
+@media (min-width: 768px) { .freq { grid-template-columns: 7fr 5fr; gap: 56px; align-items: center; } }
+.freq h3 { font-size: var(--fs-h3); color: var(--c-snow); letter-spacing: .03em; }
+.freq-note { font-size: var(--fs-note); color: var(--c-gd); margin: 8px 0 24px; }
+.bars { display: grid; gap: 16px; }
+.bar-row { display: grid; grid-template-columns: 76px 1fr; align-items: center; gap: 12px; }
+@media (min-width: 768px) { .bar-row { grid-template-columns: 96px 1fr; } }
+.bar-label { font-size: 13px; color: var(--c-gd); letter-spacing: .02em; }
+.bar-track { position: relative; height: 10px; background: rgba(230,226,216,.12); border-radius: 2px; }
+.bar-fill {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+  background: var(--c-gold); border-radius: 2px 3px 3px 2px;
+  transition: width .9s cubic-bezier(.22,1,.36,1);
+}
+.bar-val {
+  position: absolute; left: 100%; margin-left: 10px; top: 50%; transform: translateY(-50%);
+  font-family: var(--num); font-variant-numeric: tabular-nums;
+  font-size: 14px; color: var(--c-gold-hi); white-space: nowrap;
+}
+/* 手机窄屏：数值改第三列，不再绝对定位挤出右缘 */
+@media (max-width: 520px) {
+  .bar-row { grid-template-columns: 64px 1fr auto; gap: 8px; }
+  .bar-val { position: static; transform: none; margin-left: 0; }
+}
+.freq-aside p { color: var(--c-gd); font-size: 15px; }
+.freq-aside p + p { margin-top: 12px; }
+.freq-aside b { color: var(--c-snow); font-weight: 600; }
+.freq-aside .fine { font-size: var(--fs-note); color: var(--c-gd-dim); }
+
+/* ══════════════════════════════════════════════════════════════
+   八、拾阶计划 + 直播卖点（浅底）
+   ══════════════════════════════════════════════════════════════ */
+/* 四步 stepper（真序列：高一→考研） */
+.steps { display: grid; gap: 0; margin-top: 46px; }
+@media (min-width: 1024px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.step { position: relative; padding: 0 0 30px 30px; border-left: 1px solid rgba(122,100,32,.35); }
+.step:last-child { padding-bottom: 0; }
+@media (min-width: 1024px) {
+  .steps { position: relative; }
+  .step { border-left: 0; border-top: 1px solid rgba(122,100,32,.35); padding: 22px 22px 0 0; }
+  .steps::before {
+    content: ""; position: absolute; left: 0; top: -3px; width: 7px; height: 7px;
+    background: var(--c-gold-deep); border-radius: 50%;
+  }
+}
+.step-dot {
+  position: absolute; left: -5px; top: 4px; width: 9px; height: 9px;
+  background: var(--c-paper); border: 2px solid var(--c-gold-deep); border-radius: 50%;
+}
+@media (min-width: 1024px) {
+  .step-dot { left: -4.5px; top: -4.5px; }
+}
+/* 同理：特异性须高于 .step p (0,1,1)，否则阶段眉题被正文样式覆盖 */
+.steps .step-stage { font-size: 12px; letter-spacing: .18em; color: var(--c-gl); font-weight: 600; margin-bottom: 6px; }
+.step h3 { font-size: var(--fs-h3); color: var(--c-ink); margin-bottom: 8px; letter-spacing: .06em; }
+.step p { color: var(--c-gl); font-size: 15px; margin: 0; }
+
+/* ===== 教研现场图片区（重构：画廊感 + 灵动悬停） ===== */
+.sec--evidence-dark {
+  background: var(--c-navy); color: var(--c-snow);
+  position: relative;
+}
+.sec--evidence-dark .eyebrow { color: var(--c-gold); }
+.sec--evidence-dark .lede { color: var(--c-gd); }
+
+.sec--paper2 { background: var(--c-paper); color: var(--c-ink); }
+.sec--paper2 .lede { color: var(--c-gl); }
+.sec--paper2 .eyebrow { color: var(--c-gold-deep); }
+
+.shots { display: grid; gap: 20px; margin-top: 44px; }
+@media (min-width: 768px) { .shots { grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 56px; } }
+.shot { margin: 0; }
+.shot img {
+  width: 100%; border-radius: 6px;
+  border: 1px solid rgba(194,160,95,.12);
+  box-shadow:
+    0 2px 8px rgba(0,0,0,.20),
+    0 0 0 1px rgba(194,160,95,.04);
+  transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s ease;
+}
+/* 悬停：微抬 + 金色光晕 */
+.shot:hover img {
+  transform: translateY(-4px) scale(1.008);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,.30),
+    0 0 0 1px rgba(194,160,95,.20),
+    0 0 48px rgba(194,160,95,.06);
+}
+@media (hover: none) { .shot:hover img { transform: none; box-shadow: 0 2px 8px rgba(0,0,0,.20); } }
+.shot figcaption {
+  display: flex; gap: 10px; font-size: 13px; color: var(--c-gd);
+  margin-top: 14px; line-height: 1.6;
+}
+.shot figcaption::before { content: "—"; color: var(--c-gold); flex: none; }
+.shot--wide { grid-column: 1 / -1; }
+
+/* ===== 学员反馈区重构：宽卡片 + 优雅分数标签 ===== */
+.voices { display: grid; gap: 20px; margin-top: 44px; }
+@media (min-width: 768px) { .voices { grid-template-columns: 1fr; gap: 24px; margin-top: 52px; } }
+.voice {
+  background: var(--c-card); border: 1px solid rgba(194,160,95,.15);
+  border-radius: var(--r-card); padding: 32px 30px 28px; position: relative;
+}
+@media (min-width: 768px) { .voice { padding: 40px 40px 32px; } }
+.voice::before {
+  content: "\201C"; position: absolute; top: 10px; left: 22px;
+  font-family: var(--serif); font-size: 44px; color: var(--c-gold); opacity: .45; line-height: 1;
+}
+.voice p { font-family: var(--serif); font-size: 16px; color: var(--c-snow); line-height: 1.85; margin: 24px 0 14px; }
+@media (min-width: 768px) { .voice p { font-size: 17px; line-height: 1.9; } }
+.voice footer { font-size: var(--fs-note); color: var(--c-gd); letter-spacing: .06em; }
+.voice-fine { font-size: var(--fs-note); color: var(--c-gd-dim); margin-top: 26px; }
+
+/* ★【重构】提分数据标签：更大胶囊 + 清晰层次 */
+.voice-score {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: 18px; padding: 8px 18px 8px 16px;
+  background: linear-gradient(90deg, rgba(11,26,46,.85), rgba(18,40,74,.7));
+  border: 1px solid rgba(194,160,95,.22);
+  border-radius: var(--r-card);
+  box-shadow: 0 2px 12px rgba(0,0,0,.15);
+}
+.voice-score .vs-from { font-family: var(--num); font-size: 17px; color: var(--c-gd); }
+.voice-score .vs-arrow { font-family: var(--num); font-size: 14px; color: var(--c-gold); }
+.voice-score .vs-to   { font-family: var(--num); font-size: 22px; color: var(--c-gold-hi); font-weight: 700;
+  text-shadow: 0 0 14px rgba(212,184,90,.25); }
+.voice-score .vs-dur  { font-size: 12px; color: var(--c-gd-dim); margin-left: 4px;
+  padding-left: 10px; border-left: 1px solid rgba(194,160,95,.18); }
+
+/* ★【新增】聊天截图卡：微信对话样式还原（深底气泡 + 时间戳 + 头像占位） */
+.voice--chat { padding: 22px 20px 20px; }
+.voice--chat::before { display: none; }   /* 去掉大引号 */
+.chat-bubble {
+  display: flex; gap: 10px; margin-bottom: 14px; align-items: flex-start;
+}
+.chat-bubble:last-of-type { margin-bottom: 0; }
+.chat-avatar {
+  flex: none; width: 36px; height: 36px; border-radius: 6px;
+  background: rgba(194,160,95,.18); display: flex; align-items: center; justify-content: center;
+  font-size: 14px; color: var(--c-gold); font-family: var(--serif);
+}
+.chat-bubble--self .chat-avatar { background: rgba(230,226,216,.1); color: var(--c-gd); }
+.chat-text {
+  background: rgba(194,160,95,.10); border: 1px solid rgba(194,160,95,.14);
+  border-radius: 4px 12px 12px 12px; padding: 10px 14px;
+  font-size: 14px; color: var(--c-snow); line-height: 1.7; max-width: 85%;
+}
+.chat-bubble--self .chat-text {
+  background: rgba(29,92,173,.18); border-color: rgba(29,92,173,.25);
+  border-radius: 12px 4px 12px 12px; margin-left: auto;
+}
+.chat-time { text-align: center; font-size: 11px; color: var(--c-gd-dim); margin: 6px 0 14px; }
+
+/* ══════════════════════════════════════════════════════════════
+   十一、FAQ（浅底，原生 details 折叠）
+   ══════════════════════════════════════════════════════════════ */
+.faq { margin-top: 36px; border-top: 1px solid rgba(27,42,68,.14); }
+@media (min-width: 768px) { .faq { margin-top: 48px; } }
+.faq details { border-bottom: 1px solid rgba(27,42,68,.14); }
+.faq summary {
+  list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 14px;
+  padding: 24px 38px 24px 0; position: relative;
+  font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--c-ink);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  font-family: var(--num); font-size: 22px; font-weight: 400; color: var(--c-gold-deep);
+  transition: transform .2s ease;
+}
+.faq details[open] summary::after { content: "×"; }
+.faq details[open] summary { color: var(--c-gold-deep); }   /* 展开态标题暗金高亮 */
+.faq details p { color: var(--c-gl); padding: 0 30px 22px 0; margin: 0; max-width: 44em; }
+
+/* ══════════════════════════════════════════════════════════════
+   十二、底部联系（深底 CTA）
+   ══════════════════════════════════════════════════════════════ */
+.contact-grid { display: grid; gap: 36px; margin-top: 40px; }
+@media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr auto; gap: 64px; align-items: start; } }
+.contact-lead { color: var(--c-gd); max-width: 30em; }
+.contact-lead b { color: var(--c-snow); font-weight: 600; }
+.wx-line { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 26px; }
+.wx-id { font-size: 16px; color: var(--c-gd); }
+.wx-id b {
+  font-family: var(--num); font-size: 20px; color: var(--c-snow); font-weight: 600;
+  letter-spacing: .03em; padding: 6px 14px; border: 1px dashed rgba(194,160,95,.45);
+  border-radius: 4px; margin-left: 8px; user-select: all; -webkit-user-select: all;
+}
+.wx-hint { font-size: var(--fs-note); color: var(--c-gd-dim); margin-top: 12px; }
+.qr-card {
+  justify-self: start; background: #FFFFFF; border-radius: var(--r-card);
+  padding: 12px; width: 172px; box-shadow: 0 6px 24px rgba(0,0,0,.28);
+}
+.qr-card img { width: 148px; height: auto; }
+.qr-card figcaption { font-size: 11px; color: var(--c-gl); text-align: center; padding: 8px 0 2px; letter-spacing: .05em; }
+.trust {
+  font-size: var(--fs-note); color: var(--c-gd-dim); line-height: 1.8;
+  max-width: 46em; margin-top: 48px; padding-top: 22px;
+  border-top: 1px solid rgba(194,160,95,.18);
+}
+.copyright { font-size: var(--fs-note); color: var(--c-gd-dim); margin-top: 10px; letter-spacing: .04em; }
+
+/* ══════════════════════════════════════════════════════════════
+   十三、悬浮球 + 底部弹层 + Toast
+   ══════════════════════════════════════════════════════════════ */
+.fab {
+  position: fixed; right: 18px; bottom: calc(20px + env(safe-area-inset-bottom));
+  z-index: 60; border: 0; cursor: pointer;
+  background: var(--c-gold); color: var(--c-navy);
+  font-size: 15px; font-weight: 600; letter-spacing: .05em;
+  padding: 13px 20px; border-radius: 999px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.32);
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .3s ease, transform .3s ease, visibility .3s, background-color .2s;
+}
+.fab.show { opacity: 1; visibility: visible; transform: none; }
+.fab:hover { background: var(--c-gold-hi); }
+
+/* 弹层（底部抽屉） */
+.sheet { position: fixed; inset: 0; z-index: 100; display: none; }
+.sheet.open { display: block; }
+.sheet-mask { position: absolute; inset: 0; background: rgba(8,16,32,.62); }
+.sheet-panel {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  bottom: 0; width: 100%; max-width: 440px;
+  background: var(--c-navy); border: 1px solid rgba(194,160,95,.25); border-bottom: 0;
+  border-radius: 14px 14px 0 0; text-align: center;
+  padding: 30px 24px calc(24px + env(safe-area-inset-bottom));
+  animation: sheet-up .32s cubic-bezier(.22,1,.36,1);
+}
+@keyframes sheet-up { from { transform: translate(-50%, 40px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .sheet-panel { animation: none; } }
+.sheet-close {
+  position: absolute; top: 12px; right: 12px; width: 34px; height: 34px;
+  border: 0; background: transparent; color: var(--c-gd); font-size: 22px; cursor: pointer; line-height: 1;
+}
+.sheet-close:hover { color: var(--c-snow); }
+.sheet h3 { color: var(--c-snow); font-size: 21px; letter-spacing: .06em; }
+.sheet-sub { color: var(--c-gd); font-size: 14px; margin: 8px 0 18px; }
+.sheet-qr { width: 168px; margin: 0 auto; background: #fff; border-radius: var(--r-card); padding: 10px; }
+.sheet-qr img { width: 100%; height: auto; }
+.sheet-hint { font-size: 13px; color: var(--c-gold-hi); margin: 14px 0 6px; letter-spacing: .03em; }
+.sheet .wx-id { margin: 4px 0 16px; }
+
+/* Toast 轻提示 */
+.toast {
+  position: fixed; left: 50%; transform: translateX(-50%);
+  bottom: calc(88px + env(safe-area-inset-bottom));
+  z-index: 110; background: var(--c-card); color: var(--c-snow);
+  border: 1px solid rgba(194,160,95,.4); border-radius: 6px;
+  font-size: 14px; padding: 11px 20px; letter-spacing: .03em;
+  opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s;
+  max-width: 86vw; text-align: center;
+}
+.toast.show { opacity: 1; visibility: visible; }
+
+/* 弹层打开时锁定背景滚动（微信里防滚动穿透） */
+body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
+
+/* ══════════════════════════════════════════════════════════════
+   十四、入场动画（仅首屏一次；减弱动态时全部直出终态）
+   ══════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-quote, .hero h1, .hero-motto, .hero-cta, .hero-in > div {
+    animation: rise .6s cubic-bezier(.65,0,.35,1) both;
+  }
+  .hero-quote       { animation-delay: 0s; }
+  .hero h1          { animation-delay: .1s; }
+  .hero-motto       { animation-delay: .2s; }
+  .hero-cta         { animation-delay: .28s; }
+  .hero-in > div    { animation-delay: .05s; }
+  .hero-fig canvas  { animation: fadeIn .8s .15s both; }
+  @keyframes rise   { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: .25; } }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   十五、内容增强组件：信件 / 双列痛点 / 真题实拆 / 课堂时间线
+                    / 适合筛选 / 取货三件套 / 资历锚点
+   ══════════════════════════════════════════════════════════════ */
+
+/* —— 写给家长的信（衬线长文，左金线装订） —— */
+.letter { max-width: 660px; margin: 44px auto 0; padding: 6px 4px 6px 24px; border-left: 2px solid var(--c-gold); }
+@media (min-width: 768px) { .letter { padding: 10px 8px 10px 32px; max-width: 720px; } }
+.letter p { font-family: var(--serif); font-size: 16px; line-height: 2.05; color: var(--c-ink); text-indent: 2em; margin: 0 0 .4em; }
+@media (min-width:768px) { .letter p { font-size: 18px; line-height: 2.15; } }
+.letter p b { font-weight: 600; }
+.letter .sign { text-align: right; font-family: var(--serif); color: var(--c-gold-deep); font-size: 15px; margin-top: 20px; letter-spacing: .08em; }
+
+/* —— 双列痛点（深底）：孩子说 / 您看见的 —— */
+.duo { display: grid; gap: 16px; margin-top: 38px; }
+@media (min-width: 768px) { .duo { grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; } }
+.duo-card { background: var(--c-card); border: 1px solid rgba(194,160,95,.18); border-radius: var(--r-card); padding: 26px 24px; }
+@media (min-width: 768px) { .duo-card { padding: 32px 28px; } }
+.duo-card h3 { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--c-gd); letter-spacing: .18em; margin: 0 0 16px; }
+.duo-card ul { list-style: none; padding: 0; margin: 0; }
+.duo-card li { position: relative; padding-left: 24px; margin-bottom: 13px; color: var(--c-snow); font-size: 15px; line-height: 1.7; }
+.duo-card li:last-child { margin-bottom: 0; }
+.duo-card li::before { content: "—"; position: absolute; left: 0; color: var(--c-gold); }
+.duo-turn { text-align: center; margin-top: 32px; font-family: var(--serif); font-size: 16px; color: var(--c-snow); letter-spacing: .03em; }
+@media (min-width:768px) { .duo-turn { font-size: 18px; } }
+.duo-turn b { color: var(--c-gold-hi); font-weight: 600; }
+
+/* —— 真题实拆演示（深底） —— */
+.demo { margin-top: 46px; }
+.demo-q { background: var(--c-card); border: 1px solid rgba(194,160,95,.28); border-radius: var(--r-card); padding: 24px 26px; max-width: 700px; margin: 0 auto 28px; text-align: center; }
+.demo-q .tag { font-size: 12px; letter-spacing: .18em; color: var(--c-gold); font-weight: 600; margin: 0 0 12px; }
+.demo-q p { font-family: var(--serif); font-size: 17px; color: var(--c-snow); line-height: 1.9; margin: 0; letter-spacing: .02em; }
+.demo-q sup { font-size: .62em; }
+.demo-vs { display: grid; gap: 16px; align-items: stretch; }
+@media (min-width: 768px) { .demo-vs { grid-template-columns: 1fr 1fr; gap: 20px; } }
+.demo-card { border-radius: var(--r-card); padding: 26px 24px; display: flex; flex-direction: column; }
+.demo-card--bad { background: rgba(232,237,245,.05); border: 1px solid rgba(143,160,188,.28); }
+.demo-card--good { background: var(--c-card); border: 1px solid rgba(194,160,95,.35); }
+.demo-card .who { font-size: 13px; letter-spacing: .18em; font-weight: 600; margin: 0 0 16px; }
+.demo-card--bad .who { color: var(--c-gd); }
+.demo-card--good .who { color: var(--c-gold-hi); }
+.steps-ghost { list-style: none; margin: 0; padding: 14px 18px; background: rgba(14,33,64,.55); border-radius: 4px; flex: 1; }
+.steps-ghost li { font-size: 13px; color: var(--c-gd-dim); line-height: 2.1; font-variant-numeric: tabular-nums; }
+.steps-ghost li em { font-style: normal; color: rgba(232,237,245,.55); }
+.demo-card--good .steps-ghost { background: rgba(14,33,64,.45); }
+.demo-card .lead { font-size: 14px; color: var(--c-gd); margin: 16px 0 0; }
+.demo-card .lead b { color: var(--c-snow); font-weight: 600; }
+.acts { display: grid; gap: 10px; flex: 1; align-content: start; }
+.act { display: flex; gap: 13px; background: rgba(14,33,64,.5); border-radius: 4px; padding: 13px 15px; }
+.act i { font-style: normal; flex: none; font-family: var(--num); font-size: 14px; color: var(--c-gold-hi); font-weight: 600; transform: translateY(1px); }
+.act b { display: block; font-size: 14.5px; color: var(--c-snow); font-weight: 600; letter-spacing: .05em; }
+.act span { display: block; font-size: 13px; color: var(--c-gd); line-height: 1.65; margin-top: 2px; }
+.demo-end { text-align: center; margin-top: 30px; font-family: var(--serif); font-size: 16px; color: var(--c-snow); line-height: 1.9; }
+@media (min-width:768px) { .demo-end { font-size: 18px; } }
+.demo-end .fine { display: block; font-family: var(--sans); font-size: var(--fs-note); color: var(--c-gd); margin-top: 8px; }
+
+/* —— 衍生真题（真题实拆区：这一串的历年变式清单，「学一道会一串」的实证） —— */
+.deriv { max-width: 700px; margin: 40px auto 0; background: rgba(22,48,92,.45);
+         border: 1px solid rgba(194,160,95,.28); border-radius: var(--r-card); padding: 24px 26px 20px; }
+.deriv-t { margin: 0 0 14px; font-family: var(--serif); font-size: 17px; color: var(--c-snow); letter-spacing: .04em; }
+.deriv ul { list-style: none; margin: 0; padding: 0; }
+.deriv li { display: grid; grid-template-columns: 172px 1fr; gap: 14px; padding: 11px 0; border-bottom: 1px dashed rgba(194,160,95,.2); }
+.deriv li:last-child { border-bottom: 0; }
+.deriv li b { font-family: var(--num); font-variant-numeric: tabular-nums; font-size: 13.5px; color: var(--c-gold-hi); letter-spacing: .02em; }
+.deriv li span { font-size: 13px; color: var(--c-gd); line-height: 1.7; }
+.deriv-note { font-size: 12.5px; color: var(--c-gd-dim); margin: 14px 0 0; }
+@media (max-width: 520px) {
+  .deriv li { grid-template-columns: 1fr; gap: 3px; }
+}
+
+/* —— 一节直播课的 90 分钟（浅底时间线） —— */
+/* subsec 升级为真分组标题：顶边线 + 编号（data-i 属性），走廊变展厅 */
+.subsec { font-size: 20px; color: var(--c-ink); letter-spacing: .03em; margin: var(--sp-sub) 0 6px; padding-top: 28px; border-top: 1px solid rgba(27,42,68,.14); }
+.subsec::before {
+  content: attr(data-i); display: block; font-family: var(--num);
+  font-size: 12px; letter-spacing: .18em; color: var(--c-gl); margin-bottom: 8px;
+}
+.subsec[data-i=""]::before, .subsec:not([data-i])::before { content: none; }  /* 无编号的 subsec（如导师区）直出 */
+.subsec-note { font-size: var(--fs-note); color: var(--c-gl); margin: 0 0 26px; }
+.tl { border-left: 1px solid rgba(122,94,47,.45); margin-top: 10px; max-width: 640px; }
+.tl-row { position: relative; padding: 0 0 26px 28px; }
+.tl-row:last-child { padding-bottom: 0; }
+.tl-row::before {
+  content: ""; position: absolute; left: -5px; top: 5px; width: 9px; height: 9px;
+  background: var(--c-paper); border: 2px solid var(--c-gold-deep); border-radius: 50%;
+}
+.tl-time { font-family: var(--num); font-variant-numeric: tabular-nums; font-size: 13px; color: var(--c-gold-deep); font-weight: 600; letter-spacing: .05em; }
+.tl-row b { display: block; font-size: 16px; color: var(--c-ink); font-weight: 600; margin: 3px 0 4px; }
+.tl-row p { font-size: 14px; color: var(--c-gl); margin: 0; line-height: 1.7; }
+
+/* —— 环节横带（课前/课后/当日）：非时序内容不再用竖轨，消灭双胞胎时间线 —— */
+.cycle { display: grid; gap: 14px; margin-top: 18px; }
+@media (min-width: 768px) { .cycle { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+.cycle > div { background: #FFFFFF; border: 1px solid rgba(90,107,133,.16); border-radius: var(--r-card); padding: 18px 18px 16px; }
+.cycle i { font-style: normal; font-size: 12px; letter-spacing: .18em; color: var(--c-gl); font-weight: 600; }
+.cycle b { display: block; font-size: 16px; margin: 6px 0 4px; }
+.cycle p { font-size: 13.5px; color: var(--c-gl); line-height: 1.7; margin: 0; }
+.cycle--four { grid-template-columns: 1fr; }
+@media (min-width: 768px) { .cycle--four { grid-template-columns: repeat(4, 1fr); } }
+
+/* —— 延伸卡（考研·竞赛·强基，降半级：虚线边框示意「可选延伸」） —— */
+@media (min-width: 768px) {
+  .step--ext { border-top-style: dashed; }
+  .step--ext .step-dot { border-style: dashed; background: transparent; }
+}
+
+/* —— 四步操作化小字（怎么验 · 多久验 · 没过怎么办） —— */
+.gate-how {
+  display: block; font-size: 13px; color: var(--c-gold-deep); margin-top: 6px;
+  letter-spacing: .02em; line-height: 1.65;
+}
+
+/* —— 过门带（plan 与 classes 之间的深底金句带：打断浅底走廊 + 金句承上启下） —— */
+.interlude { background: var(--c-navy); padding: 84px 0; text-align: center; }
+@media (min-width: 768px) { .interlude { padding: 104px 0; } }
+.gate-quote {
+  font-family: var(--serif); font-size: 19px; color: var(--c-gold-hi);
+  line-height: 2; letter-spacing: .04em; margin: 0 auto; max-width: 30em;
+  display: inline-block; padding: 0 26px; position: relative;
+}
+@media (min-width:768px) { .gate-quote { font-size: 24px; line-height: 2.1; } }
+.gate-quote::before, .gate-quote::after {
+  content: ""; position: absolute; top: 50%; width: 1px; height: 68%; background: var(--c-gold);
+}
+.gate-quote::before { left: 0; } .gate-quote::after { right: 0; }
+
+/* —— 适合谁 / 暂不适合谁（浅底双卡） —— */
+.fit { display: grid; gap: 16px; margin-top: 38px; }
+@media (min-width: 768px) { .fit { grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; } }
+.fit-card { border-radius: var(--r-card); padding: 28px 26px; }
+@media (min-width: 768px) { .fit-card { padding: 34px 30px; } }
+.fit-card--yes { background: #FFFFFF; border: 1px solid rgba(122,100,32,.35); }
+.fit-card--no  { background: rgba(255,255,255,.55); border: 1px dashed rgba(107,117,133,.4); }
+.fit-card h3 { font-family: var(--sans); font-size: 15px; font-weight: 600; letter-spacing: .12em; margin: 0 0 18px; }
+.fit-card--yes h3 { color: var(--c-gold-deep); }
+.fit-card--no  h3 { color: var(--c-gl); }
+.fit-card ul { list-style: none; padding: 0; margin: 0; }
+.fit-card li { position: relative; padding-left: 27px; margin-bottom: 14px; font-size: 15px; line-height: 1.7; color: var(--c-ink); }
+.fit-card--no li { color: var(--c-gl); }
+.fit-card li:last-child { margin-bottom: 0; }
+.fit-card--yes li::before { content: "✓"; position: absolute; left: 0; color: var(--c-gold-deep); font-weight: 700; }
+.fit-card--no  li::before { content: "×"; position: absolute; left: 1px; color: var(--c-gl); font-weight: 700; }
+.fit-end { text-align: center; margin-top: 32px; font-family: var(--serif); font-size: 16px; color: var(--c-ink); }
+@media (min-width:768px) { .fit-end { font-size: 17px; } }
+
+/* —— 取货两件套已移除（底部联系区改为常规联系引导）；.offer 样式随之删除 —— */
+
+/* —— 导师资历锚点（两格数字） —— */
+.pins { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 30px 0 26px; }
+.pins > div { background: #FFFFFF; border: 1px solid rgba(90,107,133,.16); border-radius: var(--r-card); text-align: center; padding: 16px 6px 13px; }
+.pins b { display: block; font-family: var(--num); font-variant-numeric: tabular-nums; font-size: 24px; font-weight: 600; color: var(--c-gold-deep); line-height: 1.2; }
+@media (min-width:768px) { .pins b { font-size: 28px; } }
+.pins span { font-size: var(--fs-note); color: var(--c-gl); }
+
+/* —— 学员反馈：桌面端两列（4 条证词 → 2×2，第 4 条是高一崩盘型家长，与前 3 条并列） —— */
+@media (min-width: 768px) {
+  /* voices 区宽卡片 */
+  .voices { gap: 20px; }
+}
+
+/* —— 课堂录像位（真题实拆区内嵌 3 分钟切片） —— */
+.demo-video { max-width: 700px; margin: 36px auto 0; }
+.demo-video video {
+  width: 100%; display: block; background: #000;
+  border: 1px solid rgba(194,160,95,.35); border-radius: var(--r-card);
+}
+.demo-video figcaption {
+  font-size: var(--fs-note); color: var(--c-gd); text-align: center;
+  margin-top: 10px; letter-spacing: .04em;
+}
+
+/* —— 取货按钮容器已随取货话术移除 —— */
+
+/* ★【新增】阶梯诱饵横幅（深底金边卡片，放在真题实拆之后：看完课→想更多→领手册） */
+.lead-magnet {
+  background: linear-gradient(135deg, var(--c-card) 0%, rgba(22,48,92,.85) 100%);
+  border: 1px solid rgba(194,160,95,.4); border-radius: var(--r-card);
+  padding: 36px 30px; margin-top: 0; position: relative; overflow: hidden;
+}
+.lead-magnet::after {
+  content: ""; position: absolute; top: 0; right: 0; width: 180px; height: 180px;
+  background: radial-gradient(circle at 70% 30%, rgba(194,160,95,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.lead-magnet h3 {
+  font-family: var(--serif); font-size: 22px; color: var(--c-gold-hi);
+  letter-spacing: .03em; margin: 0 0 6px;
+}
+@media (min-width:768px){ .lead-magnet h3 { font-size: 26px; } }
+.lead-magnet .lm-sub { font-size: 14px; color: var(--c-gd); margin: 0 0 22px; }
+.lm-items { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 10px; }
+.lm-items li {
+  position: relative; padding-left: 26px; font-size: 14px; color: var(--c-snow); line-height: 1.6;
+}
+.lm-items li::before {
+  content: "✓"; position: absolute; left: 0; color: var(--c-gold); font-weight: 700; font-size: 14px;
+}
+.lm-note { font-size: 12px; color: var(--c-gd-dim); margin: 14px 0 0; letter-spacing: .02em; }
+
+/* —— 学会的四个标准（浅底：懂、会、对、熟验收清单） —— */
+.gates { margin-top: 10px; max-width: 640px; }
+.gate {
+  display: grid; grid-template-columns: 64px 1fr; gap: 16px;
+  padding: 18px 0; border-bottom: 1px dashed rgba(122,94,47,.3);
+}
+.gate:last-child { border-bottom: 0; }
+
+.gate-no { font-family: var(--serif); font-size: 14px; font-weight: 600; color: var(--c-gold-deep); letter-spacing: .08em; padding-top: 3px; }
+/* 注意：b/span 规则必须限定在内容 div 内，否则 .gate span (0,1,1) 会盖掉 .gate-no (0,1,0) 的暗金色 */
+.gate > div > b { display: block; font-size: 16px; color: var(--c-ink); font-weight: 600; }
+.gate > div > span { display: block; font-size: 14px; color: var(--c-gl); line-height: 1.7; margin-top: 4px; }
+
+/* —— 自媒体日常输出（导师区尾部）：小红书 + 真题库在线版，卡片标题即链接 —— */
+.social { margin-top: 56px; }
+.social-cards { display: grid; gap: 16px; margin-top: 26px; }
+@media (min-width: 768px) { .social-cards { grid-template-columns: 1fr 1fr; gap: 20px; } }
+/* 单卡布局（真题库卡已收敛，仅剩小红书一张） */
+@media (min-width: 768px) { .social-cards--one { grid-template-columns: 1fr; max-width: 620px; } }
+.social-card { background: #FFFFFF; border: 1px solid rgba(90,107,133,.16); border-radius: var(--r-card); padding: 24px 22px 22px; }
+.social-card b { display: block; font-size: 15.5px; color: var(--c-ink); font-weight: 600; letter-spacing: .02em; }
+.social-card span { display: block; font-size: 14px; color: var(--c-gl); line-height: 1.75; margin-top: 8px; }
+.social-link { color: var(--c-gold-deep); text-decoration: none; border-bottom: 1px solid rgba(122,100,32,.3); }
+.social-link:hover { color: var(--c-ink); border-bottom-color: var(--c-gold-deep); }
+/* 深底区里的链接用亮金，保证对比度 */
+.sec--deep .social-link { color: var(--c-gold-hi); border-bottom-color: rgba(194,160,95,.35); }
+.sec--deep .social-link:hover { color: var(--c-snow); border-bottom-color: var(--c-gold); }
+/* 样例图复用 .shot 的 img/figcaption 样式，仅覆盖排布 */
+.social-fig { margin: 30px auto 0; max-width: 620px; }
+
+/* —— 班型与价格（三档金字塔：小班主推 / 一对一 / 签约课；价格行推底对齐） —— */
+
+/* ★【新增·P2】手机端优化 */
+@media (max-width: 767px) {
+  /* 手机端画布降低透明度，不隐藏 */
+  .hero-fig canvas { opacity: .12; }
+  .stat--arg { grid-column: auto; }   /* 论证卡不再跨全列 */
+  .sheet-qr { width: 200px; }   /* 弹层二维码放大 */
+  .fab { bottom: calc(24px + env(safe-area-inset-bottom)); padding: 11px 18px; }   /* FAB 余量 */
+}
+
+.tiers { display: grid; gap: 16px; margin-top: 44px; }
+@media (min-width: 768px) { .tiers { grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; } }
+.tier {
+  position: relative; background: #FFFFFF; border: 1px solid rgba(90,107,133,.16);
+  border-radius: var(--r-card); padding: 28px 24px 24px;
+  display: flex; flex-direction: column;
+}
+@media (min-width: 768px) { .tier { padding: 36px 30px 28px; } }
+.tier--main { border-color: rgba(122,94,47,.55); border-top: 3px solid var(--c-gold-deep); padding-top: 25px; }
+/* —— VIP 签约提升班：左侧金边 + 暖底，视觉权重仅次于主推荐 —— */
+.tier--vip {
+  border-color: rgba(122,94,47,.45); border-left: 4px solid var(--c-gold-deep);
+  background: linear-gradient(180deg, rgba(227,200,138,.06) 0%, #FFFFFF 40%);
+  padding-top: 25px;
+}
+.tier--vip .tier-badge {
+  background: linear-gradient(135deg, var(--c-gold) 0%, var(--c-gold-deep) 100%);
+  letter-spacing: .08em; padding: 5px 15px;
+}
+.tier--vip .tier-price b { font-size: 30px; }
+.tier--vip .creed li b { color: var(--c-gold-deep); }
+/* —— 一对一：虚线顶边 + 净底，传递「精准 / 定制」感 —— */
+.tier--one { border-top: 2px dashed rgba(122,94,47,.4); padding-top: 25px; }
+.tier--one .tier-badge {
+  background: var(--c-paper); color: var(--c-gold-deep);
+  border: 1px solid rgba(122,94,47,.35);
+  box-shadow: none;
+}
+.tier--one .creed li b { color: var(--c-gold-deep); }
+.tier-badge {
+  position: absolute; top: -13px; left: 20px;
+  background: var(--c-gold-deep); border: 0; color: var(--c-paper);
+  font-size: 11px; font-weight: 600; letter-spacing: .12em;
+  padding: 5px 13px; border-radius: 999px;
+}
+.tier h3 { font-size: var(--fs-h3); color: var(--c-ink); letter-spacing: .04em; }
+.tier-for { font-size: 14px; color: var(--c-ink); margin: 8px 0 14px; }
+.tier .creed li { font-size: 14px; margin-bottom: 10px; }
+.tier-price { margin-top: auto; padding-top: 16px; border-top: 1px dashed rgba(90,107,133,.3); }
+.tier-price b { font-family: var(--num); font-size: 26px; font-weight: 600; color: var(--c-gold-deep); }
+.tier--main .tier-price b { font-size: 30px; }
+.tier-price b i { font-style: normal; font-weight: 400; color: var(--c-gl); }  /* 区间连字符弱化：两端的差才是信息 */
+.tier-price span { font-size: 13px; color: var(--c-gl); margin-left: 6px; }
+.tier-note { font-size: var(--fs-note); color: var(--c-gl); margin: 10px 0 0; line-height: 1.7; }
+
+/* ══════════════════════════════════════════════════════════════
+   十六、第九轮新增组件（信息设计 + 冷纸黄铜 + 排版 token 落地）
+   追加在样式表尾部：同特异性后来居上，实现规则级覆盖
+   ══════════════════════════════════════════════════════════════ */
+
+/* —— 拆解链（导师区：18,000 道 → 手写拆解 → 六大板块 → 300 串，信息设计条2）—— */
+.chain { display: grid; grid-template-columns: 1fr; margin-top: 30px; }
+.chain-node {
+  background: #FFFFFF; border: 1px solid rgba(90,107,133,.16);
+  border-radius: var(--r-card); padding: var(--pad-chip);
+}
+.chain-node b {
+  display: block; font-family: var(--serif); font-size: 19px; font-weight: 600;
+  color: var(--c-ink); line-height: 1.35;
+}
+.chain-node span { display: block; font-size: 12.5px; color: var(--c-gl); margin-top: 3px; line-height: 1.6; }
+.chain-node--end {
+  border-color: rgba(122,100,32,.45); border-top: 3px solid var(--c-gold-deep);
+  background: linear-gradient(180deg, rgba(194,160,95,.10), #FFFFFF 46%);
+}
+.chain-node--end b { color: var(--c-gold-deep); }
+.chain-arrow { display: flex; align-items: center; justify-content: center; height: 24px; }
+.chain-arrow::before { content: "↓"; font-family: var(--num); font-size: 14px; color: var(--c-gold-deep); }
+@media (min-width: 768px) {
+  .chain { grid-template-columns: 1fr 26px 1fr 26px 1fr 26px 1fr; align-items: stretch; }
+  .chain-node { display: flex; flex-direction: column; justify-content: center; padding: var(--pad-card); }
+  .chain-arrow { height: auto; }
+  .chain-arrow::before { content: "→"; font-size: 16px; }
+}
+
+/* —— 90 分钟时间配比条（plan 区 subsec01 后，信息设计条6：两头都是「验」）—— */
+.ratio { display: flex; height: 46px; border-radius: 4px; overflow: hidden; margin: 0; }
+.ratio i {
+  flex: 0 0 calc(var(--r) * 1%); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 2px; font-style: normal;
+  border-right: 2px solid var(--c-paper);
+}
+.ratio i:last-child { border-right: 0; }
+.ratio i:nth-child(1) { background: #6B5327; }   /* 验（上一讲） */
+.ratio i:nth-child(2) { background: #3A5482; }   /* 讲 */
+.ratio i:nth-child(3) { background: #2F466E; }   /* 讲 */
+.ratio i:nth-child(4) { background: #C2A05F; }   /* 验（本讲，亮金收口） */
+.ratio b { font-size: 11px; font-weight: 600; color: var(--c-paper); letter-spacing: .02em; white-space: nowrap; }
+.ratio span { font-family: var(--num); font-variant-numeric: tabular-nums; font-size: 12px; color: var(--c-paper); opacity: .8; }
+.ratio i:nth-child(4) b, .ratio i:nth-child(4) span { color: var(--c-navy); opacity: .85; }
+@media (max-width: 520px) {
+  .ratio { height: 34px; }
+  .ratio b { display: none; }   /* 窄屏只留分钟数，环节名在下方时间线里 */
+}
+
+/* —— 根题谱系图（真题实拆区：根卡 + 金色脊柱 + 逐年下挂，信息设计条1）—— */
+.deriv--tree .tree-root {
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  background: rgba(194,160,95,.1); border: 1px solid rgba(194,160,95,.42);
+  border-radius: var(--r-card); padding: 12px 16px; margin-bottom: 8px;
+}
+.tree-root .tr-tag { font-size: 11px; letter-spacing: .18em; color: var(--c-gold); font-weight: 600; }
+.tree-root b { font-family: var(--num); font-variant-numeric: tabular-nums; font-size: 15px; color: var(--c-gold-hi); font-weight: 600; letter-spacing: .02em; }
+.tree-root .tr-acts { font-size: 11.5px; color: var(--c-gd-dim); letter-spacing: .04em; margin-left: auto; white-space: nowrap; }
+.tree-spine { list-style: none; margin: 0; padding: 4px 0 0 22px; position: relative; }
+.tree-spine::before {
+  content: ""; position: absolute; left: 5px; top: 12px; bottom: 20px; width: 2px;
+  background: linear-gradient(rgba(194,160,95,.55), rgba(194,160,95,.14));
+}
+.tree-spine li {
+  position: relative; display: grid; grid-template-columns: 176px 1fr; gap: 14px;
+  padding: 11px 0; border-bottom: 1px dashed rgba(194,160,95,.2); align-items: baseline;
+}
+.tree-spine li::before {
+  content: ""; position: absolute; left: -21px; top: 16px; width: 8px; height: 8px;
+  border-radius: 50%; background: var(--c-navy); border: 2px solid var(--c-gold);
+}
+.tree-spine li.tree-more { border-bottom: 0; color: var(--c-gd-dim); font-size: 13px; display: block; padding-top: 14px; }
+.tree-spine li.tree-more::before { background: transparent; border-style: dashed; }
+@media (max-width: 560px) {
+  .tree-spine li { grid-template-columns: 1fr; gap: 3px; }
+  .tree-root .tr-acts { margin-left: 0; white-space: normal; }
+}
+
+/* —— 频次图：首条亮金 + 底部刻度 + 图表要点（信息设计条4/5）—— */
+.bar-fill { opacity: .6; }
+.bar-fill--top { opacity: 1; }
+.freq-tip { font-size: 13px; color: var(--c-gold-hi); margin: 6px 0 0; }
+.bar-scale {
+  display: flex; justify-content: space-between; margin: 3px 6px 0 88px;
+  font-family: var(--num); font-variant-numeric: tabular-nums;
+  font-size: 11px; color: var(--c-gd-dim);
+}
+@media (min-width: 768px) { .bar-scale { margin-left: 108px; } }
+@media (max-width: 520px) { .bar-scale { margin-left: 72px; margin-right: 36px; } }
+
+/* —— 论证卡（hero 数据条第一卡：18,000 拆成 300，信息设计条4）—— */
+.stat--arg { grid-column: 1 / -1; }
+.stat--arg b { display: flex; align-items: baseline; justify-content: flex-start; gap: 10px; flex-wrap: wrap; }
+.stat--arg .arg-flow {
+  font-style: normal; font-family: var(--serif); font-size: 15px; font-weight: 600;
+  color: var(--c-gd-dim); white-space: nowrap;
+}
+.stat--arg .arg-flow::before { content: "——"; margin-right: 2px; color: rgba(194,160,95,.45); }
+.stat--arg .arg-flow::after { content: "→"; margin-left: 2px; color: rgba(194,160,95,.7); }
+@media (min-width: 768px) { .stat--arg { grid-column: span 2; } }
+/* 口号数字随标题宋体（排版条8a：「3–5 人」「8 年」中数字与汉字基线一致） */
+.stat b.stat-txt { font-family: var(--serif); letter-spacing: .02em; }
+
+/* —— 信件金句块（信息设计条8：全页最可转发的一句话，独立成段）—— */
+.letter-quote {
+  text-indent: 0; font-family: var(--serif); font-size: 21px; font-weight: 600;
+  color: var(--c-ink); line-height: 1.7; margin: 26px 0; padding: 2px 0 2px 18px;
+  border-left: 3px solid var(--c-gold); letter-spacing: .04em;
+}
+@media (min-width: 768px) { .letter-quote { font-size: 24px; } }
+
+/* —— 阶梯 gates（四步验收逐级缩进：视觉即「拾阶」）—— */
+.gates .gate:nth-child(2) { margin-left: 24px; }
+.gates .gate:nth-child(3) { margin-left: 48px; }
+.gates .gate:nth-child(4) { margin-left: 72px; }
+@media (max-width: 520px) {
+  .gates .gate:nth-child(2) { margin-left: 10px; }
+  .gates .gate:nth-child(3) { margin-left: 20px; }
+  .gates .gate:nth-child(4) { margin-left: 30px; }
+}
+
+/* —— 朱砂功能色：否定 / 失败态（配色：状态色禁做装饰）—— */
+.fit-card--no li::before { color: var(--c-cinnabar); }
+.toast--fail { border-color: rgba(181,84,59,.55); color: #E8B7A6; }
+
+/* ══════════════════════════════════════════════════════════════
+   十七、第九轮规则级覆盖（后位优先）
+   ══════════════════════════════════════════════════════════════ */
+/* 浅底键盘焦点改暗金（配色 S1：主金在冷纸上对比不足） */
+.sec--paper :focus-visible, .sec--paper2 :focus-visible { outline-color: var(--c-gold-deep); }
+/* 信件 / 谱系卡左对齐，与标题组同轴（排版条7；.demo-q 对称展柜居中保留） */
+.letter { margin: 44px 0 0; }
+.deriv { margin: 40px 0 0; }
+/* 信件缩进例外：落款与金句不缩进 */
+.letter .sign, .letter .letter-quote { text-indent: 0; }
+/* 谱系图证据文字桌面提权（排版条9） */
+.deriv--tree .tree-spine li span { font-size: 14px; }
+/* FAQ：右缘对齐 + 行高（排版条11） */
+.faq summary { line-height: 1.55; }
+.faq details p { padding: 0 34px 22px 0; }
+@media (min-width: 768px) { .faq summary { font-size: 18px; } }
+/* FAQ 展开态降金：文字回墨蓝，金色职能让给 + 号（配色：金色职能收敛） */
+.faq details[open] summary { color: var(--c-ink); }
+/* 班型价格两行栈式（排版条8b） */
+.tier-price span { display: block; margin: 4px 0 0; }
+/* steps 中屏两列（排版条5：768–1023 每列约 146px 过窄） */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .steps { grid-template-columns: repeat(2, 1fr); column-gap: 48px; row-gap: 40px; }
+}
+/* 条形图逐条错峰入场 */
+.bar-row:nth-child(1) .bar-fill { transition-delay: .05s; }
+.bar-row:nth-child(2) .bar-fill { transition-delay: .15s; }
+.bar-row:nth-child(3) .bar-fill { transition-delay: .25s; }
+.bar-row:nth-child(4) .bar-fill { transition-delay: .35s; }
+.bar-row:nth-child(5) .bar-fill { transition-delay: .45s; }
+.bar-row:nth-child(6) .bar-fill { transition-delay: .55s; }
+
+/* 卡片 hover 微抬 + 金边 */
+.model, .voice, .tier {
+  transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, border-color .25s ease;
+}
+.model:hover, .voice:hover, .tier:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.15);
+  border-color: rgba(194,160,95,.3);
+}
+.sec--deep .model:hover, .sec--deep .voice:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,.30), 0 0 0 1px rgba(194,160,95,.12);
+}
+@media (hover: none) { .model:hover, .voice:hover, .tier:hover { transform: none; box-shadow: none; border-color: inherit; } }
+
+/* Hero 主 CTA 微脉动 */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-cta .btn--gold {
+    animation: ctaPulse 3.2s ease-in-out 1.2s infinite;
+  }
+  @keyframes ctaPulse {
+    0%, 100% { box-shadow: 0 2px 8px rgba(194,160,95,.22), inset 0 1px 0 rgba(255,255,255,.15); }
+    50%      { box-shadow: 0 2px 8px rgba(194,160,95,.22), 0 0 0 8px rgba(194,160,95,.0), inset 0 1px 0 rgba(255,255,255,.15); }
+  }
+}
+
+/* 装订线渐变 */
+.rule-gold {
+  border: 0; height: 1px; margin: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(194,160,95,.25) 15%,
+    rgba(194,160,95,.45) 50%,
+    rgba(194,160,95,.25) 85%,
+    transparent 100%);
+}
+
+/* 过门带加坐标纸纹理 */
+.interlude::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(194,160,95,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(194,160,95,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.gate-quote { position: relative; z-index: 1; }
+
+/* 价格主推档金顶加粗 */
+.tier--main {
+  border-color: rgba(122,100,32,.5);
+  border-top: 4px solid var(--c-gold);
+  padding-top: 24px;
+  box-shadow: 0 8px 32px -12px rgba(194,160,95,.18);
+}
+/* VIP 签约班：左金边 + 暖底升级 */
+.tier--vip {
+  border-color: rgba(122,100,32,.4);
+  border-left: 4px solid var(--c-gold);
+  box-shadow: 0 6px 24px -10px rgba(194,160,95,.14);
+  background: linear-gradient(180deg, rgba(212,184,90,.06) 0%, var(--c-paper) 50%);
+}
+.tier--vip .tier-badge {
+  background: linear-gradient(135deg, var(--c-gold-hi) 0%, var(--c-gold) 100%);
+  color: var(--c-navy);
+  box-shadow: 0 2px 10px rgba(194,160,95,.3);
+}
+/* 一对一：虚线金边 + 纸色徽章 */
+.tier--one {
+  border-top: 2px dashed var(--c-gold);
+  box-shadow: 0 4px 16px -8px rgba(194,160,95,.10);
+}
+.tier--one .tier-badge {
+  background: var(--c-paper); color: var(--c-gold-deep);
+  border: 1px solid var(--c-gold);
+}
+.tier-badge {
+  position: absolute; top: -14px; left: 20px;
+  background: var(--c-gold); color: var(--c-navy);
+  border: 0; font-size: 11px; font-weight: 700; letter-spacing: .12em;
+  padding: 5px 14px; border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(194,160,95,.25);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   十八、沉浸体验增强（星空主题 · 音频控件 · 滚动叙事）
+   ─────────────────────────────────────────────────────────────
+   · 教研现场转深色 + 星空 canvas 叠加
+   · 图片交错入场 + 悬停光晕
+   · 音频控件面板 + 音乐悬浮球 + 呼吸灯
+   · 无障碍：prefers-reduced-motion 全降级
+   ══════════════════════════════════════════════════════════════ */
+
+/* —— 星空容器（absolute 叠加在 section 内部） —— */
+.starfield-wrap {
+  position: absolute; inset: 0; z-index: 0;
+  pointer-events: none; overflow: hidden;
+}
+.starfield-wrap canvas { display: block; width: 100%; height: 100%; }
+
+/* —— 教研现场深色化：从浅底转深空蓝，配星空 —— */
+.sec--evidence-dark {
+  background: var(--c-navy); color: var(--c-snow);
+  position: relative;
+}
+.sec--evidence-dark .eyebrow { color: var(--c-gold); }
+.sec--evidence-dark .shot img {
+  border-color: rgba(194,160,95,.15);
+  box-shadow: 0 2px 12px rgba(0,0,0,.25), 0 0 0 1px rgba(194,160,95,.06);
+  transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+}
+.sec--evidence-dark .shot figcaption { color: var(--c-gd); }
+.sec--evidence-dark .shot figcaption::before { color: var(--c-gold); }
+/* 图片悬停：金色光晕 + 微抬 */
+.sec--evidence-dark .shot:hover img {
+  transform: translateY(-4px) scale(1.008);
+  box-shadow: 0 8px 32px rgba(0,0,0,.35), 0 0 0 1px rgba(194,160,95,.25),
+              0 0 48px rgba(194,160,95,.08);
+}
+@media (hover: none) {
+  .sec--evidence-dark .shot:hover img { transform: none; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+}
+
+/* —— 移动端：音乐按钮移到左下角，避免与 FAB 重叠 —— */
+@media (max-width: 767px) {
+  .music-btn { left: 18px; right: auto; }
+  .audio-panel { left: 18px; right: 18px; min-width: auto; bottom: calc(84px + env(safe-area-inset-bottom)); }
+}
+
+/* —— 图片入场动画（fade-up + 交错延迟，scroll-triggered by JS） —— */
+.shot-anim {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1);
+}
+.shot-anim.in-view { opacity: 1; transform: none; }
+.shot-anim:nth-child(1) { transition-delay: .04s; }
+.shot-anim:nth-child(2) { transition-delay: .12s; }
+.shot-anim:nth-child(3) { transition-delay: .20s; }
+.shot-anim:nth-child(4) { transition-delay: .28s; }
+.shot-anim:nth-child(5) { transition-delay: .36s; }
+.shot-anim:nth-child(6) { transition-delay: .44s; }
+/* 减弱动效：直出终态 */
+@media (prefers-reduced-motion: reduce) {
+  .shot-anim { opacity: 1; transform: none; transition: none; }
+}
+
+/* ★ 全页分组元素交错延迟（models / voices / tiers / duo / fit / chain / steps / gates / tl） */
+/* 模型卡（300串区） */
+.models .model:nth-child(1) { transition-delay: .06s; }
+.models .model:nth-child(2) { transition-delay: .16s; }
+.models .model:nth-child(3) { transition-delay: .26s; }
+/* 学员反馈卡 */
+.voices .voice:nth-child(1) { transition-delay: .04s; }
+.voices .voice:nth-child(2) { transition-delay: .12s; }
+.voices .voice:nth-child(3) { transition-delay: .20s; }
+.voices .voice:nth-child(4) { transition-delay: .28s; }
+.voices .voice:nth-child(5) { transition-delay: .36s; }
+.voices .voice:nth-child(6) { transition-delay: .44s; }
+/* 班型卡 */
+.tiers .tier:nth-child(1) { transition-delay: .06s; }
+.tiers .tier:nth-child(2) { transition-delay: .16s; }
+.tiers .tier:nth-child(3) { transition-delay: .26s; }
+/* 双列痛点卡 */
+.duo .duo-card:nth-child(1) { transition-delay: .06s; }
+.duo .duo-card:nth-child(2) { transition-delay: .16s; }
+/* 适合/不适合卡 */
+.fit .fit-card:nth-child(1) { transition-delay: .06s; }
+.fit .fit-card:nth-child(2) { transition-delay: .16s; }
+/* 拆解链节点 */
+.chain .chain-node:nth-child(1) { transition-delay: .04s; }
+.chain .chain-node:nth-child(3) { transition-delay: .12s; }
+.chain .chain-node:nth-child(5) { transition-delay: .20s; }
+.chain .chain-node:nth-child(7) { transition-delay: .28s; }
+/* 四步验收 */
+.gates .gate:nth-child(1) { transition-delay: .04s; }
+.gates .gate:nth-child(2) { transition-delay: .12s; }
+.gates .gate:nth-child(3) { transition-delay: .20s; }
+.gates .gate:nth-child(4) { transition-delay: .28s; }
+/* 课堂时间线 */
+.tl .tl-row:nth-child(1) { transition-delay: .04s; }
+.tl .tl-row:nth-child(2) { transition-delay: .12s; }
+.tl .tl-row:nth-child(3) { transition-delay: .20s; }
+.tl .tl-row:nth-child(4) { transition-delay: .28s; }
+/* 资历锚点 */
+.pins > div:nth-child(1) { transition-delay: .04s; }
+.pins > div:nth-child(2) { transition-delay: .12s; }
+/* FAQ 折叠项 */
+.faq details:nth-child(1) { transition-delay: .02s; }
+.faq details:nth-child(2) { transition-delay: .04s; }
+.faq details:nth-child(3) { transition-delay: .06s; }
+.faq details:nth-child(4) { transition-delay: .08s; }
+.faq details:nth-child(5) { transition-delay: .10s; }
+.faq details:nth-child(6) { transition-delay: .12s; }
+.faq details:nth-child(7) { transition-delay: .14s; }
+.faq details:nth-child(8) { transition-delay: .16s; }
+.faq details:nth-child(9) { transition-delay: .18s; }
+.faq details:nth-child(10) { transition-delay: .20s; }
+.faq details:nth-child(11) { transition-delay: .22s; }
+.faq details:nth-child(12) { transition-delay: .24s; }
+.faq details:nth-child(13) { transition-delay: .26s; }
+/* 减弱动效：所有交错延迟归零 */
+@media (prefers-reduced-motion: reduce) {
+  .models .model, .voices .voice, .tiers .tier, .duo .duo-card,
+  .fit .fit-card, .chain .chain-node, .gates .gate, .tl .tl-row,
+  .pins > div, .faq details { transition-delay: 0s !important; }
+}
+
+/* —— 音频控件面板（右下角，默认隐藏，点击音乐按钮展开） —— */
+.audio-panel {
+  position: fixed; right: 18px; bottom: calc(80px + env(safe-area-inset-bottom));
+  z-index: 65;
+  background: rgba(14,33,64,.94);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
+  border: 1px solid rgba(194,160,95,.32);
+  border-radius: 14px;
+  padding: 18px 20px 16px;
+  min-width: 224px;
+  opacity: 0; visibility: hidden; transform: translateY(14px) scale(.96);
+  transition: opacity .28s ease, transform .28s cubic-bezier(.22,1,.36,1), visibility .28s;
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+}
+.audio-panel.open { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+.audio-panel-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.audio-panel-head svg { width: 20px; height: 20px; flex: none; color: var(--c-gold); }
+.audio-panel-head b { font-size: 14px; color: var(--c-snow); font-weight: 500; letter-spacing: .02em; flex: 1; }
+.audio-panel-close {
+  border: 0; background: transparent; color: var(--c-gd); font-size: 18px;
+  cursor: pointer; padding: 2px 4px; line-height: 1;
+}
+.audio-panel-close:hover { color: var(--c-snow); }
+
+/* 播放 / 暂停 按钮 */
+.audio-play-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 10px 0;
+  background: rgba(194,160,95,.12); border: 1px solid rgba(194,160,95,.35);
+  border-radius: var(--r-card); color: var(--c-gold-hi); font-size: 13px; font-weight: 500;
+  cursor: pointer; letter-spacing: .04em;
+  transition: background .2s ease, border-color .2s ease;
+}
+.audio-play-btn:hover { background: rgba(194,160,95,.20); border-color: var(--c-gold); }
+.audio-play-btn svg { width: 16px; height: 16px; flex: none; }
+
+/* 音量滑块 */
+.audio-vol { margin-top: 12px; display: flex; align-items: center; gap: 10px; }
+.audio-vol svg { width: 16px; height: 16px; flex: none; color: var(--c-gd); }
+.audio-vol input[type="range"] {
+  flex: 1; height: 4px; border-radius: 2px;
+  -webkit-appearance: none; appearance: none;
+  background: rgba(232,237,245,.12); outline: none; cursor: pointer;
+}
+.audio-vol input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--c-gold-hi); border: 2px solid var(--c-navy);
+  box-shadow: 0 0 6px rgba(227,200,138,.3);
+}
+.audio-vol input[type="range"]::-moz-range-thumb {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--c-gold-hi); border: 2px solid var(--c-navy);
+}
+.audio-vol-val {
+  font-family: var(--num); font-variant-numeric: tabular-nums;
+  font-size: 12px; color: var(--c-gd); min-width: 28px; text-align: right;
+}
+/* 版权标注 */
+.audio-credit { font-size: 11px; color: var(--c-gd-dim); margin-top: 10px; line-height: 1.5; }
+
+/* —— 音乐悬浮按钮（星形图标 + 呼吸灯） —— */
+.music-btn {
+  position: fixed; right: 18px; bottom: calc(24px + env(safe-area-inset-bottom));
+  z-index: 65; width: 48px; height: 48px;
+  border-radius: 50%; border: 1px solid rgba(194,160,95,.45);
+  background: rgba(14,33,64,.85);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  backdrop-filter: saturate(140%) blur(8px);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: var(--c-gold-hi);
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+  transition: transform .22s ease, border-color .22s ease, background .22s ease, opacity .3s ease;
+  opacity: 0; visibility: hidden;
+}
+.music-btn.show { opacity: 1; visibility: visible; }
+.music-btn:hover { transform: scale(1.06); border-color: var(--c-gold); background: rgba(22,48,92,.9); }
+.music-btn:active { transform: scale(.95); }
+.music-btn svg { width: 20px; height: 20px; }
+
+/* 呼吸灯环（播放态） */
+.music-btn.playing { border-color: rgba(227,200,138,.6); }
+.music-btn.playing::after {
+  content: ""; position: absolute; inset: -4px;
+  border-radius: 50%; border: 2px solid rgba(227,200,138,.35);
+  animation: musicBreathe 2.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes musicBreathe {
+    0%, 100% { opacity: .35; transform: scale(1); }
+    50%      { opacity: .75; transform: scale(1.12); }
+  }
+}
+/* 静音斜线（暂停态） */
+.music-btn:not(.playing) .music-mute-line { display: block; }
+.music-btn.playing .music-mute-line { display: none; }
+
+/* —— 通用 fade-up 入场（可用于任意区块内容） —— */
+.fade-up {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1);
+}
+.fade-up.in-view { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { opacity: 1; transform: none; transition: none; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     顶栏导航
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【区块】吸顶导航 -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="回到顶部">
+      <!-- 印章标识（SVG 内联，无版权问题） -->
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="10" fill="none"/><rect x="3" y="3" width="58" height="58" rx="8" fill="none" stroke="#C2A05F" stroke-width="2.5"/><text x="32" y="44" font-size="32" text-anchor="middle" fill="#E3C88A" font-family="Songti SC,STSong,serif" font-weight="600">陈</text></svg>
+      <span>
+        <!-- ★【修改】老师姓氏 / 名称（改这里 + 上面 SVG 里的「陈」字） -->
+        <b>陈老师 · 数学</b>
+        <small>300 串 · 直播课</small>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="页面导航">
+      <a href="#mentor">导师</a>
+      <a href="#system">300 串</a>
+      <a href="#plan">课程</a>
+      <a href="#classes">班型</a>
+      <a href="#evidence">现场</a>
+      <a href="#faq">疑问</a>
+    </nav>
+    <!-- 顶栏按钮：打开弹层拿微信号 -->
+    <button class="btn btn--ghost" type="button" data-open-sheet data-cta-label="nav-拍张卷子聊聊">拍张卷子，聊聊</button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ══════════════════════════════════════════════════════════
+     一、Hero 首屏（深空蓝 + 坐标纸网格 + 函数曲线动画）
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【区块】Hero 首屏——痛点先行，3 秒内让家长觉得「这说的就是我家孩子」 -->
+<section class="sec--deep grid-deep" style="padding:0;">
+  <div class="wrap hero">
+    <div class="hero-in hero-in--split">
+      <!-- 左栏：文案 -->
+      <div class="hero-text">
+        <p class="hero-quote hero-quote--featured" id="heroQuote">未来不缺会算的，缺的是会问的。<br>数学，练的就是提问的脑子。</p>
+        <h1>课上听懂了，做题还是不会？卡住的不是不够努力——是一直在用初中的方法，学一门忽然需要「结构与迁移」的学科。</h1>
+        <p class="hero-motto">换个方法，学一题，通一类。</p>
+        <div class="hero-cta">
+          <a class="btn btn--gold" href="#demo" data-cta-label="hero-看实录">看 3 分钟上课实录</a>
+          <a class="btn btn--ghost" href="#classes">班型与价格</a>
+        </div>
+      </div>
+<!-- 右栏：极点极线演示 + 真题引出 -->
+      <div class="hero-demo">
+        <div class="hero-demo-label">
+          <span class="eyebrow" style="color:var(--c-gold);font-size:11px;letter-spacing:2px;">教研演示</span>
+          <span style="color:var(--c-gold-hi);font-size:16px;font-weight:600;margin-left:8px;">极点与极线</span>
+        </div>
+        <!-- 理论演示 -->
+        <div class="hero-demo-frame">
+          <iframe src="assets/pole-polar.html?v=7" class="hero-demo-iframe" loading="lazy" title="极点与极线·三种情况动态演示"></iframe>
+        </div>
+        <!-- 真题引出 -->
+        <div class="hero-demo-exams">
+          <p class="hero-demo-exam-title">学一题，通一类</p>
+          <p class="hero-demo-exam-sub">同一个「极点极线」模型，反复出现在不同年份的高考压轴题中：</p>
+          <ul class="hero-demo-exam-list">
+            <li><b>2020 全国 Ⅰ 卷 理 20</b> 椭圆 x²/9+y²=1，P 在 x=6 上运动，证 CD 恒过定点 (3/2, 0)</li>
+            <li><b>2010 全国卷 I 理 21</b> 椭圆 x²/4+y²=1，P(4, 1) 作两切线，证切点弦过定点 (1, 1/4)</li>
+            <li><b>2008 江西卷 理 21</b> 椭圆上动点 P 作斜率互补两弦，证两远端连线过定点</li>
+            <li><b>2016 四川卷 理 20</b> 椭圆 x²/3+y²/2=1，过内点 P(1,1) 作两弦，证交点 Q 在定直线 2x+3y=6 上</li>
+            <li><b>2014 全国卷 I 理 20</b> 椭圆 x²/4+y²=1，A 为右顶点，过 O 弦 MN，证 |OP|·|OQ| 为定值</li>
+            <li><b>2023 新高考 Ⅱ 卷</b> 以极点极线为命题背景，考查圆锥曲线中的定点定线问题</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@media(min-width:960px){
+  .hero-in--split{flex-direction:row!important;align-items:flex-start!important;text-align:left!important;gap:40px;padding:110px 0 32px!important}
+  .hero-text{flex:1 1 52%;max-width:560px;display:flex;flex-direction:column;justify-content:center}
+  .hero-text .hero-quote--featured{margin-bottom:24px}
+  .hero-demo{flex:1 1 44%;display:flex;flex-direction:column;min-width:0}
+  .hero-demo-label{margin-bottom:10px}
+  .hero-demo-frame{border:1px solid #4cc9ff20;border-radius:8px;overflow:hidden;background:#060e1e;aspect-ratio:2/1;width:100%}
+  .hero-demo-iframe{border:none;display:block;width:100%;height:100%}
+  .hero-demo-tags{display:flex;gap:6px;margin-top:10px;font-size:11px;color:var(--c-gd);flex-wrap:wrap}
+  .hero-demo-exams{margin-top:14px;padding:14px 16px;background:rgba(8,20,44,.55);border-radius:6px;border-left:3px solid var(--c-gold)}
+  .hero-demo-exam-title{font-size:15px;font-weight:700;color:var(--c-gold-hi);margin-bottom:4px;letter-spacing:1px}
+  .hero-demo-exam-sub{font-size:11px;color:var(--c-gd);margin-bottom:8px;line-height:1.5}
+  .hero-demo-exam-list{list-style:none;padding:0;margin:0}
+  .hero-demo-exam-list li{font-size:11.5px;color:var(--c-gl);line-height:1.7;padding:2px 0}
+  .hero-demo-exam-list li b{color:var(--c-gold);font-weight:600}
+  .hero-in--split .hero-fig{display:none}
+}
+@media(max-width:959px){
+  .hero-demo-frame{border:1px solid #4cc9ff20;border-radius:8px;overflow:hidden;background:#060e1e;margin-top:24px;aspect-ratio:2/1;width:100%}
+  .hero-demo-iframe{border:none;display:block;width:100%;height:100%}
+  .hero-demo-tags{display:flex;gap:6px;margin-top:10px;font-size:11px;color:var(--c-gd);flex-wrap:wrap}
+  .hero-demo-exams{margin-top:14px;padding:14px 16px;background:rgba(8,20,44,.55);border-radius:6px;border-left:3px solid var(--c-gold)}
+  .hero-demo-exam-title{font-size:15px;font-weight:700;color:var(--c-gold-hi);margin-bottom:4px;letter-spacing:1px}
+  .hero-demo-exam-sub{font-size:11px;color:var(--c-gd);margin-bottom:8px;line-height:1.5}
+  .hero-demo-exam-list{list-style:none;padding:0;margin:0}
+  .hero-demo-exam-list li{font-size:11.5px;color:var(--c-gl);line-height:1.7;padding:2px 0}
+  .hero-demo-exam-list li b{color:var(--c-gold);font-weight:600}
+}
+</style>
+
+<!-- 函数曲线画布（小屏时仍作背景） -->
+<div class="hero-fig" aria-hidden="true"><canvas id="curve"></canvas></div>
+
+<hr class="rule-gold">
+
+<!-- ═════════════════════════════════════════════════════════
+     一·五、写给家长的信（情感共鸣核心区——纯共情+诊断，不展开方法）
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【改版】信件区：去重 300 串（全部归导师区），收紧到 4 段：场景→困境→诊断→桥梁 -->
+<section class="sec sec--paper" id="letter">
+  <div class="wrap">
+    <p class="eyebrow">写给家长的话</p>
+    <div class="letter">
+      <p>孩子初中数学考过年级前列，升入高中，第一次月考砸了——回家把书包扔在门口，饭也没吃。如果您家正在经历这一幕，这段话是写给您的。</p>
+      <p>后面的情节也相似：补课、一对一、刷题册、错题本，都试过；换了两三位老师，钱花了不少，成绩却钉在同一个分数上。孩子慢慢开始说：「我可能不是学数学的料。」</p>
+      <p>带了八年学生，我越来越确定一件事——卡住的不是孩子的努力，也不是聪不聪明。而是他一直在用初中那套「听懂 + 记住」的方法，去学一门忽然需要「结构与迁移」的学科。</p>
+      <p class="letter-quote">不是变笨了，是一直在用初中的钥匙，开高中的锁。</p>
+      <p>往下翻，这个问题有解。</p>
+      <p class="sign">—— 陈老师</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     二、导师介绍（浅底变体）——300 串的故事在这里讲一次，讲透
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【改版】导师区：接管 300 串叙事（Hero/Letter 已去重）；补硬资质，对标竞品 -->
+<section class="sec sec--paper2" id="mentor">
+  <div class="wrap">
+    <p class="eyebrow">导师介绍</p>
+    <!-- ★【改版】标题从抽象→个人叙事 -->
+    <h2 class="h2">这 300 串，是怎么来的</h2>
+
+    <!-- ★ 资历锚点（上线前须能出示佐证） -->
+    <div class="pins fade-up">
+      <div><b>8 年</b><span>数学教龄</span></div>
+      <div><b>3 届</b><span>毕业班带教</span></div>
+    </div>
+
+    <!-- 18,000→300 拆解链：这是「300 串」故事的唯一主场 -->
+    <div class="chain fade-up">
+      <div class="chain-node"><b>18,000 道</b><span>真题＋主流模拟，逐题登记</span></div>
+      <i class="chain-arrow" aria-hidden="true"></i>
+      <div class="chain-node"><b>手写拆解</b><span>拆一题、录一题，按命题逻辑归类</span></div>
+      <i class="chain-arrow" aria-hidden="true"></i>
+      <div class="chain-node"><b>六大板块</b><span>其中高考解答题 3,065 道，逐年归档</span></div>
+      <i class="chain-arrow" aria-hidden="true"></i>
+      <div class="chain-node chain-node--end"><b>300 串</b><span>每串一道根，根下挂着历年变式</span></div>
+    </div>
+
+    <div class="mentor-grid">
+      <figure class="mentor-fig" style="margin:0;">
+        <!-- ★【修改】导师照片：替换 assets/portrait.png（建议竖版 4:5，浅色墙面半身照）
+             注意：这是页面第一张图片，微信转发时会抓它当缩略图，务必用清晰真人照片 -->
+        <img src="assets/portrait.png" alt="陈老师近照" width="800" height="1000"
+             loading="eager" fetchpriority="high" decoding="async">
+        <figcaption>陈老师 · 高中数学 · 8 年教龄</figcaption>
+      </figure>
+
+      <div class="fade-up">
+        <!-- ★【改版】正文：不再重复拆解链（上面已讲），直接讲教学判断和信念 -->
+        <p>我是陈老师，独立数学教师。八年前前后后教了几百个学生，越教越确定一件事：<b style="color:var(--c-ink);">高中数学难，不是难在知识量，而是难在题一直在变、方法始终没换。</b></p>
+
+        <p>多数补课停在这一步——多做题、多背解法。但题是背不完的，高考每年出新变式。把孩子从背题里捞出来，办法只有一个：让他亲眼看见题目背后的骨架，认出它属于哪一串。这 300 串，就是我一道题一道题攒下来的答案。</p>
+
+        <p style="font-family:var(--serif); font-size:18px; color:var(--c-gold-deep); font-weight:600; letter-spacing:.03em; margin:20px 0; padding:12px 0 12px 18px; border-left:3px solid var(--c-gold); line-height:1.6;">让孩子看见题目背后的骨架。</p>
+
+        <!-- ★【改版】资历要点：补硬资质（对标竞品：学历/分数/提分案例数） -->
+        <ul class="creed">
+          <li>讲义、变式、批注，全部手写，年年按新卷重订</li>
+          <li>课上问到的问题，课后补完整推导——不过夜</li>
+          <li>不背题型套路，只练一眼识别——考场上的真本事</li>
+          <!-- ★【上线前补】如有具体提分数据，加在这里效果最好：
+          <li>累计带教 XXX 人，平均提分 XX 分（数据来自学员授权）</li> -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- ★【改版】小红书：精简为一段话 + 一张图，不再独立成块 -->
+    <div class="social fade-up">
+      <h3 class="subsec">不上课的日子，也在拆题</h3>
+      <p class="subsec-note">拆题手稿常年更新，和课堂上同一副笔迹。<a class="social-link" href="https://www.xiaohongshu.com/search_result?keyword=%E9%99%88%E8%80%81%E5%B8%88%E4%B8%89%E7%99%BE%E4%B8%B2" target="_blank" rel="noopener">小红书 · 「陈老师三百串」 →</a></p>
+      <figure class="shot social-fig">
+        <img src="assets/social-sample.jpg" alt="小红书日常拆题样例：复数域求解 sin(x⁴−1)=2 的完整手写推导" width="1564" height="1428" loading="lazy" decoding="async">
+        <figcaption>小红书日常一条（样例）：在复数域里解 sin(x<sup>4</sup>−1)=2——实数域里无解的题，换大学的方法照样推到底。竞赛与强基向的延伸，长这样</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<hr class="rule-gold">
+
+<!-- ══════════════════════════════════════════════════════════
+     三、题串库（深底）：痛点共情 → 三大思维模型 → 考点频次图
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【区块】题串库（三大模型 + 频次图） -->
+<section class="sec sec--deep grid-deep" id="system">
+  <span class="bigsym bigsym--sum" aria-hidden="true">&sum;</span><!-- 装饰性数学符号 -->
+  <div class="wrap" style="position:relative; z-index:1;">
+    <h2 class="h2 fade-up">见过的题和会做的题，中间差三步</h2>
+
+    <!-- ★【修改】双列痛点：左=学生视角，右=家长视角（同一问题的两面） -->
+    <div class="duo fade-up">
+      <div class="duo-card">
+        <h3>孩子说</h3>
+        <ul>
+          <li>课上听懂了，合上笔记却不知从哪一步下笔</li>
+          <li>做过的题一变形，就认不出它的本来面目</li>
+          <li>错题本也抄了几本，同一个坑还在掉</li>
+        </ul>
+      </div>
+      <div class="duo-card">
+        <h3>您看见的</h3>
+        <ul>
+          <li>补课的钱花出去不少，成绩钉在同一个分数上</li>
+          <li>问学得怎样，永远只有一句「还行」</li>
+          <li>越想越慌：眼看只剩一年多——再换老师怕来不及，不换又怕继续白费</li>
+          <li>一提数学就冷场，问多了他烦，问少了你慌——你们之间好像只剩「作业写了吗」这一句话</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ★【修改】转折句 -->
+    <p class="duo-turn fade-up">—— 他不是学不动。他只是从来没见过，那些「没见过」的题，其实都是同一道。</p>
+
+    <!-- 三大思维模型（非序列，不用编号；每卡一幅专属几何小图） -->
+    <div class="models fade-up">
+      <div class="model">
+        <!-- 图形语义：大三角形被虚线拆回基本形 -->
+        <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+          <path d="M22 5 L40 38 L4 38 Z" stroke="#C2A05F" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M22 5 L22 38 M22 22 L4 38" stroke="#C2A05F" stroke-width="1" stroke-dasharray="3 3" opacity=".7"/>
+          <circle cx="22" cy="22" r="2.2" fill="#E3C88A"/>
+        </svg>
+        <h3>认出根</h3>
+        <!-- ★【修改】模型一句话说明（白话三步之一） -->
+        <p>题面怎么换，骨架不变——一眼认出它是 300 串里的哪一串。</p>
+      </div>
+      <div class="model">
+        <!-- 图形语义：靶心 + 命中点，站在出题人对面 -->
+        <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+          <circle cx="20" cy="24" r="14" stroke="#C2A05F" stroke-width="1.4"/>
+          <circle cx="20" cy="24" r="8.5" stroke="#C2A05F" stroke-width="1.4" opacity=".75"/>
+          <circle cx="20" cy="24" r="3" stroke="#C2A05F" stroke-width="1.4"/>
+          <path d="M32 12 L39 5 M39 5 h-7 M39 5 v7" stroke="#E3C88A" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <h3>看穿怎么变</h3>
+        <p>站到出题人一侧：这串的根今年动了哪个数、换了哪层皮。</p>
+      </div>
+      <div class="model">
+        <!-- 图形语义：知识点连线成网 -->
+        <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+          <path d="M9 33 L22 8 L35 22 L14 38 Z M9 33 L35 22 M22 8 L14 38" stroke="#C2A05F" stroke-width="1.1" opacity=".8"/>
+          <circle cx="9" cy="33" r="2.4" fill="#C2A05F"/><circle cx="22" cy="8" r="2.4" fill="#C2A05F"/>
+          <circle cx="35" cy="22" r="2.4" fill="#C2A05F"/><circle cx="14" cy="38" r="2.4" fill="#C2A05F"/>
+          <circle cx="28" cy="30" r="2.8" fill="#E3C88A"/>
+        </svg>
+        <h3>挂回串上</h3>
+        <p>每道变式做完，挂回串上——认一道，会一类。</p>
+      </div>
+    </div>
+
+    <!-- 考点频次条形图（单系列横向条形，数值直接标注） -->
+    <div class="freq fade-up">
+      <div>
+        <h3>历年真题核心考点频次</h3>
+        <p class="freq-note">按 2006–2025 年高考真题解答题 3,065 道统计</p>
+        <div class="bars" id="bars">
+          <!-- 数据出自真题库（GaokaoMathBank）统计：解答题按知识点板块去重计数，函数与导数 852 道、
+               立体几何 450、概率统计 389、圆锥曲线 388、数列 365、三角函数 329；
+               题库更新后重跑统计脚本同步此处 data-w / 数值 -->
+          <div class="bar-row"><span class="bar-label">函数与导数</span><div class="bar-track"><i class="bar-fill bar-fill--top" data-w="100"></i><span class="bar-val">852 道</span></div></div>
+          <div class="bar-row"><span class="bar-label">立体几何</span><div class="bar-track"><i class="bar-fill" data-w="53"></i><span class="bar-val">450</span></div></div>
+          <div class="bar-row"><span class="bar-label">概率统计</span><div class="bar-track"><i class="bar-fill" data-w="46"></i><span class="bar-val">389</span></div></div>
+          <div class="bar-row"><span class="bar-label">圆锥曲线</span><div class="bar-track"><i class="bar-fill" data-w="46"></i><span class="bar-val">388</span></div></div>
+          <div class="bar-row"><span class="bar-label">数列</span><div class="bar-track"><i class="bar-fill" data-w="43"></i><span class="bar-val">365</span></div></div>
+          <div class="bar-row"><span class="bar-label">三角函数</span><div class="bar-track"><i class="bar-fill" data-w="39"></i><span class="bar-val">329</span></div></div>
+          <div class="bar-scale" aria-hidden="true"><span>0</span><span>250</span><span>500</span><span>750</span></div>
+        </div>
+
+      </div>
+      <div class="freq-aside">
+        <!-- ★【修改】图表旁白（怎么读这张图） -->
+        <p><b>函数与导数断层领先</b>——历年解答题里约每 3 道就有 1 道，大题几乎年年压轴，串也最密。</p>
+        <p>板块配比按它定：<b>串密的板块讲得厚、变式挂得全，每章例题优先从真题里选</b>——教学顺序跟着学校进度走，不练偏题。</p>
+        <p class="fine">每道题的年份、卷别与归类，<a class="social-link" href="http://127.0.0.1:8000/topics" target="_blank" rel="noopener">真题库在线版</a>里逐条可查。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     三·五、真题实拆（题串库的应用演示：一道题的两种学法）
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【区块】真题实拆（最有说服力的一段：家长看不懂数学，也看得懂差距） -->
+<section class="sec sec--deep" id="demo">
+  <div class="wrap">
+    <h2 class="h2 fade-up">所谓新题，都是老根换了皮</h2>
+    <p class="lede fade-up">以一道真题为例——2016 年全国 I 卷理科压轴题。左边，是背步骤的学生看到的；右边，是认出根的学生看到的。</p>
+
+    <div class="demo fade-up">
+      <div class="demo-q">
+        <p class="tag">2016 年全国 I 卷 · 理科第 21 题 · 压轴</p>
+        <!-- 真题原文第（2）问：2016 全国 I 卷理 21，知乎解析帖最多的导数大题之一 -->
+        <p>已知函数 f(x) = (x−2)e<sup>x</sup> + a(x−1)²。若 f(x) 有两个零点，求 a 的取值范围。</p>
+      </div>
+      <div class="demo-vs">
+        <div class="demo-card demo-card--bad">
+          <p class="who">只背步骤的学生眼里，这是一串背不完的分类</p>
+          <ul class="steps-ghost">
+            <li>求导：f′(x) = (x−1)(e<sup>x</sup> + 2a)</li>
+            <li>对 a 分类：a ≥ 0；−e/2 &lt; a &lt; 0；a ≤ −e/2……</li>
+            <li>每一类分别列表、算极值、画走势</li>
+            <li>极值算完，还要比端点趋势</li>
+            <li><em>（分类总漏一种——漏一类，这一问的步骤分就丢大半）</em></li>
+          </ul>
+          <p class="lead">分类背了十遍，参数一换，<b>又是一道「没见过」的题。</b></p>
+        </div>
+        <div class="demo-card demo-card--good">
+          <p class="who">认出根之后，分类不再是背出来的清单</p>
+          <div class="acts">
+            <div class="act"><i>①</i><div><b>定形态</b><span>求导判单调——图像的升降，只在极值点处切换</span></div></div>
+            <div class="act"><i></i><div><b>画草图</b><span>零点个数不在「算」里，在图里数</span></div></div>
+            <div class="act"><i>③</i><div><b>收边界</b><span>极值符号 + 端点趋势，收出 a 的不等式</span></div></div>
+          </div>
+          <p class="lead">分类没有取消，而是从三个动作里自然长出来——<b>为什么分、以谁为界、每一类做什么，动作自己会告诉你。</b></p>
+        </div>
+      </div>
+      <!-- ★【修改】课堂录像：src 换成真实切片文件（3–5 分钟，学生昵称打码，标注录制日期），
+           文件放入 assets/clip-daoshu.mp4 即可播放；poster 为封面帧（当前暂用板书占位图） -->
+      <figure class="demo-video">
+        <video controls playsinline preload="metadata" poster="assets/board-live.png"
+               src="assets/clip-daoshu.mp4"></video>
+        <figcaption>课堂实录切片 · 3 分钟 · 导数一串的「收边界」片段（学生昵称已打码）</figcaption>
+      </figure>
+      <!-- ★【新增】衍生真题：这一串的历年变式（实查真题库 GaokaoMathBank，同根家族，逐年可查） -->
+      <!-- ★【重构·信息设计条1】根题谱系图：把「挂」画出来——根卡在上，脊柱贯下，变式逐年下挂（含 2025 两道，实查真题库） -->
+      <div class="deriv deriv--tree">
+        <p class="deriv-t">这一串，后来还这样考过</p>
+        <div class="tree-root">
+          <span class="tr-tag">这一串的根</span>
+          <b>2016 · 全国 I 卷 · 理 21</b>
+          <span class="tr-acts">定形态 · 画草图 · 收边界</span>
+        </div>
+        <ol class="tree-spine">
+          <li><b>2017 · 全国 I 卷 · 理 21</b><span>设问同款「有两个零点求参数」——函数由两项变三项，讨论更深一层</span></li>
+          <li><b>2018 · 全国 II 卷 · 理 21</b><span>「有两个零点」变「区间上恰有一个零点」——从数个数，到卡区间</span></li>
+          <li><b>2021 · 新高考 II 卷 · 22</b><span>结构几乎复刻：(x−1)e<sup>x</sup> 再次登场——设问反向，给条件、证零点</span></li>
+          <li><b>2022 · 全国甲卷 · 理 21</b><span>求范围变证关系「若有两个零点则 x₁x₂&lt;1」——极值点偏移的家</span></li>
+          <li><b>2025 · 全国 II 卷 · 18</b><span>ln(1+x)−x+x²/2−kx³ 三问连发：唯一极值点、唯一零点、比较 2x₁ 与 x₂——极值点偏移 2025 正考</span></li>
+          <li><b>2025 · 天津卷 · 20</b><span>ax−(lnx)² 恰有三个零点求 a、零点不等式收尾——设问同款，再来一次</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════════
+     三·七、真题库展示（真题实拆之后 → 直接链接到在线题库）
+     ═════════════════════════════════════════════════════════ -->
+<!-- ★【新增】真题库在线入口：这是真实存在的教研台账，不是承诺，是已经建好的东西 -->
+<div class="wrap">
+  <div class="lead-magnet fade-up">
+    <h3>高考数学真题库 · 在线版</h3>
+    <p class="lm-sub">历年高考真题逐年归档、按知识点归类——不是宣传图，是已经建好的题库</p>
+    <ul class="lm-items">
+      <li>六大板块 2,700 余道解答题逐年归档，共 3,065 道</li>
+      <li>每道题标注年份、省份、题型</li>
+      <li>在线可检索、可筛选，直接点开看</li>
+    </ul>
+    <a class="btn btn--gold" href="http://127.0.0.1:8000/topics" target="_blank" rel="noopener" data-cta-label="transition-看真题库">打开真题库 →</a>
+  </div>
+</div>
+
+<hr class="rule-gold">
+
+<!-- ══════════════════════════════════════════════════════════
+     四、课程：方法论前置 + 课堂流程（冷纸白）
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【改版】课程区：先讲方法论（懂→会→对→熟），再讲课堂流程——家长先知道「怎么验」，再看「怎么教」 -->
+<section class="sec sec--paper" id="plan">
+  <div class="wrap">
+    <h2 class="h2 fade-up">课怎么教，怎么验</h2>
+
+    <!-- ★【改版】方法论前置：「懂→会→对→熟」是本页最独特的教学标识 -->
+    <h3 class="subsec fade-up" data-i="01">怎么才算学会——懂、会、对、熟</h3>
+    <p class="subsec-note fade-up">课上懂了只是第一步；四步走完，这一类题才真正归孩子。</p>
+    <div class="gates fade-up">
+      <div class="gate"><span class="gate-no">第一步</span><div><b>懂 —— 课上能跟着走</b><span>能复述每一步「为什么」。多数补课停在这一步：孩子说听懂了，家长也以为会了。</span><span class="gate-how">怎么验：课中弹幕作答、随机连麦讲题 · 每讲｜没过怎么办：「这步没跟上」当堂重来</span></div></div>
+      <div class="gate"><span class="gate-no">第二步</span><div><b>会 —— 合上笔记能重做</b><span>不看解答，独立把这道根题做完，一步不卡。听懂和会做之间，隔的就是一次「过手」——课上必留当堂演练，逼的就是这一步。</span><span class="gate-how">怎么验：当堂限时演练独立完成 · 每讲｜没过怎么办：作业降台阶，先配基础回放补齐再跟</span></div></div>
+      <div class="gate"><span class="gate-no">第三步</span><div><b>对 —— 换道变式能做对</b><span>粗心在这一步现形：方法没练熟，脑子被「下一步怎么走」占满，算式就没人看着。专门练法是收尾三查——查抄题、查符号搬家、查答案代回去；失误也归档，记下漏的是哪一查。</span><span class="gate-how">怎么验：同构变式作业＋收尾三查、失误归档 · 每讲批改｜没过怎么办：同一串变式错两次，点名重练这一步</span></div></div>
+      <div class="gate"><span class="gate-no">第四步</span><div><b>熟 —— 限时压强下仍然对</b><span>小题没有过程分——选择填空错一道就是整道 5 分，多选题选错一个选项就归零。靠的不是细心，是熟。限时演练每周做，就是过这一步。</span><span class="gate-how">怎么验：限时演练得分 · 每周｜没过怎么办：连续缺答，我单独跟您说</span></div></div>
+    </div>
+
+    <!-- ★ 课堂流程：家长先知道「怎么验」，再看「怎么教」 -->
+    <h3 class="subsec fade-up" data-i="02">一节课：从根讲到变式</h3>
+    <div class="tl fade-up">
+      <div class="tl-row"><span class="tl-time">00 – 10 min</span><b>先讲作业，不讲新课</b><p>昨晚作业错得最多的那一题，请做错的同学连麦重讲一遍，卡在哪一步当场现形。</p></div>
+      <div class="tl-row"><span class="tl-time">10 – 40 min</span><b>本周的根，从两道真题里逼出来</b><p>先给两道真题，让学生先卡住，再把根「逼」出来——概念在题后面到；新授课和基础班会把坡放缓，卡不住就先给半成品。</p></div>
+      <div class="tl-row"><span class="tl-time">40 – 70 min</span><b>真题逐行板书拆解</b><p>两道真题完整推导，逐行板书不跳步；弹幕随时喊停，「这步没跟上」就重来。</p></div>
+      <div class="tl-row"><span class="tl-time">70 – 90 min</span><b>限时演练，当堂交卷</b><p>一道同构变式独立完成——课上没真会的，这一步藏不住；演练难度按班型匹配，复盘约 5 分钟，作业分层、课后微信发出。</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule-gold">
+
+<!-- ══════════════════════════════════════════════════════════
+     过门带（plan → classes 之间的深底金句带：打断中段浅底走廊，
+     金句吸收原三卖点卡的唯一增量「当场问」，承上「怎么教」启下「多少钱」）
+     ══════════════════════════════════════════════════════════ -->
+<section class="interlude">
+  <div class="wrap">
+    <p class="gate-quote fade-up">卡住的那一步，才是最该讲的一步。<br>三五人的班，卡住了当场问、当场讲通。</p>
+  </div>
+</section>
+
+<hr class="rule-gold">
+
+<!-- ══════════════════════════════════════════════════════════
+     四·五、班型与价格（三档：3–5 人小班主推 / 一对一 / VIP 签约课）
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【区块】班型与价格——三个价格均为建议区间占位，上线前必须改成真实定价（FAQ 只引用不重复数字，改价只改这里） -->
+<section class="sec sec--paper" id="classes">
+  <div class="wrap">
+    <p class="eyebrow fade-up">班型与价格</p>
+    <p class="lede fade-up">三种班型，三种节奏——按需选，按阶段付。</p>
+
+    <div class="tiers fade-up">
+      <div class="tier tier--main">
+        <span class="tier-badge">按年级分班 · 每班 3–5 人</span>
+        <h3>3–5 人小班课</h3>
+        <p class="tier-for">跟班走节奏——同步、一轮、二轮全覆盖。</p>
+        <ul class="creed">
+          <li>高一 / 高二 / 高三各一班，同班水平相近，进度统一</li>
+          <li>每周一次 90 分钟直播，有回放，缺课可补</li>
+          <li>讲义、批改、学习反馈全含；按阶段付费，剩余课时随时可退</li>
+        </ul>
+        <!-- ★【修改】小班课真实定价区间 -->
+        <div class="tier-price"><b>100<i>–</i>150</b><span>元 / 课时 · 90 分钟</span></div>
+      </div>
+      <div class="tier tier--one">
+        <span class="tier-badge">诊断定点 · 按需约课</span>
+        <h3>一对一</h3>
+        <p class="tier-for">缺哪几串补哪几串——不铺课，只定点清除。</p>
+        <ul class="creed">
+          <li><b>诊断先行</b>：先拍卷子定位缺口，再排课次——不从头学，只补该补的</li>
+          <li><b>按需约课</b>：时间灵活，不跟大班节奏，考前集中突破也接</li>
+          <li><b>协议透明</b>：同样写进课时协议，可退规则与小班一致</li>
+        </ul>
+        <!-- ★【修改】一对一真实定价区间 -->
+        <div class="tier-price"><b>300<i>–</i>450</b><span>元 / 课时 · 90 分钟</span></div>
+        <p class="tier-note">先拍卷子，再定课次——缺什么补什么。</p>
+      </div>
+      <div class="tier tier--vip">
+        <span class="tier-badge">不限课次 · 达标才收费</span>
+        <h3>VIP 签约提升班</h3>
+        <p class="tier-for">从诊断到目标分，全程我盯——课次不限，达标为止。</p>
+        <ul class="creed">
+          <li><b>不限课次</b>：重点难点逐个击破，不赶进度，学会为止</li>
+          <li><b>老师催着学</b>：每周学习报告，缺课主动约补，不用家长盯</li>
+          <li><b>目标协议</b>：签约时约定目标分，达标结课；达不到，全额退款</li>
+        </ul>
+        <!-- ★【修改】签约提升班真实定价（学期价，含不限次小班 + 一对一 + 全程督学） -->
+        <div class="tier-price"><b>28,800</b><span>元 / 学期起</span></div>
+        <p class="tier-note">签约时定目标分与节点；未达标全额退款，7 日内原路退回。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     五、教研现场（★ 沉浸式深色 + 星空 + 交错入场）
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【区块】教研现场（深色星空底，图片带金色光晕与交错入场动效） -->
+<section class="sec sec--deep sec--evidence-dark" id="evidence">
+  <!-- 星空粒子层：JS 驱动，鼠标视差 -->
+  <div class="starfield-wrap" aria-hidden="true"><canvas id="starfield"></canvas></div>
+  <span class="bigsym bigsym--sum" aria-hidden="true">&sum;</span>
+
+  <div class="wrap" style="position:relative; z-index:1;">
+    <p class="eyebrow fade-up">教研现场</p>
+    <p class="lede fade-up" style="color:var(--c-gd);">每一张纸，都是手写批注的真实记录——不是摆拍，是每天都在发生的事。</p>
+
+    <div class="shots">
+      <figure class="shot shot-anim">
+        <!-- ★【修改】手写教案照片：替换 assets/notes-lesson.png（建议 800×620，实拍备课手稿，保留红笔修改痕迹） -->
+        <img src="assets/notes-lesson.png" alt="陈老师的手写教案手稿" width="800" height="620" loading="lazy" decoding="async">
+        <figcaption>其一 · 一节课背后，先写满这几页</figcaption>
+      </figure>
+      <figure class="shot shot-anim">
+        <!-- ★【修改】真题批注照片：替换 assets/notes-annotate.png（真题册多轮批注页） -->
+        <img src="assets/notes-annotate.png" alt="真题册上的多轮批注" width="800" height="620" loading="lazy" decoding="async">
+        <figcaption>其二 · 同一道题，第五次批注又不同</figcaption>
+      </figure>
+      <figure class="shot shot-anim">
+        <!-- ★【修改】考点台账照片：替换 assets/notes-stats.png（手绘统计表或台账打印页） -->
+        <img src="assets/notes-stats.png" alt="逐年登记的真题考点台账" width="800" height="620" loading="lazy" decoding="async">
+        <figcaption>其三 · 历年真题，逐题登记在册</figcaption>
+      </figure>
+      <figure class="shot shot-anim">
+        <!-- ★【修改】直播板书截图：替换 assets/board-live.png（保留学生弹幕的板书截帧） -->
+        <img src="assets/board-live.png" alt="直播课板书与弹幕互动截图" width="800" height="620" loading="lazy" decoding="async">
+        <figcaption>其四 · 推导走到哪，课就上到哪</figcaption>
+      </figure>
+      <!-- ★【新增】批改痕迹：红笔逐题批注的学生作业（上线前替换为真实照片） -->
+      <figure class="shot shot-anim">
+        <img src="assets/correction-sample.png" alt="陈老师红笔批改的学生作业" width="800" height="620" loading="lazy" decoding="async">
+        <figcaption>其五 · 逐题批注——不是打勾叉，是写清「为什么错、怎么想才对」</figcaption>
+      </figure>
+      <!-- ★【新增】学生笔记实拍：孩子自己按串归类（上线前替换为真实照片） -->
+      <figure class="shot shot-anim">
+        <img src="assets/student-notes.png" alt="学生自己按串归类的笔记" width="800" height="620" loading="lazy" decoding="async">
+        <figcaption>其六 · 学生自己按串归类的笔记——方法长在孩子手上，才算学会</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<hr class="rule-gold">
+
+<!-- ══════════════════════════════════════════════════════════
+     六、学员反馈（深底）
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【区块】学员反馈（真实反馈替换时保留「讲思路」的细节感） -->
+<section class="sec sec--deep" id="voices">
+  <div class="wrap">
+    <p class="eyebrow fade-up">学员反馈</p>
+
+    <div class="voices fade-up">
+      <blockquote class="voice">
+        <div class="voice-score"><span class="vs-from">72</span><span class="vs-arrow">→</span><span class="vs-to">104</span><span class="vs-dur">4 个月</span></div>
+        <p>孩子初中数学没下过年级前列，高一第一次月考 72，半个月不爱搭理人。诊断下来卡在函数：符号语言读不懂，单调性定义会背、不会用。头两次月考没起色，十一月还跌回 80 出头；老师把基础题得分率发给我们看——一直在涨，让再等等。期末 104，寒假他自己把错题按串重新分了类。</p>
+        <footer>—— 高一学员家长（月考 72 → 期末 104）</footer>
+      </blockquote>
+      <blockquote class="voice">
+        <div class="voice-score"><span class="vs-from">94</span><span class="vs-arrow">→</span><span class="vs-to">112</span><span class="vs-dur">8 个月</span></div>
+        <p>90 出头晃了一年，前面换过两拨老师也没动。卡点说得出来：圆锥曲线联立完不会回代，数列错位相减最后一步总错。三月周测掉到 86，孩子泄气，我们也没敢催。五月期末 112——用他的话说，「看见第二问，知道它想让我干什么了」。</p>
+        <footer>—— 高二学员家长（上学期期末 94 → 下学期期末 112）</footer>
+      </blockquote>
+      <blockquote class="voice">
+        <div class="voice-score"><span class="vs-from">110</span><span class="vs-arrow">→</span><span class="vs-to">130</span><span class="vs-dur">8 个月</span></div>
+        <p>一模 110，压轴整道空着，时间不够用。二月限时训练上强度，先掉了 6 分——老师提前一个月说过会有这次回落，让别慌。三月 118，真的回来了。高考 130，出考场第一句话：「这次没空题。」</p>
+        <footer>—— 高三学员家长（一模 110 → 高考 130）</footer>
+      </blockquote>
+      <blockquote class="voice">
+        <div class="voice-score"><span class="vs-from">60</span><span class="vs-arrow">→</span><span class="vs-to">90</span><span class="vs-dur">一学年</span></div>
+        <p>摸底 60，选择填空丢一半——不是不会，是会做的做不对。老师先不碰压轴，只抓前 10 道选择填空的正确率。头一个月分数没动静，我们心里犯嘀咕；第二个月大题还是老样子，小题先稳住了。学年末 90。</p>
+        <footer>—— 高三学员家长（摸底 60 → 学年末模考 90，摸底卷留底）</footer>
+      </blockquote>
+      <blockquote class="voice">
+        <div class="voice-score"><span class="vs-from">84</span><span class="vs-arrow">→</span><span class="vs-to">121</span><span class="vs-dur">复读一学年</span></div>
+        <p>孩子二战，开学那阵子情绪不高——同学都上大学了。老师把板块顺序调了，先立概率统计，把稳的分先拿到手。十二月才涨 5 分，一月涨了 11。高考 121，他自己说：「看到卷子先分类，会的先拿全。」</p>
+        <footer>—— 复读学员家长（应届 84 → 复读高考 121）</footer>
+      </blockquote>
+
+    </div>
+
+    <p class="voice-fine">以上为学员案例节选，分数均出自大考节点。</p>
+  </div>
+</section>
+
+<hr class="rule-gold">
+
+<!-- ══════════════════════════════════════════════════════════
+     六·五、适合谁 / 暂不适合谁（坦诚筛选，反而建立信任）
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【区块】适合谁（坦诚筛选区：敢说「不适合」的老师，家长才敢信「适合」） -->
+<section class="sec sec--paper" id="fit">
+  <div class="wrap">
+    <h2 class="h2 fade-up">谁适合来</h2>
+
+    <div class="fit fade-up">
+      <div class="fit-card fit-card--yes">
+        <h3>适合的孩子</h3>
+        <ul>
+          <li>想真正搞懂「为什么这么解」，不愿再靠背题硬撑</li>
+          <li>初中底子不差、升入高中忽然垮下来的——换方法，正是这里干的事</li>
+          <li>分数长期在 90–110 徘徊，想把题目认清楚、上一个大台阶</li>
+          <li>高三或复读，想系统复盘、把真题读薄，而不是继续盲目刷卷</li>
+          <li>换过两三位老师、一听「补课」就烦的——先把页内录像给孩子自己看，他点头再说</li>
+        </ul>
+      </div>
+      <div class="fit-card fit-card--no">
+        <h3>暂不适合</h3>
+        <ul>
+          <li>想要七天速成的——这里没有；按剩余时间排优先级，倒正是每天在做的事</li>
+          <li>孩子本人不想学、只有家长着急的——先沟通，再决定</li>
+          <li>分数已在 135 以上冲顶尖，或离考试只剩一两个月的——先拍张卷子来，接不接我直说</li>
+          <li>看重机构规模和前台服务的——这里只有一位老师</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     七、FAQ（浅底变体，原生折叠，无需 JS）
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【区块】常见疑问（可按家长实际问题增删 <details>） -->
+<section class="sec sec--paper2" id="faq">
+  <div class="wrap">
+    <h2 class="h2 fade-up">您想问的，我先答了</h2>
+
+    <div class="faq fade-up">
+      <details>
+        <summary>直播课，孩子挂着屏幕走神怎么办？</summary>
+        <p>三五人的班，谁走神我看得见，直接点他名。课中弹幕限时作答、随机连麦讲题，连续缺答我会单独跟您说。不爱开口的孩子，弹幕打字就行——三五人的班，打的内容只有我们几个看得见。</p>
+      </details>
+      <details>
+        <!-- 粗心=全体家长最大公约数痛点，专业拆解而非态度说教 -->
+        <summary>孩子粗心大意，答案算不对，小题总丢分，怎么破？</summary>
+        <p>先说结论：粗心不是态度问题。人做题时脑子同时干两件事——想方法、看计算；方法不熟的孩子，「想下一步」把脑子占满了，计算就没人看着。所以错的总在难题里、最后一步、抄题上，也没见孩子打游戏粗心。破解三件事：①把每串的根练到不用想，脑子腾出来，眼睛才管得过来；②收尾三查——查抄题、查符号搬家、查答案代回去，这是可训练的动作，不是「细心点」的空话；③失误也归档：记下漏的是哪一查，同一串的变式错两次，我会点名重过对关。</p>
+      </details>
+      <details>
+        <!-- 作息冲突：10 位家长模拟中 5 人的头号障碍（晚自习/周六在校） -->
+        <summary>上课时间跟晚自习、学校安排撞了怎么办？</summary>
+        <p>缺课不掉课：回放全程保留、板书留档，可反复看；作业拍照提交、限时批改照常走微信；提问不用等到下周课，课后就答。也说句实话——时间长期撞、只能看回放的孩子，直播的价值拿到的不完整，值不值得报，看完页内录像、翻完讲义，咱们再定。</p>
+      </details>
+      <details>
+        <!-- 平台与设备：低门槛说清 + 摄像头软规则（防走神机制的一半） -->
+        <summary>用什么平台上课？设备要求高吗？</summary>
+        <p>手机、iPad、电脑都能进，开课前发链接、点开即入；板书字写大，手机屏幕也看得清。必要时开摄像头——开着，我看得见孩子，孩子也知道被看见，这本身就是防走神的一半；没开的，弹幕作答一样盯得住。</p>
+      </details>
+      <details>
+        <!-- 同班水平：3–5 人怎么配平（诊断+分层作业=已有承诺的组装） -->
+        <summary>一个班就三五个人，水平差得远怎么办？</summary>
+        <p>入学先诊断，按薄弱模块定起点；同一个班讲同一串，作业按基础/进阶分层布置——台阶不一样，方向一样。三五人的班，配平本来就比大班容易。孩子跟不吃力的同班一起走，比单独塞进「高分班」垫底更养状态。</p>
+      </details>
+      <details>
+        <!-- 独立教师产能疑虑：0 销售承诺的背面就是「只有一个人」，主动交底 -->
+        <summary>您一个人，带得过来吗？</summary>
+        <p>教研、上课、批改、回微信，都是我一个人。班额卡在三五人，就是为了人人看得过来；真到带不过来的时候，我不会为了学费硬开班——按阶段付费，剩余课时随时可退。</p>
+      </details>
+      <details>
+        <!-- 校内校外双轨：家长怕孩子夹在两种讲法中间 -->
+        <summary>您讲的，和学校老师讲的不一致怎么办？</summary>
+        <p>不冲突，分工不同。学校按教材讲知识点、讲标准解法；我讲的是前半程——拿到题先认出它是哪一串、变在哪一步。考场上的书写步骤，跟着学校走；解法口径真遇到不同的，课堂当场说清两种写法哪种更稳。</p>
+      </details>
+      <details>
+        <summary>独立老师，没有机构背书，能长久吗？</summary>
+        <p>按阶段付费，剩余课时随时可退；教到什么程度、每次课讲什么，都写在协议里。独立意味着：教你的和对你负责的，是同一个人。</p>
+      </details>
+      <details>
+        <summary>孩子基础差，直播跟得上吗？</summary>
+        <p>入学先做诊断，定位薄弱模块；练习按难度分层推送。暂时跟不上的部分，先配基础回放补齐，再进直播间——台阶矮一点，步子慢一点，但每一步都踩实。</p>
+      </details>
+      <details>
+        <!-- 插班路径：高三 9 个月/复读半年怎么进（拍卷子定点补，不从头学） -->
+        <summary>高三才来、或是复读插班，进度跟得上吗？</summary>
+        <p>先拍卷子诊断：前面缺了哪几串，用讲义和回放定点补——不从头再学，也不裸跟进度硬撑。高三下学期和复读生，真题复盘正是这里的主场；离考试只剩个把月、缺口又大的，我会直说不合适。</p>
+      </details>
+      <details>
+        <!-- 退费明细独立成问：预付费监管时代家长必查项，全部来自班型区既有承诺 -->
+        <summary>退费具体怎么退？</summary>
+        <p>未上的课，全退。小班和一对一按剩余课时退；签约课只结当期阶段、不预收下一阶段，剩余 7 日内原路退回——都写在课时协议里，白纸黑字。</p>
+      </details>
+      <details>
+        <!-- ★【区块】AI 时代质问（最难也最常见，主动接招） -->
+        <summary>AI 都能解题了，还教「串」，不是培养考试机器吗？</summary>
+        <p>恰恰相反——考试机器是刷出来的，不是看出来的。把 18,000 道题当 18,000 道刷，靠反射拿分，题一换皮就死；把它们看成 300 串的，认的是结构、迁的是方法。至于 AI：它从海量例子里归纳模式、再泛化到新题，做的正是「把题串起来」这件事。</p>
+      </details>
+      <details>
+        <!-- ★【区块】AI 时代的学习方法——正面回应「还需要自己动手吗」 -->
+        <summary>AI 时代还需要自己做题吗？</summary>
+        <p>需要，而且这一点不会因为 AI 的进步而改变。高级别的数学直觉来源于具体的操练过程，看懂一个证明和能独立写出来是两件事，这中间的差距只有自己动手才能弥补。</p>
+      </details>
+      <details>
+        <!-- 差异化压轴：正面回答「你和别的老师有什么不一样」 -->
+        <summary>您和别的数学老师，到底有什么不一样？</summary>
+        <p>三件可以当面验的事。一，教材是我自己的：18,000 道题逐题拆过、串成 300 串，每串挂着历年变式——真题部分在线可查。二，验收是我定的：「懂了」不算学会，要过懂、会、对、熟四步。三，课堂敢验货：页内放着 3 分钟课堂实录——讲得怎么样，您亲眼看，不用听我说。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<hr class="rule-gold">
+
+<!-- ══════════════════════════════════════════════════════════
+     八、底部联系（深底 CTA）+ 合规小字
+     ══════════════════════════════════════════════════════════ -->
+<!-- ★【区块】底部联系 -->
+<footer class="sec sec--deep" id="contact" style="padding-bottom:56px;">
+  <span class="bigsym bigsym--int" aria-hidden="true">&int;</span><!-- 装饰性数学符号 -->
+  <div class="wrap" style="position:relative; z-index:1;">
+    <p class="eyebrow fade-up">联系陈老师</p>
+    <h2 class="h2 fade-up">加微信，聊聊孩子的情况</h2>
+
+    <div class="contact-grid fade-up">
+      <div>
+        <div class="wx-line">
+          <span class="wx-id">微信号<b data-wxid>（见下方 CONFIG 配置）</b></span>
+          <!-- 复制按钮：点击后同步调用 execCommand 复制（微信内稳定） -->
+          <button class="btn btn--gold" type="button" data-copy>复制微信号</button>
+        </div>
+      </div>
+
+      <figure class="qr-card" style="margin:0;">
+        <!-- ★【修改】微信二维码：替换 assets/qr-wechat.png（必须是 PNG/JPG 位图，不能是 SVG 或背景图，否则微信长按无法识别）
+             建议导出企业微信「联系我」二维码，有效期更稳定 -->
+        <img src="assets/qr-wechat.png" alt="陈老师微信二维码" width="480" height="560" loading="eager" decoding="async">
+        <figcaption>长按识别，加我微信</figcaption>
+      </figure>
+    </div>
+
+  </div>
+</footer>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════
+     悬浮球（滚过首屏后出现 → 打开取货弹层）
+     ══════════════════════════════════════════════════════════ -->
+<!-- 悬浮球：随时打开联系方式，滚过首屏后出现 -->
+<button class="fab" type="button" data-open-sheet data-cta-label="fab-拍张卷子聊聊">拍张卷子</button>
+
+<!-- ══════════════════════════════════════════════════════════
+     音频控件面板（音乐播放 / 暂停 / 音量）
+     ─────────────────────────────────────────────────────────
+     ★【修改】音频文件：将 assets/bgm-starlight.mp3 替换为真实授权音频
+     推荐使用：纯音乐版《夜空中最亮的星》钢琴版 / 八音盒版
+     版权合规方案见 JS 中 AudioController 注释
+     ══════════════════════════════════════════════════════════ -->
+<div class="audio-panel" id="audioPanel" role="region" aria-label="背景音乐控制">
+  <div class="audio-panel-head">
+    <!-- 音符图标 -->
+    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M7 15V4l10-2v11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="5" cy="15" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="15" cy="13" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+    <b>背景音乐</b>
+    <button class="audio-panel-close" type="button" id="audioPanelClose" aria-label="关闭面板">×</button>
+  </div>
+  <button class="audio-play-btn" type="button" id="audioPlayBtn" aria-label="播放背景音乐">
+    <svg id="audioPlayIcon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+      <polygon points="3,1 14,8 3,15"/>
+    </svg>
+    <span id="audioPlayLabel">播放音乐</span>
+  </button>
+  <div class="audio-vol">
+    <!-- 音量图标 -->
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M2 5.5h2.5L8 2.5v11L4.5 10.5H2a.5.5 0 0 1-.5-.5V6a.5.5 0 0 1 .5-.5z" fill="currentColor" opacity=".6"/>
+      <path d="M10.5 4.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    <input type="range" id="audioVolSlider" min="0" max="100" value="30" aria-label="音量调节">
+    <span class="audio-vol-val" id="audioVolVal">30%</span>
+  </div>
+  <p class="audio-credit">★ 请替换为已授权音频文件（纯音乐版 / 钢琴版）</p>
+</div>
+
+<!-- 音乐悬浮按钮（星形图标，点击展开音频面板） -->
+<button class="music-btn" type="button" id="musicBtn" aria-label="背景音乐控制">
+  <!-- 星形 SVG（呼应「夜空中最亮的星」意象） -->
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M12 2l2.9 6.3L22 9.2l-5 4.8L18.2 22 12 18.3 5.8 22 7 14l-5-4.8 7.1-.9L12 2z"
+          fill="currentColor" opacity=".85"/>
+  </svg>
+  <!-- 暂停斜线（暂停态可见） -->
+  <svg class="music-mute-line" viewBox="0 0 24 24" fill="none"
+       style="position:absolute;inset:0;width:100%;height:100%;" aria-hidden="true">
+    <line x1="5" y1="19" x2="19" y2="5" stroke="var(--c-gd)" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</button>
+
+<!-- ══════════════════════════════════════════════════════════
+     底部弹层（取货抽屉：二维码 + 微信号 + 复制）
+     ══════════════════════════════════════════════════════════ -->
+<div class="sheet" id="consultSheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" aria-hidden="true">
+  <div class="sheet-mask" data-close-sheet></div>
+  <div class="sheet-panel">
+    <button class="sheet-close" type="button" data-close-sheet aria-label="关闭">×</button>
+    <h3 id="sheetTitle">拍张卷子，聊聊孩子的情况</h3>
+    <p class="sheet-sub">说一句孩子年级、现状就行——我看过情况，告诉您卡在哪、怎么补</p>
+    <div class="sheet-qr">
+      <!-- 二维码必须 img 位图 + 不加 lazy（微信长按识别的前提）；src 由 JS 从 CONFIG 注入 -->
+      <img data-qr alt="陈老师微信二维码">
+    </div>
+    <p class="sheet-hint">长按上方二维码，选「识别图中二维码」</p>
+    <p class="wx-id">微信号<b data-wxid>（见 CONFIG）</b></p>
+    <button class="btn btn--gold" type="button" data-copy>复制微信号</button>
+  </div>
+</div>
+
+<!-- Toast 轻提示（复制结果反馈） -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- 复制用的隐藏输入框（execCommand 需要真实选区） -->
+<textarea id="copyTA" aria-hidden="true" tabindex="-1" style="position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0;"></textarea>
+
+<!-- ══════════════════════════════════════════════════════════
+     脚本：CONFIG + 复制/取货弹层 + 曲线动画 + CTA 打点
+     ══════════════════════════════════════════════════════════ -->
+<script>
+/* ---------- CONFIG（微信号/二维码/提示语/CTA 统计，修改集中在一处） ---------- */
+var CONFIG = {
+  wechatId: 'ChenLaoshi-Math',                              // 微信号
+  qrUrl:    'assets/qr-wechat.png',                         // 二维码图片（必须 img 位图，微信长按可识别）
+  toastMsg: { copy: '微信号已复制，去微信粘贴即可', err: '复制失败，请手动长按复制' }
+};
+
+/* ---------- 注入微信号、二维码 src ---------- */
+(function(){
+  document.querySelectorAll('[data-wxid]').forEach(function(el){ el.textContent = CONFIG.wechatId; });
+  document.querySelectorAll('[data-qr]').forEach(function(img){ img.src = CONFIG.qrUrl; });
+  var yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+
+/* ---------- CTA 打点（页面内所有带 data-cta-label 的按钮/链接，点击时打日志） ---------- */
+(function(){
+  function track(label){
+    try{ if (window.console) console.log('[CTA]', label, new Date().toISOString()); }catch(_){}
+  }
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('[data-cta-label]'); if (t) track(t.getAttribute('data-cta-label'));
+  });
+})();
+
+/* ---------- 复制：优先 navigator.clipboard，回退 execCommand（兼容微信内置浏览器） ---------- */
+(function(){
+  var ta = document.getElementById('copyTA');
+  function fallback(){
+    ta.value = CONFIG.wechatId; ta.focus(); ta.select();
+    var ok = false; try{ ok = document.execCommand('copy'); }catch(_){}
+    return ok;
+  }
+  function toast(msg, err){
+    var t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show'); if (err) t.classList.add('err');
+    clearTimeout(toast._t); toast._t = setTimeout(function(){ t.classList.remove('show','err'); }, 2200);
+  }
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(CONFIG.wechatId).then(
+          function(){ toast(CONFIG.toastMsg.copy); },
+          function(){ if (fallback()) toast(CONFIG.toastMsg.copy); else toast(CONFIG.toastMsg.err, true); }
+        );
+      } else {
+        if (fallback()) toast(CONFIG.toastMsg.copy); else toast(CONFIG.toastMsg.err, true);
+      }
+    });
+  });
+})();
+
+/* ---------- 取货弹层：FAB 打开 / 遮罩+关闭按钮关闭 / ESC 关闭 ---------- */
+(function(){
+  var sheet = document.getElementById('consultSheet');
+  function open(){ sheet.classList.add('open'); sheet.setAttribute('aria-hidden','false'); document.body.classList.add('sheet-locked'); }
+  function close(){ sheet.classList.remove('open'); sheet.setAttribute('aria-hidden','true'); document.body.classList.remove('sheet-locked'); }
+  document.querySelectorAll('[data-open-sheet]').forEach(function(el){ el.addEventListener('click', open); });
+  document.querySelectorAll('[data-close-sheet]').forEach(function(el){ el.addEventListener('click', close); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && sheet.classList.contains('open')) close(); });
+})();
+
+/* ---------- FAB 显隐：滚过首屏后才出现（IntersectionObserver） ---------- */
+(function(){
+  var fab = document.querySelector('.fab'); if (!fab) return;
+  var hero = document.querySelector('.hero'); if (!hero){ fab.classList.add('show'); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ fab.classList.toggle('show', !e.isIntersecting); });
+  }, { threshold: 0 });
+  io.observe(hero);
+})();
+
+/* ---------- 导数函数曲线动画：2016 真题  f(x) = (x-2)eˣ + a(x-1)² ----------
+   画布上展示：①f(x) 主体曲线（笔迹描画动画）；②两个零点标记 x=1, x=x₀；③y=1/x 双曲线辅助参考。
+   动画 1800ms，easeInOutCubic；240 个采样点。 -------------------------------- */
+(function(){
+  var cv = document.querySelector('#demo-curve'); if (!cv) return;
+  var ctx = cv.getContext('2d'), DPR = Math.max(1, window.devicePixelRatio || 1);
+  var W = cv.clientWidth || 760, H = cv.clientHeight || 420;
+  cv.width = W * DPR; cv.height = H * DPR; ctx.scale(DPR, DPR);
+
+  /* 坐标变换：数学域 x ∈ [-1, 4], y ∈ [-4, 6] → 画布像素 */
+  var XMIN=-1, XMAX=4, YMIN=-4, YMAX=6, PAD_L=40, PAD_R=20, PAD_T=20, PAD_B=30;
+  function px(x){ return PAD_L + (x - XMIN)/(XMAX - XMIN) * (W - PAD_L - PAD_R); }
+  function py(y){ return PAD_T + (YMAX - y)/(YMAX - YMIN) * (H - PAD_T - PAD_B); }
+
+  /* a 的取值：2016 题中讨论 a>0 时的零点，这里用 a=1 示意主曲线形态 */
+  var A = 1;
+  function f(x){ return (x-2) * Math.exp(x) + A * Math.pow(x-1, 2); }
+  function fPrime(x){ return (x-1) * Math.exp(x) + 2*A*(x-1); }
+
+  /* 240 采样点 */
+  var N = 240, pts = [];
+  for (var i=0;i<=N;i++){ var x = XMIN + (XMAX-XMIN)*i/N; pts.push([px(x), py(f(x))]); }
+
+  /* 坐标轴 + 网格 */
+  function axes(){
+    ctx.strokeStyle = '#d8dce3'; ctx.lineWidth = 1;
+    for (var x=Math.ceil(XMIN); x<=XMAX; x++){
+      ctx.beginPath(); ctx.moveTo(px(x), PAD_T); ctx.lineTo(px(x), H-PAD_B); ctx.stroke();
+    }
+    for (var y=Math.ceil(YMIN); y<=YMAX; y++){
+      ctx.beginPath(); ctx.moveTo(PAD_L, py(y)); ctx.lineTo(W-PAD_R, py(y)); ctx.stroke();
+    }
+    ctx.strokeStyle = '#2b3a55'; ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.moveTo(PAD_L, py(0)); ctx.lineTo(W-PAD_R, py(0)); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(px(0), PAD_T); ctx.lineTo(px(0), H-PAD_B); ctx.stroke();
+  }
+
+  /* y = 1/x 参考双曲线（仅画 x>0 象限） */
+  function hyperbola(){
+    ctx.strokeStyle = 'rgba(194,160,95,.55)'; ctx.lineWidth = 1.2;
+    ctx.setLineDash([4,4]);
+    for (var x=0.1; x<=XMAX; x+=0.05){
+      var y = 1/x; if (y>YMAX || y<YMIN) continue;
+      ctx.beginPath(); ctx.moveTo(px(x), py(y)); ctx.lineTo(px(x+0.05), py(1/(x+0.05))); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+  }
+
+  /* easeInOutCubic 缓动 */
+  function ease(t){ return t<0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2; }
+
+  /* 零点标记 */
+  var ZEROS = [[1, 'x=1']];
+  function zeros(){
+    ZEROS.forEach(function(z){
+      var cx=px(z[0]), cy=py(0);
+      ctx.fillStyle = '#C2A05F'; ctx.beginPath(); ctx.arc(cx, cy, 6, 0, 2*Math.PI); ctx.fill();
+      ctx.fillStyle = '#0E2140'; ctx.font = '600 13px "Inter", sans-serif';
+      ctx.fillText(z[1], cx+10, cy-8);
+    });
+  }
+
+  /* 笔迹描画动画 */
+  var DUR = 1800, start = null;
+  function step(ts){
+    if (!start) start = ts;
+    var t = Math.min(1, (ts - start) / DUR), k = ease(t), end = Math.floor(k * pts.length);
+    ctx.clearRect(0, 0, W, H); axes(); hyperbola();
+    ctx.strokeStyle = '#0E2140'; ctx.lineWidth = 2.2; ctx.lineJoin='round'; ctx.lineCap='round';
+    ctx.beginPath();
+    for (var i=0; i<end; i++){
+      var p = pts[i]; if (i===0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]);
+    }
+    ctx.stroke();
+    if (t >= 1) zeros(); else requestAnimationFrame(step);
+  }
+
+  /* 视口进入时启动动画（IntersectionObserver，一次） */
+  var sec = cv.closest('.sec');
+  var fired = false;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting && !fired){ fired = true; requestAnimationFrame(step); io.disconnect(); }
+    });
+  }, { threshold: 0.35 });
+  if (sec) io.observe(sec); else { fired = true; requestAnimationFrame(step); }
+
+  /* 窗口 resize 时重算尺寸并立即重绘 */
+  var rt; window.addEventListener('resize', function(){
+    clearTimeout(rt); rt = setTimeout(function(){
+      W = cv.clientWidth; H = cv.clientHeight;
+      cv.width = W * DPR; cv.height = H * DPR; ctx.scale(DPR, DPR);
+      pts = []; for (var i=0;i<=N;i++){ var x = XMIN + (XMAX-XMIN)*i/N; pts.push([px(x), py(f(x))]); }
+      fired = false; requestAnimationFrame(step);
+    }, 120);
+  });
+})();
+
+/* ══════════════════════════════════════════════════════════════
+   ★ 沉浸体验 JavaScript（星空 · 音频 · 滚动动画）
+   ──────────────────────────────────────────────────────────────
+   ① StarfieldAnim    — 星空粒子 canvas（鼠标引力视差 + 闪烁 + 流星）
+   ② AudioController  — 音频状态机（静音/播放/暂停/音量 + localStorage）
+   ③ ScrollReveal     — IntersectionObserver 驱动的 fade-up / shot-anim 入场
+   ④ MusicBtn         — 悬浮按钮 + 音频面板的 UI 联动
+   ══════════════════════════════════════════════════════════════ */
+
+/* ① 星空粒子动画（仅在 prefers-reduced-motion: no-preference 时启用） */
+(function StarfieldAnim(){
+  var canvas = document.getElementById('starfield');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var container = canvas.parentElement;
+  var stars = [], W = 0, H = 0, DPR = 1;
+  var mouseX = 0.5, mouseY = 0.5;       /* 归一化鼠标位置 [0,1] */
+  var animId = null, isVisible = false;
+  var SHOOT_INTERVAL = 12000;            /* 流星间隔 ms */
+  var shootTimer = null;
+
+  /* 减弱动效模式检测 */
+  var motionMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motionMQ.matches) { drawStatic(); return; }
+  motionMQ.addEventListener('change', function(){ if (motionMQ.matches) { cancelAnimationFrame(animId); drawStatic(); } else { startAnim(); } });
+
+  function resize(){
+    var rect = container.getBoundingClientRect();
+    DPR = Math.min(window.devicePixelRatio || 1, 2);  /* 限制 DPR≤2 保性能 */
+    W = rect.width; H = rect.height;
+    canvas.width = W * DPR; canvas.height = H * DPR;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    initStars();
+  }
+
+  function initStars(){
+    stars = [];
+    var count = Math.min(Math.floor(W * H / 5500), 180);  /* 密度控制：每 5500px² 一颗，上限 180 */
+    for (var i = 0; i < count; i++){
+      stars.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: 0.3 + Math.random() * 1.4,           /* 半径 0.3–1.7 */
+        baseOp: 0.25 + Math.random() * 0.55,     /* 基础不透明度 */
+        phase: Math.random() * Math.PI * 2,       /* 闪烁相位 */
+        speed: 0.0004 + Math.random() * 0.0015,   /* 闪烁速率 */
+        drift: (Math.random() - 0.5) * 0.06,      /* 微漂移 */
+        isGold: Math.random() < 0.28              /* 28% 金色星 */
+      });
+    }
+  }
+
+  /* 静态模式（减弱动效）：只画一轮 */
+  function drawStatic(){
+    resize();
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < stars.length; i++){
+      var s = stars[i];
+      ctx.fillStyle = s.isGold ? 'rgba(227,200,138,' + (s.baseOp * 0.7) + ')' : 'rgba(232,237,245,' + (s.baseOp * 0.6) + ')';
+      ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+
+  /* 动画主循环 */
+  function animate(ts){
+    if (!isVisible) return;
+    ctx.clearRect(0, 0, W, H);
+
+    /* 视差偏移量（鼠标在中心 → 偏移 0，边缘 → ±8px 最大） */
+    var px = (mouseX - 0.5) * 16;
+    var py = (mouseY - 0.5) * 12;
+
+    for (var i = 0; i < stars.length; i++){
+      var s = stars[i];
+      /* 视差：近星偏移多，远星偏移少（r 越大 = 越近） */
+      var parallax = s.r / 1.7;
+      var dx = s.x + px * parallax;
+      var dy = s.y + py * parallax;
+      /* 闪烁 */
+      var op = s.baseOp * (0.72 + 0.28 * Math.sin(ts * s.speed + s.phase));
+      /* 漂移 */
+      s.x += s.drift;
+      if (s.x > W + 4) s.x = -4;
+      if (s.x < -4) s.x = W + 4;
+      /* 绘制 */
+      ctx.fillStyle = s.isGold
+        ? 'rgba(227,200,138,' + op.toFixed(3) + ')'
+        : 'rgba(232,237,245,' + op.toFixed(3) + ')';
+      ctx.beginPath(); ctx.arc(dx, dy, s.r, 0, Math.PI * 2); ctx.fill();
+    }
+
+    /* 偶尔画流星（约 15% 概率出现在时间窗口内） */
+    drawShootingStar(ts);
+
+    animId = requestAnimationFrame(animate);
+  }
+
+  /* 流星（稀有、快速、划过即消） */
+  var shootState = { active: false, x: 0, y: 0, vx: 0, vy: 0, life: 0, maxLife: 0 };
+  function triggerShoot(){
+    if (shootState.active || !isVisible) return;
+    shootState.active = true;
+    shootState.x = Math.random() * W * 0.6 + W * 0.1;
+    shootState.y = Math.random() * H * 0.3;
+    shootState.vx = 3 + Math.random() * 4;
+    shootState.vy = 1.5 + Math.random() * 2;
+    shootState.life = 0;
+    shootState.maxLife = 30 + Math.random() * 20;
+  }
+  function drawShootingStar(){
+    var s = shootState;
+    if (!s.active) return;
+    s.x += s.vx; s.y += s.vy; s.life++;
+    var progress = s.life / s.maxLife;
+    var op = progress < 0.3 ? progress / 0.3 : 1 - (progress - 0.3) / 0.7;
+    /* 尾迹 */
+    ctx.strokeStyle = 'rgba(227,200,138,' + (op * 0.5).toFixed(3) + ')';
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    ctx.moveTo(s.x, s.y);
+    ctx.lineTo(s.x - s.vx * 8, s.y - s.vy * 8);
+    ctx.stroke();
+    /* 头部亮点 */
+    ctx.fillStyle = 'rgba(255,255,255,' + (op * 0.8).toFixed(3) + ')';
+    ctx.beginPath(); ctx.arc(s.x, s.y, 1.5, 0, Math.PI * 2); ctx.fill();
+    if (s.life >= s.maxLife) { s.active = false; }
+  }
+
+  /* 流星定时器 */
+  function startShootTimer(){
+    if (shootTimer) clearInterval(shootTimer);
+    shootTimer = setInterval(function(){ if (Math.random() < 0.35) triggerShoot(); }, SHOOT_INTERVAL);
+  }
+
+  function startAnim(){
+    isVisible = true;
+    resize();
+    startShootTimer();
+    animId = requestAnimationFrame(animate);
+  }
+
+  /* 鼠标追踪（仅在该 section 范围内生效） */
+  var section = canvas.closest('.sec');
+  if (section){
+    section.addEventListener('mousemove', function(e){
+      var rect = section.getBoundingClientRect();
+      mouseX = (e.clientX - rect.left) / rect.width;
+      mouseY = (e.clientY - rect.top) / rect.height;
+    });
+  }
+
+  /* IntersectionObserver：仅在可见时运行动画 */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      isVisible = e.isIntersecting;
+      if (isVisible && !animId) { animId = requestAnimationFrame(animate); startShootTimer(); }
+      else if (!isVisible) { cancelAnimationFrame(animId); animId = null; if (shootTimer) { clearInterval(shootTimer); shootTimer = null; } }
+    });
+  }, { threshold: 0.05 });
+  io.observe(section || container);
+
+  /* resize 防抖 */
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){ if (isVisible) resize(); }, 150);
+  });
+
+  startAnim();
+})();
+
+/* ② 音频控制器（状态机：静音→播放→暂停 + 音量 + localStorage 记忆） */
+var AudioCtrl = (function(){
+  var audio = null;
+  var state = { playing: false, volume: 0.3, muted: false };
+  var LS_KEY = 'mathpage_audio';
+  var onStateChange = null;  /* 外部回调（UI 更新用） */
+
+  /* 从 localStorage 恢复状态 */
+  try {
+    var saved = JSON.parse(localStorage.getItem(LS_KEY));
+    if (saved) { state.volume = typeof saved.volume === 'number' ? saved.volume : 0.3; }
+  } catch(_){}
+
+  function save(){ try { localStorage.setItem(LS_KEY, JSON.stringify({ volume: state.volume })); } catch(_){} }
+
+  function init(){
+    if (audio) return;
+    audio = new Audio();
+    audio.loop = true;
+    audio.preload = 'none';
+    audio.volume = state.volume;
+    /* ★【修改】替换为实际授权音频文件路径 */
+    audio.src = 'assets/bgm-starlight.mp3';
+    audio.addEventListener('ended', function(){ audio.currentTime = 0; audio.play(); });
+  }
+
+  function play(){
+    init();
+    audio.play().then(function(){
+      state.playing = true; state.muted = false;
+      if (onStateChange) onStateChange(state);
+    }).catch(function(err){ console.warn('[AudioCtrl] 播放失败:', err); });
+  }
+
+  function pause(){
+    if (!audio) return;
+    audio.pause();
+    state.playing = false;
+    if (onStateChange) onStateChange(state);
+  }
+
+  function toggle(){
+    state.playing ? pause() : play();
+  }
+
+  function setVolume(v){
+    state.volume = Math.max(0, Math.min(1, v));
+    state.muted = false;
+    if (audio) audio.volume = state.volume;
+    save();
+    if (onStateChange) onStateChange(state);
+  }
+
+  function toggleMute(){
+    if (state.muted){
+      state.muted = false;
+      if (audio) audio.volume = state.volume;
+    } else {
+      state.muted = true;
+      if (audio) audio.volume = 0;
+    }
+    if (onStateChange) onStateChange(state);
+  }
+
+  function getState(){ return { playing: state.playing, volume: state.volume, muted: state.muted }; }
+
+  return { play: play, pause: pause, toggle: toggle, setVolume: setVolume, toggleMute: toggleMute, getState: getState, onChange: function(cb){ onStateChange = cb; } };
+})();
+
+/* ④ 音乐悬浮按钮 + 音频面板 UI 联动 */
+(function MusicBtnUI(){
+  var musicBtn = document.getElementById('musicBtn');
+  var audioPanel = document.getElementById('audioPanel');
+  var playBtn = document.getElementById('audioPlayBtn');
+  var playIcon = document.getElementById('audioPlayIcon');
+  var playLabel = document.getElementById('audioPlayLabel');
+  var volSlider = document.getElementById('audioVolSlider');
+  var volVal = document.getElementById('audioVolVal');
+  var panelClose = document.getElementById('audioPanelClose');
+  if (!musicBtn || !audioPanel) return;
+
+  /* 面板显隐 */
+  var panelOpen = false;
+  function togglePanel(){
+    panelOpen = !panelOpen;
+    audioPanel.classList.toggle('open', panelOpen);
+    musicBtn.setAttribute('aria-expanded', panelOpen);
+  }
+  musicBtn.addEventListener('click', togglePanel);
+  panelClose.addEventListener('click', function(){ panelOpen = false; audioPanel.classList.remove('open'); });
+
+  /* 点击面板外关闭 */
+  document.addEventListener('click', function(e){
+    if (panelOpen && !audioPanel.contains(e.target) && !musicBtn.contains(e.target)){
+      panelOpen = false; audioPanel.classList.remove('open');
+    }
+  });
+
+  /* 播放/暂停 */
+  playBtn.addEventListener('click', function(){ AudioCtrl.toggle(); });
+
+  /* 音量滑块 */
+  volSlider.value = Math.round(AudioCtrl.getState().volume * 100);
+  volVal.textContent = volSlider.value + '%';
+  volSlider.addEventListener('input', function(){
+    var v = parseInt(volSlider.value) / 100;
+    AudioCtrl.setVolume(v);
+    volVal.textContent = volSlider.value + '%';
+  });
+
+  /* 状态变化回调（更新 UI） */
+  AudioCtrl.onChange(function(s){
+    /* 悬浮按钮：播放态加 playing 类（呼吸灯），暂停态去掉 */
+    musicBtn.classList.toggle('playing', s.playing);
+    /* 面板按钮 */
+    if (s.playing){
+      playIcon.innerHTML = '<rect x="3" y="1" width="4" height="14" rx="1"/><rect x="9" y="1" width="4" height="14" rx="1"/>';
+      playLabel.textContent = '暂停音乐';
+    } else {
+      playIcon.innerHTML = '<polygon points="3,1 14,8 3,15"/>';
+      playLabel.textContent = '播放音乐';
+    }
+    /* 音量显示 */
+    var displayVol = s.muted ? 0 : Math.round(s.volume * 100);
+    volSlider.value = s.muted ? 0 : Math.round(s.volume * 100);
+    volVal.textContent = displayVol + '%';
+  });
+
+  /* 初始触发一次状态同步 */
+  AudioCtrl.onChange(function(){});
+
+  /* FAB 显隐逻辑复用：滚过首屏后显示音乐按钮 */
+  var fab = document.querySelector('.fab');
+  if (fab){
+    var hero = document.querySelector('.hero');
+    if (hero){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ musicBtn.classList.toggle('show', !e.isIntersecting); });
+      }, { threshold: 0 });
+      io.observe(hero);
+    } else { musicBtn.classList.add('show'); }
+  }
+})();
+
+/* ③ 滚动触发动画（IntersectionObserver + fade-up / shot-anim） */
+(function ScrollReveal(){
+  /* 减弱动效模式：直出终态，不挂 observer */
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.fade-up, .shot-anim').forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var els = document.querySelectorAll('.fade-up, .shot-anim');
+  if (!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+</script>
+</body>
+</html>
