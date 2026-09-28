@@ -81,56 +81,103 @@
    改色只需改这里，全页自动同步
    ══════════════════════════════════════════════════════════════ */
 :root {
-  /* —— 色板（第十轮·臻金墨蓝：更深邃的蓝 + 更温润的金，去工业感，增书卷气） —— */
-  --c-navy:     #0E2140;   /* 墨夜蓝：主背景（更深，压住画面） */
-  --c-card:     #16305C;   /* 层叠蓝：深底卡片 */
-  --c-paper:    #F4F7FA;   /* 暖纸白：浅色区块（微暖，有纸的质感） */
-  --c-gold:     #C2A05F;   /* 主金：线条/描边（降低亮度，去轻奢） */
-  --c-gold-hi:  #E3C88A;   /* 亮金：深底强调文字 */
-  --c-gold-deep:#7A5E2F;   /* 暗金：浅底金色文字 */
-  --c-ink:      #1B2A44;   /* 墨黑：浅底正文（偏暖黑） */
-  --c-snow:     #E8EDF5;   /* 暖雾白：深底正文（微黄调，不冷） */
-  --c-gd:       #8FA0BC;   /* 银灰蓝：深底辅助 */
-  --c-gl:       #5A6B85;   /* 烟灰：浅底辅助 */
-  --c-gd-dim:   #8296B4;   /* 银灰中档 */
-  --c-cinnabar: #B5543B;   /* 朱砂：否定/警示 */
+  /* —— 色板（iPad 护眼莫兰迪：护眼纸白 + 雾蓝强调 + 莫兰迪功能色） —— */
+
+  /* 基底色 */
+  --c-bg:          #F9F8F4;   /* 护眼纸白（主背景） */
+  --c-bg-alt:      #F5F7FA;   /* 浅灰蓝（交替区块） */
+  --c-bg-warm:     #F3F0EA;   /* 暖米色（第三层级） */
+  --c-surface:     #FFFFFF;   /* 卡片白 */
+
+  /* 功能色（莫兰迪） */
+  --c-success:     #6B9E78;   /* 鼠尾草绿：正确/掌握 */
+  --c-error:       #C47D7D;   /* 赤陶红：错误/需复习 */
+  --c-warning:     #D4A853;   /* 琥珀黄：重要/收藏 */
+
+  /* 文字色 */
+  --c-text:        #2C3E50;   /* 深墨正文（≥7:1 on #F9F8F4） */
+  --c-text-secondary: #5A6B7A; /* 中灰蓝辅助 */
+  --c-text-muted:  #8A95A0;   /* 浅灰提示/脚注 */
+
+  /* 强调色（雾蓝替代金色） */
+  --c-accent:      #4A7C8F;   /* 雾蓝主强调 */
+  --c-accent-light:#E8F1F5;   /* 雾蓝浅底 */
+  --c-accent-dark: #2D5A6B;   /* 雾蓝深 */
+
+  /* 边界/分隔 */
+  --c-border:      rgba(44,62,80,.08);    /* 极淡分隔线 */
+  --c-border-subtle:rgba(44,62,80,.04);   /* 更淡内发光替代 */
+  --c-divider:     rgba(74,124,143,.20);  /* 装订线（雾蓝替代金线） */
+
+  /* 阴影系统 */
+  --shadow-card:   0 4px 24px rgba(0,0,0,.04);   /* 自然光 45° 漫射 */
+  --shadow-card-hover: 0 8px 32px rgba(0,0,0,.07); /* hover 加深 */
+  --shadow-card-press: 0 2px 12px rgba(0,0,0,.06); /* 按压态 */
+  --shadow-float:  0 12px 40px rgba(0,0,0,.08);   /* 悬浮面板 */
+
+  /* 触摸反馈 */
+  --touch-duration: 0.2s;
+  --touch-scale: 0.98;
+  --touch-easing: ease;
+
+  /* Safe Areas */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* —— 旧变量映射（兼容 237 处 var(--c-*) 引用） —— */
+  --c-navy:     #2D3E50;   /* 原墨蓝 → 深灰蓝（仅 Contact 深色锚点） */
+  --c-card:     #364B5E;   /* 深底卡片 → 中灰蓝 */
+  --c-paper:    #F9F8F4;   /* → 护眼纸白 */
+  --c-gold:     #4A7C8F;   /* 主金 → 雾蓝（主强调） */
+  --c-gold-hi:  #5A8FA0;   /* 亮金 → 亮雾蓝 */
+  --c-gold-deep:#3A6A7A;   /* 暗金 → 深雾蓝 */
+  --c-ink:      #2C3E50;   /* → 深墨 */
+  --c-snow:     #F0F2F5;   /* 深底正文 → 浅灰白 */
+  --c-gd:       #7A8B9A;   /* 银灰蓝 → 中性灰蓝 */
+  --c-gl:       #6B7B8A;   /* 烟灰 → 辅助灰 */
+  --c-gd-dim:   #8A95A0;   /* 银灰中档 */
+  --c-cinnabar: #C47D7D;   /* 朱砂 → 赤陶红 */
 
   /* —— 字体 —— */
   --serif: "Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC",serif;
-  --sans:  -apple-system,"PingFang SC","HarmonyOS Sans SC","MiSans","Noto Sans CJK SC",sans-serif;
-  --num:   Georgia,"Times New Roman",serif;
+  --sans:  -apple-system,"PingFang SC","Noto Sans SC","HarmonyOS Sans SC","MiSans",sans-serif;
+  --num:   "SF Mono","Cascadia Code","Latin Modern Mono","Menlo","Consolas",monospace;
+  --math:  "Latin Modern Math","STIX Two Math","Cambria Math","Songti SC",serif;
 
-  /* —— 字号 —— */
-  --fs-hero: 34px;
-  --fs-h2:   24px;
-  --fs-h3:   19px;
-  --fs-body: 15px;
-  --fs-note: 12px;
+  /* —— 字号（iPad 黄金阅读尺寸） —— */
+  --fs-hero: 36px;
+  --fs-h2:   26px;
+  --fs-h3:   20px;
+  --fs-body: 17px;      /* ↑ 从 15px 提到 17px */
+  --fs-note: 14px;      /* ↑ 从 12px 提到 14px */
+  --fs-math: 18.7px;    /* = body × 1.1，补偿公式视觉缩小 */
 
   /* —— 间距 / 圆角 —— */
-  --sp-sec: 64px;
-  --r-card: 6px;
-  --sp-block:    40px;
-  --sp-block-lg: 56px;
+  --sp-sec: 72px;       /* ↑ 从 64px，更多呼吸 */
+  --r-card: 12px;       /* ↑ 从 6px，更柔和 */
+  --r-card-sm: 8px;
+  --sp-block:    44px;
+  --sp-block-lg: 60px;
   --sp-sub:      56px;
-  --pad-chip:    16px 14px;
-  --pad-card:    24px 22px;
-  --pad-banner:  30px 26px;
+  --pad-chip:    18px 16px;
+  --pad-card:    28px 24px;
+  --pad-banner:  32px 28px;
   --ls-h: .02em;
   --ls-m: .06em;
   --ls-l: .18em;
 }
 @media (min-width: 768px) {
   :root {
-    --fs-hero: 40px;
-    --fs-h2:   36px;
+    --fs-hero: 42px;
+    --fs-h2:   30px;
     --fs-h3:   24px;
     --fs-body: 18px;
-    --fs-note: 14px;
-    --sp-sec: 112px;
-    --sp-block:    64px;
-    --sp-block-lg: 80px;
-    --sp-sub:      72px;
+    --fs-note: 15px;
+    --fs-math: 19.8px;   /* 18 × 1.1 */
+    --sp-sec: 88px;
+    --sp-block:    56px;
+    --sp-block-lg: 72px;
+    --sp-sub:      64px;
     --pad-chip:    22px 20px;
     --pad-card:    32px 28px;
     --pad-banner:  44px 36px;
@@ -147,9 +194,11 @@ body {
   font-family: var(--sans);
   font-size: var(--fs-body);
   line-height: 1.75;
-  color: var(--c-ink);
-  background: var(--c-navy);
+  color: var(--c-text);
+  background: var(--c-bg);
   overflow-x: hidden;             /* 防横向滚动 */
+  padding-top: var(--safe-top);
+  padding-bottom: var(--safe-bottom);
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
