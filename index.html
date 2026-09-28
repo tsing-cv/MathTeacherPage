@@ -75,6 +75,39 @@
 }
 </script>
 
+<!-- KaTeX 数学公式渲染 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6FBsoFPP2PpO0cE3ZkE1SPjM8O+pM5gYlD/AMW3"
+      crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+        integrity="sha384-7yk6g0MjWCGCzXbMfMCk6cBYFMfBpGMkWMgC8s5gO2AEdJ5sMq3IYk+1zQ7JmJ"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/contrib/auto-render.min.js"
+        integrity="sha384-hllmK9EsA5ZJBIxkE7K8pGEi+q3FqG4mhb1q6+HmRlFAMeT6Ml1J1Gs+qg+M3J"
+        crossorigin="anonymous"></script>
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof renderMathInElement === 'function') {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ],
+      throwOnError: false
+    });
+  }
+});
+</script>
+<script>
+// KaTeX CDN 降级：加载失败时标记 no-katex
+window.addEventListener('error', function(e) {
+  if (e.target && e.target.tagName === 'SCRIPT' &&
+      e.target.src && e.target.src.includes('katex')) {
+    document.documentElement.classList.add('no-katex');
+  }
+}, true);
+</script>
+
 <style>
 /* ══════════════════════════════════════════════════════════════
    一、设计变量（色板 / 字体 / 字号 / 间距 / 圆角）
@@ -97,7 +130,7 @@
   /* 文字色 */
   --c-text:        #2C3E50;   /* 深墨正文（≥7:1 on #F9F8F4） */
   --c-text-secondary: #5A6B7A; /* 中灰蓝辅助 */
-  --c-text-muted:  #8A95A0;   /* 浅灰提示/脚注 */
+  --c-text-muted:  #6B7B8A;   /* 浅灰提示/脚注（4.1:1 on 纸白） */
 
   /* 强调色（雾蓝替代金色） */
   --c-accent:      #4A7C8F;   /* 雾蓝主强调 */
@@ -135,7 +168,7 @@
   --c-snow:     #F0F2F5;   /* 深底正文 → 浅灰白 */
   --c-gd:       #7A8B9A;   /* 银灰蓝 → 中性灰蓝 */
   --c-gl:       #6B7B8A;   /* 烟灰 → 辅助灰 */
-  --c-gd-dim:   #8A95A0;   /* 银灰中档 */
+  --c-gd-dim:   #6B7B8A;   /* 银灰中档（4.1:1 on 纸白） */
   --c-cinnabar: #C47D7D;   /* 朱砂 → 赤陶红 */
 
   /* —— 字体 —— */
@@ -1085,13 +1118,13 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
   border-right: 2px solid var(--c-paper);
 }
 .ratio i:last-child { border-right: 0; }
-.ratio i:nth-child(1) { background: #6B5327; }   /* 验（上一讲） */
-.ratio i:nth-child(2) { background: #3A5482; }   /* 讲 */
-.ratio i:nth-child(3) { background: #2F466E; }   /* 讲 */
-.ratio i:nth-child(4) { background: #4A7C8F; }   /* 验（本讲，亮金收口） */
-.ratio b { font-size: 11px; font-weight: 600; color: var(--c-paper); letter-spacing: .02em; white-space: nowrap; }
-.ratio span { font-family: var(--num); font-variant-numeric: tabular-nums; font-size: 12px; color: var(--c-paper); opacity: .8; }
-.ratio i:nth-child(4) b, .ratio i:nth-child(4) span { color: var(--c-navy); opacity: .85; }
+.ratio i:nth-child(1) { background: #2C3E50; }   /* 验（上一讲） */
+.ratio i:nth-child(2) { background: #3D5A6B; }   /* 讲 */
+.ratio i:nth-child(3) { background: #446E80; }   /* 讲 */
+.ratio i:nth-child(4) { background: #4A7C8F; }   /* 验（本讲，雾蓝收口） */
+.ratio b { font-size: 11px; font-weight: 600; color: #FFFFFF; letter-spacing: .02em; white-space: nowrap; }
+.ratio span { font-family: var(--num); font-variant-numeric: tabular-nums; font-size: 12px; color: #FFFFFF; opacity: .85; }
+.ratio i:nth-child(4) b, .ratio i:nth-child(4) span { color: #FFFFFF; opacity: 1; }
 @media (max-width: 520px) {
   .ratio { height: 34px; }
   .ratio b { display: none; }   /* 窄屏只留分钟数，环节名在下方时间线里 */
@@ -1171,7 +1204,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 
 /* —— 朱砂功能色：否定 / 失败态（配色：状态色禁做装饰）—— */
 .fit-card--no li::before { color: var(--c-cinnabar); }
-.toast--fail { border-color: rgba(181,84,59,.55); color: #E8B7A6; }
+.toast--fail { border-color: rgba(196,125,125,.55); color: #F0D0D0; }
 
 /* ══════════════════════════════════════════════════════════════
    十七、第九轮规则级覆盖（后位优先）
@@ -1458,7 +1491,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 .audio-vol input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%;
   background: var(--c-gold-hi); border: 2px solid var(--c-navy);
-  box-shadow: 0 0 6px rgba(227,200,138,.3);
+  box-shadow: 0 0 6px rgba(74,124,143,.3);
 }
 .audio-vol input[type="range"]::-moz-range-thumb {
   width: 14px; height: 14px; border-radius: 50%;
@@ -1491,10 +1524,10 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 .music-btn svg { width: 20px; height: 20px; }
 
 /* 呼吸灯环（播放态） */
-.music-btn.playing { border-color: rgba(227,200,138,.6); }
+.music-btn.playing { border-color: rgba(74,124,143,.6); }
 .music-btn.playing::after {
   content: ""; position: absolute; inset: -4px;
-  border-radius: 50%; border: 2px solid rgba(227,200,138,.35);
+  border-radius: 50%; border: 2px solid rgba(74,124,143,.35);
   animation: musicBreathe 2.8s ease-in-out infinite;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -1516,6 +1549,47 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 @media (prefers-reduced-motion: reduce) {
   .fade-up { opacity: 1; transform: none; transition: none; }
 }
+
+/* ── KaTeX 样式适配 ── */
+.katex {
+  font-size: var(--fs-math) !important;
+  color: var(--c-text) !important;
+}
+/* 公式块：独立行 + 纸纹背景 */
+.katex-display {
+  padding: 16px 24px;
+  margin: 16px 0;
+  background: var(--c-bg);
+  border-radius: var(--r-card-sm);
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+/* 公式容器 */
+.formula-wrap {
+  position: relative;
+}
+/* 公式复制按钮 */
+.formula-copy {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  opacity: 0;
+  transition: opacity .2s ease;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--c-text-secondary);
+  cursor: pointer;
+  min-height: 32px;
+  min-width: 32px;
+}
+.formula-wrap:hover .formula-copy,
+.formula-copy:focus { opacity: 1; }
+/* KaTeX 降级：CDN 不可用时 */
+.no-katex .katex { font-family: var(--math); font-size: var(--fs-math); }
 
 </style>
 </head>
@@ -1583,11 +1657,11 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
           <p class="hero-demo-exam-title">学一题，通一类</p>
           <p class="hero-demo-exam-sub">同一个「极点极线」模型，反复出现在不同年份的高考压轴题中：</p>
           <ul class="hero-demo-exam-list">
-            <li><b>2020 全国 Ⅰ 卷 理 20</b> 椭圆 x²/9+y²=1，P 在 x=6 上运动，证 CD 恒过定点 (3/2, 0)</li>
-            <li><b>2010 全国卷 I 理 21</b> 椭圆 x²/4+y²=1，P(4, 1) 作两切线，证切点弦过定点 (1, 1/4)</li>
+            <li><b>2020 全国 Ⅰ 卷 理 20</b> 椭圆 $\frac{x^2}{9}+y^2=1$，P 在 $x=6$ 上运动，证 CD 恒过定点 $(\frac{3}{2}, 0)$</li>
+            <li><b>2010 全国卷 I 理 21</b> 椭圆 $\frac{x^2}{4}+y^2=1$，P(4, 1) 作两切线，证切点弦过定点 $(1, \frac{1}{4})$</li>
             <li><b>2008 江西卷 理 21</b> 椭圆上动点 P 作斜率互补两弦，证两远端连线过定点</li>
-            <li><b>2016 四川卷 理 20</b> 椭圆 x²/3+y²/2=1，过内点 P(1,1) 作两弦，证交点 Q 在定直线 2x+3y=6 上</li>
-            <li><b>2014 全国卷 I 理 20</b> 椭圆 x²/4+y²=1，A 为右顶点，过 O 弦 MN，证 |OP|·|OQ| 为定值</li>
+            <li><b>2016 四川卷 理 20</b> 椭圆 $\frac{x^2}{3}+\frac{y^2}{2}=1$，过内点 P(1,1) 作两弦，证交点 Q 在定直线 $2x+3y=6$ 上</li>
+            <li><b>2014 全国卷 I 理 20</b> 椭圆 $\frac{x^2}{4}+y^2=1$，A 为右顶点，过 O 弦 MN，证 $|OP|\cdot|OQ|$ 为定值</li>
             <li><b>2023 新高考 Ⅱ 卷</b> 以极点极线为命题背景，考查圆锥曲线中的定点定线问题</li>
           </ul>
         </div>
@@ -1711,7 +1785,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
       <p class="subsec-note">拆题手稿常年更新，和课堂上同一副笔迹。<a class="social-link" href="https://www.xiaohongshu.com/search_result?keyword=%E9%99%88%E8%80%81%E5%B8%88%E4%B8%89%E7%99%BE%E4%B8%B2" target="_blank" rel="noopener">小红书 · 「陈老师三百串」 →</a></p>
       <figure class="shot social-fig">
         <img src="assets/social-sample.jpg" alt="小红书日常拆题样例：复数域求解 sin(x⁴−1)=2 的完整手写推导" width="1564" height="1428" loading="lazy" decoding="async">
-        <figcaption>小红书日常一条（样例）：在复数域里解 sin(x<sup>4</sup>−1)=2——实数域里无解的题，换大学的方法照样推到底。竞赛与强基向的延伸，长这样</figcaption>
+        <figcaption>小红书日常一条（样例）：在复数域里解 $\sin(x^4-1)=2$——实数域里无解的题，换大学的方法照样推到底。竞赛与强基向的延伸，长这样</figcaption>
       </figure>
     </div>
   </div>
@@ -1831,13 +1905,13 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
       <div class="demo-q">
         <p class="tag">2016 年全国 I 卷 · 理科第 21 题 · 压轴</p>
         <!-- 真题原文第（2）问：2016 全国 I 卷理 21，知乎解析帖最多的导数大题之一 -->
-        <p>已知函数 f(x) = (x−2)e<sup>x</sup> + a(x−1)²。若 f(x) 有两个零点，求 a 的取值范围。</p>
+        <p>已知函数 $f(x) = (x-2)e^x + a(x-1)^2$。若 $f(x)$ 有两个零点，求 $a$ 的取值范围。</p>
       </div>
       <div class="demo-vs">
         <div class="demo-card demo-card--bad">
           <p class="who">只背步骤的学生眼里，这是一串背不完的分类</p>
           <ul class="steps-ghost">
-            <li>求导：f′(x) = (x−1)(e<sup>x</sup> + 2a)</li>
+            <li>求导：$f'(x) = (x-1)(e^x + 2a)$</li>
             <li>对 a 分类：a ≥ 0；−e/2 &lt; a &lt; 0；a ≤ −e/2……</li>
             <li>每一类分别列表、算极值、画走势</li>
             <li>极值算完，还要比端点趋势</li>
@@ -1874,10 +1948,10 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
         <ol class="tree-spine">
           <li><b>2017 · 全国 I 卷 · 理 21</b><span>设问同款「有两个零点求参数」——函数由两项变三项，讨论更深一层</span></li>
           <li><b>2018 · 全国 II 卷 · 理 21</b><span>「有两个零点」变「区间上恰有一个零点」——从数个数，到卡区间</span></li>
-          <li><b>2021 · 新高考 II 卷 · 22</b><span>结构几乎复刻：(x−1)e<sup>x</sup> 再次登场——设问反向，给条件、证零点</span></li>
-          <li><b>2022 · 全国甲卷 · 理 21</b><span>求范围变证关系「若有两个零点则 x₁x₂&lt;1」——极值点偏移的家</span></li>
-          <li><b>2025 · 全国 II 卷 · 18</b><span>ln(1+x)−x+x²/2−kx³ 三问连发：唯一极值点、唯一零点、比较 2x₁ 与 x₂——极值点偏移 2025 正考</span></li>
-          <li><b>2025 · 天津卷 · 20</b><span>ax−(lnx)² 恰有三个零点求 a、零点不等式收尾——设问同款，再来一次</span></li>
+          <li><b>2021 · 新高考 II 卷 · 22</b><span>结构几乎复刻：$(x-1)e^x$ 再次登场——设问反向，给条件、证零点</span></li>
+          <li><b>2022 · 全国甲卷 · 理 21</b><span>求范围变证关系「若有两个零点则 $x_1 x_2 &lt; 1$」——极值点偏移的家</span></li>
+          <li><b>2025 · 全国 II 卷 · 18</b><span>$\ln(1+x)-x+\frac{x^2}{2}-kx^3$ 三问连发：唯一极值点、唯一零点、比较 $2x_1$ 与 $x_2$——极值点偏移 2025 正考</span></li>
+          <li><b>2025 · 天津卷 · 20</b><span>$ax-(\ln x)^2$ 恰有三个零点求 $a$、零点不等式收尾——设问同款，再来一次</span></li>
         </ol>
       </div>
     </div>
@@ -2418,14 +2492,14 @@ var CONFIG = {
 
   /* 坐标轴 + 网格 */
   function axes(){
-    ctx.strokeStyle = '#d8dce3'; ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(44,62,80,.08)'; ctx.lineWidth = 1;
     for (var x=Math.ceil(XMIN); x<=XMAX; x++){
       ctx.beginPath(); ctx.moveTo(px(x), PAD_T); ctx.lineTo(px(x), H-PAD_B); ctx.stroke();
     }
     for (var y=Math.ceil(YMIN); y<=YMAX; y++){
       ctx.beginPath(); ctx.moveTo(PAD_L, py(y)); ctx.lineTo(W-PAD_R, py(y)); ctx.stroke();
     }
-    ctx.strokeStyle = '#2b3a55'; ctx.lineWidth = 1.4;
+    ctx.strokeStyle = '#2C3E50'; ctx.lineWidth = 1.4;
     ctx.beginPath(); ctx.moveTo(PAD_L, py(0)); ctx.lineTo(W-PAD_R, py(0)); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(px(0), PAD_T); ctx.lineTo(px(0), H-PAD_B); ctx.stroke();
   }
@@ -2450,7 +2524,7 @@ var CONFIG = {
     ZEROS.forEach(function(z){
       var cx=px(z[0]), cy=py(0);
       ctx.fillStyle = '#4A7C8F'; ctx.beginPath(); ctx.arc(cx, cy, 6, 0, 2*Math.PI); ctx.fill();
-      ctx.fillStyle = '#0E2140'; ctx.font = '600 13px "Inter", sans-serif';
+      ctx.fillStyle = '#2C3E50'; ctx.font = '600 13px "Inter", sans-serif';
       ctx.fillText(z[1], cx+10, cy-8);
     });
   }
@@ -2461,7 +2535,7 @@ var CONFIG = {
     if (!start) start = ts;
     var t = Math.min(1, (ts - start) / DUR), k = ease(t), end = Math.floor(k * pts.length);
     ctx.clearRect(0, 0, W, H); axes(); hyperbola();
-    ctx.strokeStyle = '#0E2140'; ctx.lineWidth = 2.2; ctx.lineJoin='round'; ctx.lineCap='round';
+    ctx.strokeStyle = '#2C3E50'; ctx.lineWidth = 2.2; ctx.lineJoin='round'; ctx.lineCap='round';
     ctx.beginPath();
     for (var i=0; i<end; i++){
       var p = pts[i]; if (i===0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]);
@@ -2550,7 +2624,7 @@ var CONFIG = {
     ctx.clearRect(0, 0, W, H);
     for (var i = 0; i < stars.length; i++){
       var s = stars[i];
-      ctx.fillStyle = s.isGold ? 'rgba(227,200,138,' + (s.baseOp * 0.7) + ')' : 'rgba(232,237,245,' + (s.baseOp * 0.6) + ')';
+      ctx.fillStyle = s.isGold ? 'rgba(74,124,143,' + (s.baseOp * 0.7) + ')' : 'rgba(232,237,245,' + (s.baseOp * 0.6) + ')';
       ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill();
     }
   }
@@ -2578,7 +2652,7 @@ var CONFIG = {
       if (s.x < -4) s.x = W + 4;
       /* 绘制 */
       ctx.fillStyle = s.isGold
-        ? 'rgba(227,200,138,' + op.toFixed(3) + ')'
+        ? 'rgba(74,124,143,' + op.toFixed(3) + ')'
         : 'rgba(232,237,245,' + op.toFixed(3) + ')';
       ctx.beginPath(); ctx.arc(dx, dy, s.r, 0, Math.PI * 2); ctx.fill();
     }
@@ -2608,7 +2682,7 @@ var CONFIG = {
     var progress = s.life / s.maxLife;
     var op = progress < 0.3 ? progress / 0.3 : 1 - (progress - 0.3) / 0.7;
     /* 尾迹 */
-    ctx.strokeStyle = 'rgba(227,200,138,' + (op * 0.5).toFixed(3) + ')';
+    ctx.strokeStyle = 'rgba(74,124,143,' + (op * 0.5).toFixed(3) + ')';
     ctx.lineWidth = 1.2;
     ctx.beginPath();
     ctx.moveTo(s.x, s.y);
