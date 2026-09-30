@@ -764,7 +764,8 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 
 /* —— 真题实拆演示（深底） —— */
 .quiz-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 36px; }
-@media (min-width: 768px) { .quiz-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+@media (min-width: 600px) { .quiz-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; } }
+@media (min-width: 960px) { .quiz-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
 .quiz-card {
   background: var(--c-card); border: 1px solid rgba(194,160,95,.12);
   border-radius: var(--r-card); padding: 22px 20px; position: relative;
@@ -1828,7 +1829,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 <section class="sec sec--deep" id="quiz">
   <div class="wrap">
     <p class="eyebrow fade-up">请听题</p>
-    <h2 class="h2 fade-up">3 道题，看看孩子能不能一眼看穿</h2>
+    <h2 class="h2 fade-up">7 道题，看看孩子能不能一眼看穿</h2>
 
     <div class="quiz-grid fade-up">
       <div class="quiz-card">
@@ -1838,11 +1839,31 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
       </div>
       <div class="quiz-card">
         <span class="quiz-num">02</span>
-        <p>你有 100 块，老铁有 1 万块，每局赌注 1 元，五五开——一直赌下去，你能赢下他的 1 万块吗？</p>
-        <span class="quiz-tag">赌徒破产 · 概率直觉</span>
+        <p>班上同学生肖恰好凑齐了 12 生肖，猜猜班上大概有多少名同学？</p>
+        <span class="quiz-tag">抽屉原理 · 概率直觉</span>
       </div>
       <div class="quiz-card">
         <span class="quiz-num">03</span>
+        <p>你有 100 块，老铁有 1 万块，每局赌注 1 元，五五开——一直赌下去，你能赢下他的 1 万块吗？</p>
+        <span class="quiz-tag">赌徒破产 · 概率极限</span>
+      </div>
+      <div class="quiz-card">
+        <span class="quiz-num">04</span>
+        <p>无穷等比数列的公比 q 的绝对值属于 (0, 1)，数列的各项和等于各项平方和，第二项的取值范围是多少？</p>
+        <span class="quiz-tag">等比数列 · 不等式</span>
+      </div>
+      <div class="quiz-card">
+        <span class="quiz-num">05</span>
+        <p>集合 M = {1, 2, …, 100}，M 的任一非空子集 X 的最大数与最小数之和为 a<sub>X</sub>，那么所有 a<sub>X</sub> 的算术平均值等于多少？</p>
+        <span class="quiz-tag">组合计数 · 对称思想</span>
+      </div>
+      <div class="quiz-card">
+        <span class="quiz-num">06</span>
+        <p>f(x) 和 g(x) 都定义在实数集上，且复合函数 f[g(x)] = x 有实数解，则 g[f(x)] 可以等于 x² + 1 吗？</p>
+        <span class="quiz-tag">复合函数 · 反函数</span>
+      </div>
+      <div class="quiz-card">
+        <span class="quiz-num">07</span>
         <p>一根筷子随机折成三段，能拼成三角形的概率是多少？</p>
         <span class="quiz-tag">几何概率 · 数形结合</span>
       </div>
