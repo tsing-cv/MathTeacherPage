@@ -763,6 +763,32 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 .duo-turn b { color: var(--c-gold-hi); font-weight: 600; }
 
 /* —— 真题实拆演示（深底） —— */
+.quiz-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 36px; }
+@media (min-width: 768px) { .quiz-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+.quiz-card {
+  background: var(--c-card); border: 1px solid rgba(194,160,95,.12);
+  border-radius: var(--r-card); padding: 22px 20px; position: relative;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.quiz-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,.2); }
+.quiz-num {
+  display: inline-block; font-family: var(--num); font-size: 11px; color: var(--c-gold);
+  letter-spacing: .12em; font-weight: 600; margin-bottom: 10px;
+  padding: 2px 8px; background: rgba(194,160,95,.08); border-radius: 4px;
+}
+.quiz-card p { font-family: var(--serif); font-size: 15px; color: var(--c-snow); line-height: 1.75; margin: 0 0 14px; }
+.quiz-tag {
+  font-size: 11px; color: var(--c-gold-hi); letter-spacing: .04em;
+  padding: 3px 10px; background: rgba(194,160,95,.1); border-radius: 12px;
+}
+.quiz-cta {
+  font-size: 14px; color: var(--c-gd); line-height: 1.7; margin-top: 28px;
+  padding: 16px 20px; background: rgba(194,160,95,.05); border-left: 3px solid var(--c-gold);
+  border-radius: 0 8px 8px 0;
+}
+.quiz-cta b { color: var(--c-gold-hi); }
+
+/* —— 真题实拆演示（深底） —— */
 .demo { margin-top: 46px; }
 .demo-q { background: var(--c-card); border: 1px solid rgba(194,160,95,.28); border-radius: var(--r-card); padding: 24px 26px; max-width: 700px; margin: 0 auto 28px; text-align: center; }
 .demo-q .tag { font-size: 12px; letter-spacing: .18em; color: var(--c-gold); font-weight: 600; margin: 0 0 12px; }
@@ -1096,6 +1122,21 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 @media (max-width: 560px) {
   .tree-spine li { grid-template-columns: 1fr; gap: 3px; }
   .tree-root .tr-acts { margin-left: 0; white-space: normal; }
+}
+
+/* —— 量化数据条（四维指标：780/180/270/360/20年） —— */
+.chain-stats {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+  margin-top: 24px; padding: 18px 20px;
+  background: rgba(194,160,95,.06); border: 1px solid rgba(194,160,95,.15);
+  border-radius: var(--r-card);
+}
+.chain-stats div { text-align: center; }
+.chain-stats b { display: block; font-family: var(--num); font-size: 22px; color: var(--c-gold-hi); font-weight: 700; letter-spacing: .02em; }
+.chain-stats span { font-size: 11.5px; color: var(--c-gd); letter-spacing: .04em; margin-top: 2px; display: block; }
+@media (max-width: 560px) {
+  .chain-stats { grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 14px 14px; }
+  .chain-stats b { font-size: 18px; }
 }
 
 /* —— 频次图：首条亮金 + 底部刻度 + 图表要点（信息设计条4/5）—— */
@@ -1532,6 +1573,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
       <!-- 左栏：文案 -->
       <div class="hero-text">
         <p class="hero-quote hero-quote--featured" id="heroQuote">未来不缺会算的，缺的是会问的。<br>数学，练的就是提问的脑子。</p>
+        <span class="hero-hook">补课没少上，分数没动过？问题不在孩子，在方法。</span>
         <h1>课上听懂了，做题还是不会？卡住的不是不够努力——是一直在用初中的方法，学一门忽然需要「结构与迁移」的学科。</h1>
         <p class="hero-motto">换个方法，学一题，通一类。</p>
         <div class="hero-cta">
@@ -1568,6 +1610,11 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 </section>
 
 <style>
+.hero-hook {
+  display: inline-block; font-size: 13px; color: var(--c-gold-hi); font-weight: 600;
+  letter-spacing: .06em; padding: 4px 12px; border: 1px solid rgba(194,160,95,.3);
+  border-radius: 20px; margin-bottom: 16px; background: rgba(194,160,95,.06);
+}
 @media(min-width:960px){
   .hero-in--split{flex-direction:row!important;align-items:flex-start!important;text-align:left!important;gap:40px;padding:110px 0 32px!important}
   .hero-text{flex:1 1 52%;max-width:560px;display:flex;flex-direction:column;justify-content:center}
@@ -1640,6 +1687,15 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
       <div class="chain-node"><b>六大板块</b><span>其中高考解答题 3,065 道，逐年归档</span></div>
       <i class="chain-arrow" aria-hidden="true"></i>
       <div class="chain-node chain-node--end"><b>300 串</b><span>每串一道根，根下挂着历年变式</span></div>
+    </div>
+
+    <!-- ★【借鉴·黑马教研社】量化数据条：780/180/270/360 四维指标 -->
+    <div class="chain-stats fade-up">
+      <div><b>780</b><span>基础题型</span></div>
+      <div><b>180</b><span>核心专题</span></div>
+      <div><b>270</b><span>创新技法</span></div>
+      <div><b>360</b><span>难点突破</span></div>
+      <div><b>20 年</b><span>高考分析</span></div>
     </div>
 
     <div class="mentor-grid">
@@ -1799,7 +1855,38 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 
 <!-- ══════════════════════════════════════════════════════════
      三·五、真题实拆（题串库的应用演示：一道题的两种学法）
-     ══════════════════════════════════════════════════════════ -->
+     ═════════════════════════════════════════════════════════ -->
+
+<!-- ★【新增·借鉴海报2】请听题：3 道趣味数学题，30 秒内引发好奇 -->
+<section class="sec sec--deep" id="quiz">
+  <div class="wrap">
+    <p class="eyebrow fade-up">请听题</p>
+    <h2 class="h2 fade-up">3 道题，看看孩子能不能一眼看穿</h2>
+
+    <div class="quiz-grid fade-up">
+      <div class="quiz-card">
+        <span class="quiz-num">01</span>
+        <p>爷爷问乖孙：楼梯 10 级，每步跨 1 级或 2 级，有几种走法？</p>
+        <span class="quiz-tag">斐波那契 · 递归思维</span>
+      </div>
+      <div class="quiz-card">
+        <span class="quiz-num">02</span>
+        <p>你有 100 块，老铁有 1 万块，每局赌注 1 元，五五开——一直赌下去，你能赢下他的 1 万块吗？</p>
+        <span class="quiz-tag">赌徒破产 · 概率直觉</span>
+      </div>
+      <div class="quiz-card">
+        <span class="quiz-num">03</span>
+        <p>一根筷子随机折成三段，能拼成三角形的概率是多少？</p>
+        <span class="quiz-tag">几何概率 · 数形结合</span>
+      </div>
+    </div>
+
+    <p class="quiz-cta fade-up">这些题，课本上不教，高考却天天考——<b>因为它们考的不是公式，是「换个角度看问题」的脑子。</b>下面的实录，就是怎么练出这个脑子。</p>
+  </div>
+</section>
+
+<hr class="rule-gold">
+
 <!-- ★【区块】真题实拆（最有说服力的一段：家长看不懂数学，也看得懂差距） -->
 <section class="sec sec--deep" id="demo">
   <div class="wrap">
