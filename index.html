@@ -556,24 +556,23 @@ section[id] { scroll-margin-top: 76px; }
 /* 大引号去掉 */
 .voice::before { display: none; }
 .voice p { font-family: var(--serif); font-size: 14.5px; color: var(--c-snow); line-height: 1.75; margin: 14px 0 12px; }
-.voice .voice-insight { font-size: 13.5px; color: var(--c-gold-hi); font-weight: 600; line-height: 1.6; margin: 0 0 4px; letter-spacing: .01em; }
 .voice footer { font-size: 12px; color: var(--c-gd-dim); letter-spacing: .04em; border-top: 1px solid rgba(194,160,95,.08); padding-top: 12px; margin-top: 4px; }
 .voice-fine { font-size: 12px; color: var(--c-gd-dim); margin-top: 18px; }
 
 /* ★【重构·紧凑版】提分数据标签 */
 .voice-score {
-  display: inline-flex; align-items: baseline; gap: 6px;
-  margin-bottom: 12px; padding: 6px 14px 6px 12px;
+  display: inline-flex; align-items: baseline; gap: 5px;
+  margin-bottom: 14px; padding: 5px 10px 5px 10px;
   background: rgba(194,160,95,.08);
   border: 1px solid rgba(194,160,95,.15);
   border-radius: 8px;
 }
-.voice-score .vs-from { font-family: var(--num); font-size: 15px; color: var(--c-gd); }
-.voice-score .vs-arrow { font-family: var(--num); font-size: 12px; color: var(--c-gold); opacity: .7; }
-.voice-score .vs-to   { font-family: var(--num); font-size: 20px; color: var(--c-gold-hi); font-weight: 700;
+.voice-score .vs-from { font-family: var(--num); font-size: 14px; color: var(--c-gd); }
+.voice-score .vs-arrow { font-family: var(--num); font-size: 11px; color: var(--c-gold); opacity: .7; }
+.voice-score .vs-to   { font-family: var(--num); font-size: 18px; color: var(--c-gold-hi); font-weight: 700;
   text-shadow: 0 0 12px rgba(212,184,90,.2); }
-.voice-score .vs-dur  { font-size: 11px; color: var(--c-gd-dim); margin-left: 6px;
-  padding-left: 8px; border-left: 1px solid rgba(194,160,95,.12); }
+.voice-score .vs-dur  { font-size: 11px; color: var(--c-gd-dim); margin-left: 5px;
+  padding-left: 7px; border-left: 1px solid rgba(194,160,95,.12); }
 
 /* ★【新增】聊天截图卡：微信对话样式还原（深底气泡 + 时间戳 + 头像占位） */
 .voice--chat { padding: 22px 20px 20px; }
@@ -2029,31 +2028,26 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
     <div class="voices fade-up">
       <blockquote class="voice">
         <div class="voice-score"><span class="vs-from">72</span><span class="vs-arrow">→</span><span class="vs-to">104</span><span class="vs-dur">4 个月</span></div>
-        <div class="voice-insight">卡在函数符号语言，基础题得分率一直在涨，让再等等——果然涨了 32 分</div>
         <p>孩子初中数学没下过年级前列，高一第一次月考 72，半个月不爱搭理人。诊断下来卡在函数：符号语言读不懂，单调性定义会背、不会用。头两次月考没起色，十一月还跌回 80 出头；老师把基础题得分率发给我们看——一直在涨，让再等等。期末 104，寒假他自己把错题按串重新分了类。</p>
         <footer>—— 高一学员家长（月考 72 → 期末 104）</footer>
       </blockquote>
       <blockquote class="voice">
         <div class="voice-score"><span class="vs-from">94</span><span class="vs-arrow">→</span><span class="vs-to">112</span><span class="vs-dur">8 个月</span></div>
-        <div class="voice-insight">换过两拨老师没动，卡点是圆锥曲线回代和数列最后一步——后来「看见第二问就知道要干什么了」</div>
         <p>90 出头晃了一年，前面换过两拨老师也没动。卡点说得出来：圆锥曲线联立完不会回代，数列错位相减最后一步总错。三月周测掉到 86，孩子泄气，我们也没敢催。五月期末 112——用他的话说，「看见第二问，知道它想让我干什么了」。</p>
         <footer>—— 高二学员家长（上学期期末 94 → 下学期期末 112）</footer>
       </blockquote>
       <blockquote class="voice">
         <div class="voice-score"><span class="vs-from">110</span><span class="vs-arrow">→</span><span class="vs-to">130</span><span class="vs-dur">8 个月</span></div>
-        <div class="voice-insight">限时训练先掉 6 分再涨回来——高考 130，出考场第一句话：「这次没空题」</div>
         <p>一模 110，压轴整道空着，时间不够用。二月限时训练上强度，先掉了 6 分——老师提前一个月说过会有这次回落，让别慌。三月 118，真的回来了。高考 130，出考场第一句话：「这次没空题。」</p>
         <footer>—— 高三学员家长（一模 110 → 高考 130）</footer>
       </blockquote>
       <blockquote class="voice">
         <div class="voice-score"><span class="vs-from">60</span><span class="vs-arrow">→</span><span class="vs-to">90</span><span class="vs-dur">一学年</span></div>
-        <div class="voice-insight">不碰压轴，只抓前 10 道小题正确率——两个月后小题先稳住，学年末 90</div>
         <p>摸底 60，选择填空丢一半——不是不会，是会做的做不对。老师先不碰压轴，只抓前 10 道选择填空的正确率。头一个月分数没动静，我们心里犯嘀咕；第二个月大题还是老样子，小题先稳住了。学年末 90。</p>
         <footer>—— 高三学员家长（摸底 60 → 学年末模考 90，摸底卷留底）</footer>
       </blockquote>
       <blockquote class="voice">
         <div class="voice-score"><span class="vs-from">84</span><span class="vs-arrow">→</span><span class="vs-to">121</span><span class="vs-dur">复读一学年</span></div>
-        <div class="voice-insight">复读先立概率统计拿稳分，十二月才涨 5 分——高考 121，「看到卷子先分类」</div>
         <p>孩子二战，开学那阵子情绪不高——同学都上大学了。老师把板块顺序调了，先立概率统计，把稳的分先拿到手。十二月才涨 5 分，一月涨了 11。高考 121，他自己说：「看到卷子先分类，会的先拿全。」</p>
         <footer>—— 复读学员家长（应届 84 → 复读高考 121）</footer>
       </blockquote>
