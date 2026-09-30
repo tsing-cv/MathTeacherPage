@@ -640,6 +640,20 @@ section[id] { scroll-margin-top: 76px; }
 }
 .qr-card img { width: 148px; height: auto; }
 .qr-card figcaption { font-size: 11px; color: var(--c-gl); text-align: center; padding: 8px 0 2px; letter-spacing: .05em; }
+
+/* —— 二维码浮动定位（Contact 区右上角，对齐标题行） —— */
+.contact-wrap { position: relative; }
+.qr-float {
+  position: absolute; right: 0; top: 0; z-index: 2;
+  background: #FFFFFF; border-radius: var(--r-card);
+  padding: 12px; width: 172px; box-shadow: 0 6px 24px rgba(0,0,0,.28);
+  margin: 0;
+}
+.qr-float img { width: 148px; height: auto; display: block; }
+.qr-float figcaption { font-size: 11px; color: #5A6B7A; text-align: center; padding: 8px 0 2px; letter-spacing: .05em; }
+@media (max-width: 960px) {
+  .qr-float { position: static; margin: 20px auto 0; }
+}
 .trust {
   font-size: var(--fs-note); color: var(--c-gd-dim); line-height: 1.8;
   max-width: 46em; margin-top: 48px; padding-top: 22px;
@@ -2176,8 +2190,8 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
      ══════════════════════════════════════════════════════════ -->
 <!-- ★【区块】底部联系 -->
 <footer class="sec sec--deep" id="contact" style="padding-bottom:56px;">
-  <span class="bigsym bigsym--int" aria-hidden="true">&int;</span><!-- 装饰性数学符号 -->
-  <div class="wrap" style="position:relative; z-index:1;">
+  <span class="bigsym bigsym--int" aria-hidden="true">&int;</span>
+  <div class="wrap contact-wrap" style="position:relative; z-index:1;">
     <p class="eyebrow fade-up">联系陈老师</p>
     <h2 class="h2 fade-up">加微信，聊聊孩子的情况</h2>
 
@@ -2185,18 +2199,16 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
       <div>
         <div class="wx-line">
           <span class="wx-id">微信号<b data-wxid>（见下方 CONFIG 配置）</b></span>
-          <!-- 复制按钮：点击后同步调用 execCommand 复制（微信内稳定） -->
           <button class="btn btn--gold" type="button" data-copy>复制微信号</button>
         </div>
       </div>
 
-      <figure class="qr-card" style="margin:0;">
-        <!-- ★【修改】微信二维码：替换 assets/qr-wechat.png（必须是 PNG/JPG 位图，不能是 SVG 或背景图，否则微信长按无法识别）
-             建议导出企业微信「联系我」二维码，有效期更稳定 -->
-        <img src="assets/qr-wechat.png" alt="陈老师微信二维码" width="480" height="560" loading="eager" decoding="async">
-        <figcaption>长按识别，加我微信</figcaption>
-      </figure>
     </div>
+
+    <figure class="qr-float">
+      <img src="assets/qr-wechat.png" alt="陈老师微信二维码" width="480" height="560" loading="eager" decoding="async">
+      <figcaption>长按识别，加我微信</figcaption>
+    </figure>
 
   </div>
 </footer>
