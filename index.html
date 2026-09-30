@@ -1166,9 +1166,9 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 
 /* —— 信件金句块（信息设计条8：全页最可转发的一句话，独立成段）—— */
 .letter-quote {
-  text-indent: 0; font-family: var(--serif); font-size: 21px; font-weight: 600;
-  color: var(--c-ink); line-height: 1.7; margin: 26px 0; padding: 2px 0 2px 18px;
-  border-left: 3px solid var(--c-gold); letter-spacing: .04em;
+  text-indent: 2em; font-family: var(--serif); font-size: 21px; font-weight: 600;
+  color: var(--c-gold-deep); line-height: 1.7; margin: 26px 0;
+  letter-spacing: .04em;
 }
 @media (min-width: 768px) { .letter-quote { font-size: 24px; } }
 
@@ -1194,8 +1194,8 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 /* 信件 / 谱系卡左对齐，与标题组同轴（排版条7；.demo-q 对称展柜居中保留） */
 .letter { margin: 44px 0 0; }
 .deriv { margin: 40px 0 0; }
-/* 信件缩进例外：落款与金句不缩进 */
-.letter .sign, .letter .letter-quote { text-indent: 0; }
+/* 信件缩进例外：落款不缩进 */
+.letter .sign { text-indent: 0; }
 /* 谱系图证据文字桌面提权（排版条9） */
 .deriv--tree .tree-spine li span { font-size: 14px; }
 /* FAQ：右缘对齐 + 行高（排版条11） */
