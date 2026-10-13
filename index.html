@@ -657,11 +657,11 @@ section[id] { scroll-margin-top: 76px; }
 @media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr auto; gap: 64px; align-items: start; } }
 .contact-lead { color: var(--c-gd); max-width: 30em; }
 .contact-lead b { color: var(--c-snow); font-weight: 600; }
-/* 联系行：每行两栏——左侧标签+内容，右侧按钮，垂直居中对齐 */
+/* 联系行：左对齐紧凑排列 */
 .wx-line {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 12px;
   margin-top: 20px;
   min-height: 44px; /* iOS 最小触控热区 */
@@ -670,7 +670,6 @@ section[id] { scroll-margin-top: 76px; }
 .wx-id {
   font-size: 15px; color: var(--c-gd);
   display: flex; align-items: center; gap: 8px;
-  flex: 1; min-width: 0;
   white-space: nowrap;
 }
 .wx-id b {
@@ -2544,7 +2543,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
           </a>
         </div>
         <div class="wx-line">
-          <span class="wx-id">真题库<b style="color:var(--c-gold-hi);font-weight:700;">3,065 道 · 在线可查</b></span>
+          <span class="wx-id">真题库<b style="color:var(--c-gold-hi);font-weight:700;">历年真题在线可查</b></span>
           <a class="btn btn--gold" href="https://gaokao-math.loca.lt" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
             看真题
           </a>
