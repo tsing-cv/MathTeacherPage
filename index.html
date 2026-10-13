@@ -726,27 +726,53 @@ section[id] { scroll-margin-top: 76px; }
 /* 弹层（底部抽屉） */
 .sheet { position: fixed; inset: 0; z-index: 100; display: none; }
 .sheet.open { display: block; }
-.sheet-mask { position: absolute; inset: 0; background: rgba(8,16,32,.62); }
+.sheet-mask { position: absolute; inset: 0; background: rgba(8,16,32,.72); backdrop-filter: blur(2px); }
 .sheet-panel {
   position: absolute; left: 50%; transform: translateX(-50%);
-  bottom: 0; width: 100%; max-width: 440px;
-  background: var(--c-navy); border: 1px solid rgba(194,160,95,.25); border-bottom: 0;
-  border-radius: 14px 14px 0 0; text-align: center;
-  padding: 30px 24px calc(24px + env(safe-area-inset-bottom));
-  animation: sheet-up .32s cubic-bezier(.22,1,.36,1);
+  bottom: 0; width: 100%; max-width: 420px;
+  background: linear-gradient(180deg, var(--c-navy) 0%, var(--c-card) 100%);
+  border: 1px solid rgba(194,160,95,.3); border-bottom: 0;
+  border-radius: 20px 20px 0 0; text-align: center;
+  padding: 36px 28px calc(32px + env(safe-area-inset-bottom));
+  animation: sheet-up .35s cubic-bezier(.22,1,.36,1);
+  box-shadow: 0 -8px 32px rgba(0,0,0,.4);
 }
-@keyframes sheet-up { from { transform: translate(-50%, 40px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
+@keyframes sheet-up { from { transform: translate(-50%, 60px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .sheet-panel { animation: none; } }
 .sheet-close {
-  position: absolute; top: 12px; right: 12px; width: 34px; height: 34px;
-  border: 0; background: transparent; color: var(--c-gd); font-size: 22px; cursor: pointer; line-height: 1;
+  position: absolute; top: 16px; right: 16px; width: 40px; height: 40px;
+  border: 0; background: rgba(255,255,255,.08); border-radius: 50%;
+  color: var(--c-gd); font-size: 24px; cursor: pointer; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, color .2s;
 }
-.sheet-close:hover { color: var(--c-snow); }
-.sheet h3 { color: var(--c-snow); font-size: 21px; letter-spacing: .06em; }
+.sheet-close:hover { background: rgba(255,255,255,.15); color: var(--c-snow); }
+.sheet h3 {
+  color: var(--c-snow); font-size: 22px; font-weight: 600;
+  letter-spacing: .04em; margin: 0 0 28px; line-height: 1.5;
+  font-family: "Songti SC", "STSong", serif;
+}
+.sheet-hl {
+  color: var(--c-gold-hi); font-weight: 700;
+  text-shadow: 0 0 12px rgba(227,200,138,.3);
+}
 .sheet-sub { color: var(--c-gd); font-size: 14px; margin: 8px 0 18px; }
-.sheet-qr { width: 168px; margin: 0 auto; background: #fff; border-radius: var(--r-card); padding: 10px; }
-.sheet-qr img { width: 100%; height: auto; }
-.sheet-hint { font-size: 13px; color: var(--c-gold-hi); margin: 14px 0 6px; letter-spacing: .03em; }
+.sheet-qr {
+  width: 200px; margin: 0 auto 24px;
+  background: #fff; border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25), inset 0 0 0 1px rgba(194,160,95,.15);
+}
+.sheet-qr img { width: 100%; height: auto; display: block; }
+.sheet-hint {
+  font-size: 14px; color: var(--c-gold-hi);
+  margin: 0; letter-spacing: .02em;
+  line-height: 1.6; opacity: .9;
+}
+.sheet-hint::before {
+  content: "↑"; display: inline-block; margin-right: 6px;
+  font-size: 12px; opacity: .7;
+}
 .sheet .wx-id { margin: 4px 0 16px; }
 
 /* Toast 轻提示 */
@@ -2620,7 +2646,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
   <div class="sheet-mask" data-close-sheet></div>
   <div class="sheet-panel">
     <button class="sheet-close" type="button" data-close-sheet aria-label="关闭">×</button>
-    <h3 id="sheetTitle">拍张卷子，聊聊孩子的情况</h3>
+    <h3 id="sheetTitle"><span class="sheet-hl">拍张卷子</span>，聊聊<span class="sheet-hl">孩子的情况</span></h3>
     <div class="sheet-qr">
       <!-- 二维码必须 img 位图 + 不加 lazy（微信长按识别的前提）；src 由 JS 从 CONFIG 注入 -->
       <img data-qr alt="王老师微信二维码">
