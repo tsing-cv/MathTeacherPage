@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 敏感文件
+*.token
+*.secret
+.env
+
+# 日志
+*.log
+/tmp/
