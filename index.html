@@ -433,15 +433,16 @@ section[id] { scroll-margin-top: 76px; }
 .models { display: grid; gap: 12px; margin-top: 32px; max-width: 960px; margin-left: auto; margin-right: auto; }
 @media (min-width: 768px) { .models { grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; } }
 .model {
-  background: var(--c-card); border: 1px solid rgba(194,160,95,.20);
+  background: var(--c-card); border: 1px dashed rgba(194,160,95,.35);
   border-radius: var(--r-card); padding: 16px 14px;
+  display: flex; flex-direction: column;
 }
 @media (min-width: 768px) { .model { padding: 18px 16px; } }
 .model-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .model svg { width: 32px; height: 32px; flex-shrink: 0; }
 @media (min-width: 768px) { .model svg { width: 36px; height: 36px; } }
 .model h3 { font-size: var(--fs-h3); color: var(--c-snow); letter-spacing: .04em; margin: 0; }
-.model p { color: var(--c-gd); font-size: 14px; margin: 0; line-height: 1.7; }
+.model p { color: var(--c-gd); font-size: 14px; margin: 0; line-height: 1.7; flex: 1; }
 @media (min-width: 768px) { .model p { font-size: 15px; } }
 
 /* 考点频次条形图 */
@@ -2164,7 +2165,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
           <li><b>2018 · 全国 II 卷 · 理 21</b><span>「有两个零点」变「区间上恰有一个零点」——从数个数，到卡区间</span></li>
           <li><b>2021 · 新高考 II 卷 · 22</b><span>结构几乎复刻：$(x-1)e^x$ 再次登场——设问反向，给条件、证零点</span></li>
           <li><b>2022 · 全国甲卷 · 理 21</b><span>求范围变证关系「若有两个零点则 $x_1 x_2<1$」——极值点偏移的家</span></li>
-          <li><b>2025 · 全国 II 卷 · 18</b><span>$\ln(1+x)-x+\dfrac{x^2}{2}-kx^3$ 三问连发：唯一极值点、唯一零点、比较 $2x_1$ 与 $x_2$——极值点偏移 2025 正考</span></li>
+          <li><b>2025 · 全国 II 卷 · 18</b><span>$\ln(1+x)-x+\dfrac{x^2}{2}-kx^3$ 三问连发：唯一极值点、唯一零点、比较 $2x_1$ 与 $x_2$——再变着法考极值点偏移</span></li>
           <li><b>2025 · 天津卷 · 20</b><span>$ax-(\ln x)^2$ 恰有三个零点求 a、零点不等式收尾——设问同款，再来一次</span></li>
         </ol>
       </div>
@@ -2237,7 +2238,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
       <li>每道题标注年份、省份、题型</li>
       <li>在线可检索、可筛选，直接点开看</li>
     </ul>
-    <a class="btn btn--gold" href="https://gaokao-math.loca.lt" target="_blank" rel="noopener" data-cta-label="transition-看真题库">打开真题库 →</a>
+    <a class="btn btn--gold" href="https://tsing-cv.github.io/GaokaoMathBank/" target="_blank" rel="noopener" data-cta-label="transition-看真题库">打开真题库 →</a>
   </div>
 </div>
 
@@ -2546,7 +2547,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
       <details>
         <!-- 差异化压轴：正面回答「你和别的老师有什么不一样」 -->
         <summary>您和别的数学老师，到底有什么不一样？</summary>
-        <p>三件可以当面验的事。一，课件是我自己的：18,000 道题逐题拆过、凝为 300 个题根，每个题根挂着历年变式——<a href="https://gaokao-math.loca.lt" target="_blank" rel="noopener" style="color:var(--c-gold-hi);border-bottom:1px solid rgba(194,160,95,.35);text-decoration:none;">真题部分在线可查</a>。二，验收是我定的：「懂了」不算学会，要过懂、会、对、熟四步，每个阶段都有对应的习题检测。三，课堂敢验货：都是在线教学课堂，讲得怎么样，您亲眼看，不用听我说。</p>
+        <p>三件可以当面验的事。一，课件是我自己的：18,000 道题逐题拆过、凝为 300 个题根，每个题根挂着历年变式——<a href="https://tsing-cv.github.io/GaokaoMathBank/" target="_blank" rel="noopener" style="color:var(--c-gold-hi);border-bottom:1px solid rgba(194,160,95,.35);text-decoration:none;">真题部分在线可查</a>。二，验收是我定的：「懂了」不算学会，要过懂、会、对、熟四步，每个阶段都有对应的习题检测。三，课堂敢验货：都是在线教学课堂，讲得怎么样，您亲眼看，不用听我说。</p>
       </details>
     </div>
   </div>
@@ -2577,7 +2578,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
         </div>
         <div class="wx-line">
           <span class="wx-id">真题库<b style="color:var(--c-gold-hi);font-weight:700;">历年真题在线可查</b></span>
-          <a class="btn btn--gold" href="https://gaokao-math.loca.lt" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+          <a class="btn btn--gold" href="https://tsing-cv.github.io/GaokaoMathBank/" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
             看真题
           </a>
         </div>
