@@ -434,14 +434,15 @@ section[id] { scroll-margin-top: 76px; }
 @media (min-width: 768px) { .models { grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; } }
 .model {
   background: var(--c-card); border: 1px solid rgba(194,160,95,.20);
-  border-radius: var(--r-card); padding: 20px 16px;
+  border-radius: var(--r-card); padding: 16px 14px;
 }
-@media (min-width: 768px) { .model { padding: 24px 18px; } }
-.model svg { width: 36px; height: 36px; margin-bottom: 12px; }
-@media (min-width: 768px) { .model svg { width: 42px; height: 42px; margin-bottom: 14px; } }
-.model h3 { font-size: var(--fs-h3); color: var(--c-snow); letter-spacing: .04em; margin-bottom: 8px; }
-.model p { color: var(--c-gd); font-size: 15px; margin: 0; }
-@media (min-width: 768px) { .model p { font-size: 16px; } }
+@media (min-width: 768px) { .model { padding: 18px 16px; } }
+.model-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.model svg { width: 32px; height: 32px; flex-shrink: 0; }
+@media (min-width: 768px) { .model svg { width: 36px; height: 36px; } }
+.model h3 { font-size: var(--fs-h3); color: var(--c-snow); letter-spacing: .04em; margin: 0; }
+.model p { color: var(--c-gd); font-size: 14px; margin: 0; line-height: 1.7; }
+@media (min-width: 768px) { .model p { font-size: 15px; } }
 
 /* 考点频次条形图 */
 .freq { display: grid; gap: 40px; margin-top: 56px; }
@@ -1795,7 +1796,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
   <div class="wrap" style="position:relative; z-index:1;">
     <h2 class="h2 fade-up">8 道题，测测孩子的数学直觉</h2>
     <p class="lede fade-up" style="max-width:720px;margin:24px auto 48px;color:var(--c-gd);">
-      不考公式，不考计算——只考孩子想问题的方式。能答对 3 道以上，说明底子不差，只是方法没跟上。
+      不考公式，不考计算，只考孩子想问题的方式。
     </p>
 
     <div class="quiz-grid fade-up">
@@ -2013,30 +2014,36 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
     <!-- 三步学习法 -->
     <div class="models fade-up" style="margin-top:40px;">
       <div class="model">
-        <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
-          <circle cx="22" cy="22" r="14" stroke="#C2A05F" stroke-width="1.6"/>
-          <circle cx="22" cy="22" r="5" fill="#E3C88A"/>
-          <path d="M22 8 L22 3 M22 36 L22 41 M8 22 L3 22 M36 22 L41 22" stroke="#C2A05F" stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
-        <h3>第一步 · 认根</h3>
+        <div class="model-header">
+          <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <circle cx="22" cy="22" r="14" stroke="#C2A05F" stroke-width="1.6"/>
+            <circle cx="22" cy="22" r="5" fill="#E3C88A"/>
+            <path d="M22 8 L22 3 M22 36 L22 41 M8 22 L3 22 M36 22 L41 22" stroke="#C2A05F" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <h3>第一步 · 认根</h3>
+        </div>
         <p>拿到题，先别急着算。问自己：这道题的骨架是什么？它属于 300 个题根里的哪一个。</p>
       </div>
       <div class="model">
-        <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
-          <path d="M10 22 Q22 6 34 22 Q22 38 10 22Z" stroke="#C2A05F" stroke-width="1.4" fill="none"/>
-          <circle cx="22" cy="22" r="3" fill="#E3C88A"/>
-          <path d="M22 22 L34 10" stroke="#C2A05F" stroke-width="1" stroke-dasharray="2 2"/>
-        </svg>
-        <h3>第二步 · 看变</h3>
+        <div class="model-header">
+          <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <path d="M10 22 Q22 6 34 22 Q22 38 10 22Z" stroke="#C2A05F" stroke-width="1.4" fill="none"/>
+            <circle cx="22" cy="22" r="3" fill="#E3C88A"/>
+            <path d="M22 22 L34 10" stroke="#C2A05F" stroke-width="1" stroke-dasharray="2 2"/>
+          </svg>
+          <h3>第二步 · 看变</h3>
+        </div>
         <p>站到出题人一侧：这个根今年动了哪个数、换了哪层皮、套了哪个情境。</p>
       </div>
       <div class="model">
-        <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
-          <circle cx="14" cy="14" r="3" fill="#C2A05F"/><circle cx="30" cy="14" r="3" fill="#C2A05F"/>
-          <circle cx="22" cy="30" r="3" fill="#C2A05F"/><circle cx="22" cy="18" r="4" fill="#E3C88A"/>
-          <path d="M14 14 L22 18 L30 14 M22 18 L22 30" stroke="#C2A05F" stroke-width="1.1"/>
-        </svg>
-        <h3>第三步 · 挂串</h3>
+        <div class="model-header">
+          <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <circle cx="14" cy="14" r="3" fill="#C2A05F"/><circle cx="30" cy="14" r="3" fill="#C2A05F"/>
+            <circle cx="22" cy="30" r="3" fill="#C2A05F"/><circle cx="22" cy="18" r="4" fill="#E3C88A"/>
+            <path d="M14 14 L22 18 L30 14 M22 18 L22 30" stroke="#C2A05F" stroke-width="1.1"/>
+          </svg>
+          <h3>第三步 · 挂串</h3>
+        </div>
         <p>每做一道变式，就把它挂回对应的题根下面。认一道，会一类——题越做越少。</p>
       </div>
     </div>
