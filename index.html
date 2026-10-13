@@ -402,12 +402,19 @@ section[id] { scroll-margin-top: 76px; }
 }
 /* mentor-tags 为 grid 两列，自动均分 */
 
-.mentor-tags { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0 4px; }
+.mentor-tags { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 4px; }
 .mentor-tag {
-  display: inline-block; padding: 4px 12px;
-  font-size: 12px; letter-spacing: .08em; color: var(--c-gold-deep);
-  background: rgba(199,146,48,.08); border: 1px solid var(--c-gold);
-  border-radius: 999px; font-weight: 500; line-height: 1.4;
+  display: inline-block; padding: 10px 16px;
+  font-size: 16px; letter-spacing: .05em; color: var(--c-ink);
+  background: linear-gradient(135deg, rgba(194,160,95,.12) 0%, rgba(194,160,95,.06) 100%);
+  border: 2px solid var(--c-gold);
+  border-radius: 999px; font-weight: 600; line-height: 1.4;
+  box-shadow: 0 2px 8px rgba(194,160,95,.15);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.mentor-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(194,160,95,.25);
 }
 
 .creed { list-style: none; padding: 0; margin: 22px 0 0; }
