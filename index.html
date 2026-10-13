@@ -816,29 +816,31 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 .demo-q p { font-family: var(--serif); font-size: 17px; color: var(--c-snow); line-height: 1.9; margin: 0; letter-spacing: .02em; }
 .demo-q sup { font-size: .62em; }
 .demo-vs { display: grid; gap: 20px; align-items: stretch; position: relative; }
-.demo-vs::before {
-  content: "VS";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--c-navy-deep);
-  color: var(--c-gold-hi);
-  font-family: var(--serif);
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--c-gold);
-  z-index: 2;
-  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+@media (min-width: 768px) {
+  .demo-vs { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .demo-vs::before {
+    content: "VS";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--c-navy-deep);
+    color: var(--c-gold-hi);
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--c-gold);
+    z-index: 2;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25);
+  }
 }
-@media (min-width: 768px) { .demo-vs { grid-template-columns: 1fr 1fr; gap: 28px; } }
 .demo-card { border-radius: var(--r-card); padding: 26px 24px; display: flex; flex-direction: column; transition: transform .25s ease; position: relative; }
 .demo-card:hover { transform: scale(1.02); }
 /* 问题做法卡片：红色调 + 警告感 */
@@ -2565,12 +2567,6 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 </footer>
 
 </main>
-
-<!-- ══════════════════════════════════════════════════════════
-     悬浮球（滚过首屏后出现 → 打开取货弹层）
-     ══════════════════════════════════════════════════════════ -->
-<!-- 悬浮球：随时打开联系方式，滚过首屏后出现 -->
-<button class="fab" type="button" data-open-sheet data-cta-label="fab-拍张卷子聊聊">拍张卷子</button>
 
 <!-- ══════════════════════════════════════════════════════════
      音频控件面板（音乐播放 / 暂停 / 音量）
