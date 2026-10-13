@@ -2615,14 +2615,11 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
   <div class="sheet-panel">
     <button class="sheet-close" type="button" data-close-sheet aria-label="关闭">×</button>
     <h3 id="sheetTitle">拍张卷子，聊聊孩子的情况</h3>
-    <p class="sheet-sub">说一句孩子年级、现状就行——我看过情况，告诉您卡在哪、怎么补</p>
     <div class="sheet-qr">
       <!-- 二维码必须 img 位图 + 不加 lazy（微信长按识别的前提）；src 由 JS 从 CONFIG 注入 -->
       <img data-qr alt="王老师微信二维码">
     </div>
     <p class="sheet-hint">长按上方二维码，选「识别图中二维码」</p>
-    <p class="wx-id">微信号<b data-wxid>（见 CONFIG）</b></p>
-    <button class="btn btn--gold" type="button" data-copy>复制微信号</button>
   </div>
 </div>
 
@@ -2638,7 +2635,7 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
 <script>
 /* ---------- CONFIG（微信号/二维码/提示语/CTA 统计，修改集中在一处） ---------- */
 var CONFIG = {
-  wechatId: 'ChenLaoshi-Math',                              // 微信号
+  wechatId: '13126899515',                              // 微信号
   qrUrl:    'assets/qr-wechat.png',                         // 二维码图片（必须 img 位图，微信长按可识别）
   toastMsg: { copy: '微信号已复制，去微信粘贴即可', err: '复制失败，请手动长按复制', xhs: '小红书号已复制，去小红书搜索即可' },
   xhsId:    'GaussAcademy',
