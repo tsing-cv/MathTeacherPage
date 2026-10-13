@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高中数学公式定理大全 | 人教A版2019新课标</title>
+    <meta name="description" content="高中数学公式定理大全，涵盖人教A版2019新课标5册教材，包含必修和选择性必修全部内容">
+
+    <!-- KaTeX 公式渲染 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+    <style>
+        /* ========================================
+           CSS 变量定义 - 主题系统
+           ======================================== */
+        :root {
+            /* 主色调 */
+            --primary-color: #4F46E5;
+            --primary-hover: #4338CA;
+            --primary-light: #818CF8;
+
+            /* 辅助色 */
+            --accent-color: #10B981;
+            --accent-hover: #059669;
+            --accent-light: #34D399;
+
+            /* 语义色 */
+            --success-color: #10B981;
+            --warning-color: #F59E0B;
+            --error-color: #EF4444;
+            --info-color: #3B82F6;
+
+            /* 亮色主题 */
+            --bg-primary: #F8FAFC;
+            --bg-secondary: #FFFFFF;
+            --bg-tertiary: #F1F5F9;
+            --bg-card: #FFFFFF;
+            --bg-formula: #F0F9FF;
+
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-tertiary: #94A3B8;
+            --text-inverse: #FFFFFF;
+
+            --border-color: #E2E8F0;
+            --border-hover: #CBD5E1;
+
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+            /* 布局尺寸 */
+            --sidebar-width: 280px;
+            --toc-width: 220px;
+            --navbar-height: 64px;
+            --footer-height: 60px;
+
+            /* 圆角 */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+
+            /* 间距 */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+
+            /* 过渡 */
+            --transition-fast: 150ms ease;
+            --transition-normal: 250ms ease;
+            --transition-slow: 350ms ease;
+        }
+
+        /* 暗色主题 */
+        [data-theme="dark"] {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-tertiary: #334155;
+            --bg-card: #1E293B;
+            --bg-formula: #1E3A5F;
+
+            --text-primary: #F1F5F9;
+            --text-secondary: #CBD5E1;
+            --text-tertiary: #64748B;
+            --text-inverse: #0F172A;
+
+            --border-color: #334155;
+            --border-hover: #475569;
+
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ========================================
+           全局重置与基础样式
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--primary-hover);
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+            transition: all var(--transition-fast);
+        }
+
+        /* ========================================
+           顶部导航栏
+           ======================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--navbar-height);
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            padding: 0 var(--spacing-lg);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .navbar__logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .navbar__logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .navbar__search {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 var(--spacing-xl);
+            position: relative;
+        }
+
+        .navbar__search-input {
+            width: 100%;
+            height: 40px;
+            padding: 0 var(--spacing-md) 0 44px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            background-color: var(--bg-tertiary);
+            font-size: 15px;
+            color: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+
+        .navbar__search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: var(--bg-secondary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .navbar__search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-tertiary);
+            pointer-events: none;
+        }
+
+        .navbar__actions {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            flex-shrink: 0;
+        }
+
+        .navbar__theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            background-color: var(--bg-tertiary);
+        }
+
+        .navbar__theme-toggle:hover {
+            background-color: var(--border-color);
+            color: var(--primary-color);
+        }
+
+        .navbar__menu-toggle {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+        }
+
+        /* ========================================
+           主布局容器
+           ======================================== */
+        .main-layout {
+            display: flex;
+            margin-top: var(--navbar-height);
+            min-height: calc(100vh - var(--navbar-height));
+        }
+
+        /* ========================================
+           左侧边栏 - 知识树导航
+           ======================================== */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: var(--navbar-height);
+            width: var(--sidebar-width);
+            height: calc(100vh - var(--navbar-height));
+            background-color: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+            padding: var(--spacing-lg) 0;
+            transition: transform var(--transition-normal);
+        }
+
+        .sidebar__header {
+            padding: 0 var(--spacing-lg) var(--spacing-md);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* 知识树样式 */
+        .knowledge-tree {
+            list-style: none;
+        }
+
+        .knowledge-tree__item {
+            user-select: none;
+        }
+
+        .knowledge-tree__label {
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+            font-size: 14px;
+            color: var(--text-primary);
+            gap: var(--spacing-sm);
+        }
+
+        .knowledge-tree__label:hover {
+            background-color: var(--bg-tertiary);
+        }
+
+        .knowledge-tree__label--active {
+            background-color: rgba(79, 70, 229, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .knowledge-tree__icon {
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            transition: transform var(--transition-fast);
+        }
+
+        .knowledge-tree__icon--expanded {
+            transform: rotate(90deg);
+        }
+
+        .knowledge-tree__children {
+            list-style: none;
+            display: none;
+            padding-left: var(--spacing-md);
+        }
+
+        .knowledge-tree__children--expanded {
+            display: block;
+        }
+
+        /* 层级缩进 */
+        .knowledge-tree__label--level-2 {
+            padding-left: calc(var(--spacing-lg) + var(--spacing-md));
+        }
+
+        .knowledge-tree__label--level-3 {
+            padding-left: calc(var(--spacing-lg) + var(--spacing-md) * 2);
+            font-size: 13px;
+        }
+
+        /* ========================================
+           主内容区
+           ======================================== */
+        .content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            margin-right: var(--toc-width);
+            padding: var(--spacing-xl);
+            max-width: 100%;
+        }
+
+        .content__header {
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .content__title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .content__subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        /* 公式卡片区 */
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .formula-card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            border: 1px solid var(--border-color);
+        }
+
+        .formula-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+            border-color: var(--primary-color);
+        }
+
+        .formula-card__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .formula-card__title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .formula-card__tag {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background-color: rgba(79, 70, 229, 0.1);
+            color: var(--primary-color);
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .formula-card__content {
+            background-color: var(--bg-formula);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+            overflow-x: auto;
+        }
+
+        .formula-card__description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .formula-card__actions {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .formula-card__action-btn {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-size: 13px;
+            color: var(--text-secondary);
+            background-color: var(--bg-tertiary);
+        }
+
+        .formula-card__action-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* ========================================
+           右侧浮动TOC
+           ======================================== */
+        .toc {
+            position: fixed;
+            right: 0;
+            top: var(--navbar-height);
+            width: var(--toc-width);
+            height: calc(100vh - var(--navbar-height));
+            background-color: var(--bg-secondary);
+            border-left: 1px solid var(--border-color);
+            padding: var(--spacing-lg);
+            overflow-y: auto;
+        }
+
+        .toc__title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            margin-bottom: var(--spacing-md);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .toc__list {
+            list-style: none;
+        }
+
+        .toc__item {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .toc__link {
+            display: block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            font-size: 13px;
+            color: var(--text-secondary);
+            border-left: 2px solid transparent;
+            transition: all var(--transition-fast);
+        }
+
+        .toc__link:hover,
+        .toc__link--active {
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+            background-color: var(--bg-tertiary);
+        }
+
+        /* ========================================
+           底部版权信息
+           ======================================== */
+        .footer {
+            margin-left: var(--sidebar-width);
+            margin-right: var(--toc-width);
+            padding: var(--spacing-lg) var(--spacing-xl);
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 14px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* ========================================
+           移动端适配
+           ======================================== */
+        @media (max-width: 1024px) {
+            .toc {
+                display: none;
+            }
+
+            .content {
+                margin-right: 0;
+            }
+
+            .footer {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar__menu-toggle {
+                display: flex;
+            }
+
+            .navbar__search {
+                margin: 0 var(--spacing-md);
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+                z-index: 999;
+                box-shadow: var(--shadow-lg);
+            }
+
+            .sidebar--open {
+                transform: translateX(0);
+            }
+
+            .content {
+                margin-left: 0;
+                padding: var(--spacing-md);
+            }
+
+            .footer {
+                margin-left: 0;
+            }
+
+            .formula-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+
+            .content__title {
+                font-size: 24px;
+            }
+        }
+
+        /* ========================================
+           滚动条美化
+           ======================================== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-tertiary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--border-hover);
+        }
+
+        /* ========================================
+           工具类
+           ======================================== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="navbar" role="navigation" aria-label="主导航">
+        <div class="navbar__logo">
+            <div class="navbar__logo-icon">π</div>
+            <span>数学公式大全</span>
+        </div>
+
+        <div class="navbar__search">
+            <svg class="navbar__search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input
+                type="search"
+                class="navbar__search-input"
+                placeholder="搜索公式、定理、关键词..."
+                aria-label="搜索公式"
+            >
+        </div>
+
+        <div class="navbar__actions">
+            <button class="navbar__theme-toggle" aria-label="切换主题">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+            <button class="navbar__menu-toggle" aria-label="打开菜单">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 主布局 -->
+    <div class="main-layout">
+        <!-- 左侧边栏 - 知识树导航 -->
+        <aside class="sidebar" role="complementary" aria-label="知识树导航">
+            <div class="sidebar__header">教材目录</div>
+            <ul class="knowledge-tree" role="tree">
+                <!-- 必修第一册 -->
+                <li class="knowledge-tree__item" role="treeitem" aria-expanded="true">
+                    <div class="knowledge-tree__label knowledge-tree__label--level-1">
+                        <svg class="knowledge-tree__icon knowledge-tree__icon--expanded" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <span>必修第一册</span>
+                    </div>
+                    <ul class="knowledge-tree__children knowledge-tree__children--expanded" role="group">
+                        <li class="knowledge-tree__item" role="treeitem" aria-expanded="false">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <svg class="knowledge-tree__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                <span>第一章 集合与常用逻辑用语</span>
+                            </div>
+                            <ul class="knowledge-tree__children" role="group">
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>1.1 集合的概念</span>
+                                    </div>
+                                </li>
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>1.2 集合间的基本关系</span>
+                                    </div>
+                                </li>
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>1.3 集合的基本运算</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem" aria-expanded="false">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <svg class="knowledge-tree__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                <span>第二章 一元二次函数、方程和不等式</span>
+                            </div>
+                            <ul class="knowledge-tree__children" role="group">
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>2.1 等式性质与不等式性质</span>
+                                    </div>
+                                </li>
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>2.2 基本不等式</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem" aria-expanded="false">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <svg class="knowledge-tree__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                <span>第三章 函数的概念与性质</span>
+                            </div>
+                            <ul class="knowledge-tree__children" role="group">
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>3.1 函数的概念及表示法</span>
+                                    </div>
+                                </li>
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>3.2 函数的基本性质</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem" aria-expanded="false">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <svg class="knowledge-tree__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                <span>第四章 指数函数与对数函数</span>
+                            </div>
+                            <ul class="knowledge-tree__children" role="group">
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>4.1 指数</span>
+                                    </div>
+                                </li>
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>4.2 指数函数</span>
+                                    </div>
+                                </li>
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>4.3 对数</span>
+                                    </div>
+                                </li>
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>4.4 对数函数</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem" aria-expanded="false">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <svg class="knowledge-tree__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                                <span>第五章 三角函数</span>
+                            </div>
+                            <ul class="knowledge-tree__children" role="group">
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>5.1 任意角和弧度制</span>
+                                    </div>
+                                </li>
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>5.2 三角函数的概念</span>
+                                    </div>
+                                </li>
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>5.3 诱导公式</span>
+                                    </div>
+                                </li>
+                                <li class="knowledge-tree__item" role="treeitem">
+                                    <div class="knowledge-tree__label knowledge-tree__label--level-3">
+                                        <span>5.4 三角函数的图象与性质</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 必修第二册 -->
+                <li class="knowledge-tree__item" role="treeitem" aria-expanded="false">
+                    <div class="knowledge-tree__label knowledge-tree__label--level-1">
+                        <svg class="knowledge-tree__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <span>必修第二册</span>
+                    </div>
+                    <ul class="knowledge-tree__children" role="group">
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第六章 平面向量及其应用</span>
+                            </div>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第七章 复数</span>
+                            </div>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第八章 立体几何初步</span>
+                            </div>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第九章 统计</span>
+                            </div>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第十章 概率</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 选择性必修第一册 -->
+                <li class="knowledge-tree__item" role="treeitem" aria-expanded="false">
+                    <div class="knowledge-tree__label knowledge-tree__label--level-1">
+                        <svg class="knowledge-tree__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <span>选择性必修第一册</span>
+                    </div>
+                    <ul class="knowledge-tree__children" role="group">
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第一章 空间向量与立体几何</span>
+                            </div>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第二章 直线和圆的方程</span>
+                            </div>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第三章 圆锥曲线的方程</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 选择性必修第二册 -->
+                <li class="knowledge-tree__item" role="treeitem" aria-expanded="false">
+                    <div class="knowledge-tree__label knowledge-tree__label--level-1">
+                        <svg class="knowledge-tree__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <span>选择性必修第二册</span>
+                    </div>
+                    <ul class="knowledge-tree__children" role="group">
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第四章 数列</span>
+                            </div>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第五章 一元函数的导数及其应用</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 选择性必修第三册 -->
+                <li class="knowledge-tree__item" role="treeitem" aria-expanded="false">
+                    <div class="knowledge-tree__label knowledge-tree__label--level-1">
+                        <svg class="knowledge-tree__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <span>选择性必修第三册</span>
+                    </div>
+                    <ul class="knowledge-tree__children" role="group">
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第六章 计数原理</span>
+                            </div>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第七章 随机变量及其分布</span>
+                            </div>
+                        </li>
+                        <li class="knowledge-tree__item" role="treeitem">
+                            <div class="knowledge-tree__label knowledge-tree__label--level-2">
+                                <span>第八章 成对数据的统计分析</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="content" role="main">
+            <header class="content__header">
+                <h1 class="content__title">第一章 集合与常用逻辑用语</h1>
+                <p class="content__subtitle">必修第一册 · 人教A版2019新课标</p>
+            </header>
+
+            <!-- 公式卡片网格 -->
+            <section class="formula-grid" aria-label="公式列表">
+                <!-- 示例公式卡片 1 -->
+                <article class="formula-card">
+                    <header class="formula-card__header">
+                        <h3 class="formula-card__title">集合的交集运算</h3>
+                        <span class="formula-card__tag">核心公式</span>
+                    </header>
+                    <div class="formula-card__content">
+                        <p class="katex-formula">A \cap B = \{x | x \in A \text{ 且 } x \in B\}</p>
+                    </div>
+                    <p class="formula-card__description">
+                        两个集合的交集由所有同时属于集合A和集合B的元素组成。交集运算满足交换律和结合律。
+                    </p>
+                    <div class="formula-card__actions">
+                        <button class="formula-card__action-btn">收藏</button>
+                        <button class="formula-card__action-btn">复制</button>
+                        <button class="formula-card__action-btn">练习</button>
+                    </div>
+                </article>
+
+                <!-- 示例公式卡片 2 -->
+                <article class="formula-card">
+                    <header class="formula-card__header">
+                        <h3 class="formula-card__title">集合的并集运算</h3>
+                        <span class="formula-card__tag">核心公式</span>
+                    </header>
+                    <div class="formula-card__content">
+                        <p class="katex-formula">A \cup B = \{x | x \in A \text{ 或 } x \in B\}</p>
+                    </div>
+                    <p class="formula-card__description">
+                        两个集合的并集由所有属于集合A或集合B的元素组成。并集运算满足交换律和结合律。
+                    </p>
+                    <div class="formula-card__actions">
+                        <button class="formula-card__action-btn">收藏</button>
+                        <button class="formula-card__action-btn">复制</button>
+                        <button class="formula-card__action-btn">练习</button>
+                    </div>
+                </article>
+
+                <!-- 示例公式卡片 3 -->
+                <article class="formula-card">
+                    <header class="formula-card__header">
+                        <h3 class="formula-card__title">德摩根定律</h3>
+                        <span class="formula-card__tag">重要定理</span>
+                    </header>
+                    <div class="formula-card__content">
+                        <p class="katex-formula">\overline{A \cap B} = \overline{A} \cup \overline{B}</p>
+                        <p class="katex-formula" style="margin-top: 12px;">\overline{A \cup B} = \overline{A} \cap \overline{B}</p>
+                    </div>
+                    <p class="formula-card__description">
+                        德摩根定律描述了集合运算中对偶性的关系，在逻辑推理和概率论中有重要应用。
+                    </p>
+                    <div class="formula-card__actions">
+                        <button class="formula-card__action-btn">收藏</button>
+                        <button class="formula-card__action-btn">复制</button>
+                        <button class="formula-card__action-btn">练习</button>
+                    </div>
+                </article>
+
+                <!-- 示例公式卡片 4 -->
+                <article class="formula-card">
+                    <header class="formula-card__header">
+                        <h3 class="formula-card__title">基本不等式</h3>
+                        <span class="formula-card__tag">核心公式</span>
+                    </header>
+                    <div class="formula-card__content">
+                        <p class="katex-formula">a + b \geq 2\sqrt{ab} \quad (a, b > 0)</p>
+                    </div>
+                    <p class="formula-card__description">
+                        两个正数的算术平均数不小于它们的几何平均数。等号成立条件：当且仅当 a = b 时取等号。
+                    </p>
+                    <div class="formula-card__actions">
+                        <button class="formula-card__action-btn">收藏</button>
+                        <button class="formula-card__action-btn">复制</button>
+                        <button class="formula-card__action-btn">练习</button>
+                    </div>
+                </article>
+
+                <!-- 示例公式卡片 5 -->
+                <article class="formula-card">
+                    <header class="formula-card__header">
+                        <h3 class="formula-card__title">指数运算法则</h3>
+                        <span class="formula-card__tag">基础公式</span>
+                    </header>
+                    <div class="formula-card__content">
+                        <p class="katex-formula">a^m \cdot a^n = a^{m+n}</p>
+                        <p class="katex-formula" style="margin-top: 8px;">\frac{a^m}{a^n} = a^{m-n}</p>
+                        <p class="katex-formula" style="margin-top: 8px;">(a^m)^n = a^{mn}</p>
+                    </div>
+                    <p class="formula-card__description">
+                        指数运算的基本法则，适用于所有实数指数。这些法则是指数函数和对数函数的基础。
+                    </p>
+                    <div class="formula-card__actions">
+                        <button class="formula-card__action-btn">收藏</button>
+                        <button class="formula-card__action-btn">复制</button>
+                        <button class="formula-card__action-btn">练习</button>
+                    </div>
+                </article>
+
+                <!-- 示例公式卡片 6 -->
+                <article class="formula-card">
+                    <header class="formula-card__header">
+                        <h3 class="formula-card__title">对数运算法则</h3>
+                        <span class="formula-card__tag">基础公式</span>
+                    </header>
+                    <div class="formula-card__content">
+                        <p class="katex-formula">\log_a(MN) = \log_a M + \log_a N</p>
+                        <p class="katex-formula" style="margin-top: 8px;">\log_a\frac{M}{N} = \log_a M - \log_a N</p>
+                        <p class="katex-formula" style="margin-top: 8px;">\log_a M^n = n\log_a M</p>
+                    </div>
+                    <p class="formula-card__description">
+                        对数运算的基本法则，将乘除运算转化为加减运算，简化复杂计算。
+                    </p>
+                    <div class="formula-card__actions">
+                        <button class="formula-card__action-btn">收藏</button>
+                        <button class="formula-card__action-btn">复制</button>
+                        <button class="formula-card__action-btn">练习</button>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <!-- 右侧浮动TOC -->
+        <aside class="toc" role="complementary" aria-label="章节索引">
+            <h2 class="toc__title">本章索引</h2>
+            <ul class="toc__list">
+                <li class="toc__item">
+                    <a href="#section-1-1" class="toc__link toc__link--active">1.1 集合的概念</a>
+                </li>
+                <li class="toc__item">
+                    <a href="#section-1-2" class="toc__link">1.2 集合间的基本关系</a>
+                </li>
+                <li class="toc__item">
+                    <a href="#section-1-3" class="toc__link">1.3 集合的基本运算</a>
+                </li>
+                <li class="toc__item">
+                    <a href="#section-1-4" class="toc__link">1.4 充分条件与必要条件</a>
+                </li>
+                <li class="toc__item">
+                    <a href="#section-1-5" class="toc__link">1.5 全称量词与存在量词</a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- 底部版权信息 -->
+    <footer class="footer" role="contentinfo">
+        <p>&copy; 2026 高中数学公式定理大全 | 基于人教A版2019新课标 | 仅供学习研究使用</p>
+    </footer>
+
+    <script>
+        // ========================================
+        // JavaScript 交互逻辑
+        // ========================================
+
+        // KaTeX 公式渲染
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true}
+                ],
+                throwOnError: false
+            });
+        });
+
+        // 主题切换
+        const themeToggle = document.querySelector('.navbar__theme-toggle');
+        const html = document.documentElement;
+
+        // 从 localStorage 读取主题设置
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // 移动端菜单切换
+        const menuToggle = document.querySelector('.navbar__menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('sidebar--open');
+        });
+
+        // 知识树展开/折叠
+        const treeLabels = document.querySelectorAll('.knowledge-tree__label');
+        treeLabels.forEach(label => {
+            label.addEventListener('click', function() {
+                const item = this.parentElement;
+                const icon = this.querySelector('.knowledge-tree__icon');
+                const children = item.querySelector('.knowledge-tree__children');
+
+                if (children) {
+                    item.setAttribute('aria-expanded',
+                        item.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+                    );
+                    icon && icon.classList.toggle('knowledge-tree__icon--expanded');
+                    children.classList.toggle('knowledge-tree__children--expanded');
+                }
+
+                // 更新活跃状态
+                treeLabels.forEach(l => l.classList.remove('knowledge-tree__label--active'));
+                this.classList.add('knowledge-tree__label--active');
+            });
+        });
+
+        // TOC 滚动高亮
+        const tocLinks = document.querySelectorAll('.toc__link');
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                tocLinks.forEach(l => l.classList.remove('toc__link--active'));
+                this.classList.add('toc__link--active');
+            });
+        });
+    </script>
+</body>
+</html>

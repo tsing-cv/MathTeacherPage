@@ -1,7 +1,0 @@
-{
-  "tool_name": "mcp__zai-mcp-server__analyze_image",
-  "tool_input_preview": "{\"image_source\":\"/tmp/mt_shots/el-chain.png\",\"prompt\":\"这是一个\\\"拆解链\\\"组件（浅灰白底页面，横向四节点流程：18,000 道 → 手写拆解 → 六大板块 → 300 串，节点间有金色箭头，末节点有金色顶边强调）。请检查：1)四节点是否等宽对齐、箭头是否垂直居中于节点之间；2)节点内标题与说明文字有无溢出或重叠；3)末节点（300 串）的强...",
-  "error": "Error: Unexpected error: analyze-image analysis failed: HTTP 429: {\"error\":{\"code\":\"1113\",\"message\":\"Insufficient balance or no resource package. Please recharge.\"}}",
-  "timestamp": "2026-09-23T17:30:30.326Z",
-  "retry_count": 2
-}

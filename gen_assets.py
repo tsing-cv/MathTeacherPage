@@ -123,8 +123,9 @@ def gen_qr():
     for (px, py) in [(ox, oy), (ox + (n - 7) * cell, oy), (ox, oy + (n - 7) * cell)]:
         d.rectangle([px, py, px + 7 * cell - 2, py + 7 * cell - 2], outline=dark, width=cell)
         d.rectangle([px + 2 * cell, py + 2 * cell, px + 5 * cell - 2, py + 5 * cell - 2], fill=dark)
-    text_center(d, (w / 2, 486), "示例二维码", font(30, 1), INK)
-    text_center(d, (w / 2, 526), "请替换 assets/qr-wechat.png", font(24), (120, 128, 144))
+    # "数学" 大字（定位角下方、居中）
+    text_center(d, (w / 2, 486), "数学", font(52, 1), NAVY_DEEP)
+    text_center(d, (w / 2, 530), "请替换 assets/qr-wechat.png", font(22), (120, 128, 144))
     img.save(os.path.join(OUT_DIR, "qr-wechat.png"), optimize=True)
 
 

@@ -29,7 +29,7 @@ addEventListener('resize',resize);
 const dpr=()=>window.devicePixelRatio||1;
 
 const cases=[
-  {label:'① P 在椭圆外',sub:'完整四边形构造·极线在椭圆内',px:4.2,py:1.3,color:'#FFD700',showSec:true,showTan:true},
+  {label:'① P 在椭圆外',sub:'完整四边形构造·极线在椭圆内',px:3.5,py:1.2,color:'#FFD700',showSec:true,showTan:true},
   {label:'② P 趋近椭圆',sub:'极线 → 切线（极限情况）',px:3.05*Math.cos(0.7),py:1.0167*Math.sin(0.7),color:'#FFD700',showSec:true,showTan:true},
   {label:'③ P 在椭圆内',sub:'完整四边形构造·极线在椭圆外',px:2.0,py:0.5,color:'#FFD700',showSec:true,showTan:true}
 ];
@@ -169,6 +169,11 @@ function drawExtLine(L,x1,y1,x2,y2,col,w,alpha,dash){
   const cl=clipToCanvas(L,x1,y1,x2,y2);
   if(cl)drawLine(L,cl.x1,cl.y1,cl.x2,cl.y2,col,w,alpha,dash);
 }
+/* ── 从 p1 经 p2 延伸 k 倍后裁剪到画布 ─ */
+function drawLineThrough(L,p1x,p1y,p2x,p2y,k,col,w,alpha,dash){
+  const ex=p2x+(p2x-p1x)*k, ey=p2y+(p2y-p1y)*k;
+  drawExtLine(L,p1x,p1y,ex,ey,col,w,alpha,dash);
+}
 
 function drawTangentPts(L,px,py,alpha){
   const d=dpr();
@@ -239,13 +244,17 @@ function drawSecants(L,px,py,alpha){
     return{x:a.x+t*(b.x-a.x),y:a.y+t*(b.y-a.y)};
   }
   const Q1=xsect(A,D,B,C),Q2=xsect(A,C,B,D);
-  if(Q1){drawExtLine(L,A.x,A.y,D.x,D.y,'#00E5FF',1.2,alpha*0.55,[6,3]);
-         drawExtLine(L,B.x,B.y,C.x,C.y,'#00E5FF',1.2,alpha*0.55,[6,3]);
+  if(Q1){drawLineThrough(L,A.x,A.y,Q1.x,Q1.y,3,'#00E5FF',1.2,alpha*0.55,[6,3]);
+         drawLineThrough(L,B.x,B.y,Q1.x,Q1.y,3,'#00E5FF',1.2,alpha*0.55,[6,3]);
+         drawLineThrough(L,D.x,D.y,Q1.x,Q1.y,3,'#00E5FF',1.2,alpha*0.55,[6,3]);
+         drawLineThrough(L,C.x,C.y,Q1.x,Q1.y,3,'#00E5FF',1.2,alpha*0.55,[6,3]);
          c.save();c.globalAlpha=alpha;c.fillStyle='#00E5FF';c.shadowBlur=12*dpr();c.shadowColor='#00E5FF';
          c.beginPath();c.arc(L.tx(Q1.x),L.ty(Q1.y),5*dpr(),0,Math.PI*2);c.fill();
          c.shadowBlur=0;c.font=`bold ${12*dpr()}px sans-serif`;c.fillText('Q₁=AD∩BC',L.tx(Q1.x)+9*dpr(),L.ty(Q1.y)+5*dpr());c.restore();}
-  if(Q2){drawExtLine(L,A.x,A.y,C.x,C.y,'#FF69B4',1.2,alpha*0.55,[6,3]);
-         drawExtLine(L,B.x,B.y,D.x,D.y,'#FF69B4',1.2,alpha*0.55,[6,3]);
+  if(Q2){drawLineThrough(L,A.x,A.y,Q2.x,Q2.y,3,'#FF69B4',1.2,alpha*0.55,[6,3]);
+         drawLineThrough(L,C.x,C.y,Q2.x,Q2.y,3,'#FF69B4',1.2,alpha*0.55,[6,3]);
+         drawLineThrough(L,B.x,B.y,Q2.x,Q2.y,3,'#FF69B4',1.2,alpha*0.55,[6,3]);
+         drawLineThrough(L,D.x,D.y,Q2.x,Q2.y,3,'#FF69B4',1.2,alpha*0.55,[6,3]);
          c.save();c.globalAlpha=alpha;c.fillStyle='#FF69B4';c.shadowBlur=12*dpr();c.shadowColor='#FF69B4';
          c.beginPath();c.arc(L.tx(Q2.x),L.ty(Q2.y),5*dpr(),0,Math.PI*2);c.fill();
          c.shadowBlur=0;c.font=`bold ${12*dpr()}px sans-serif`;c.fillText('Q₂=AC∩BD',L.tx(Q2.x)+9*dpr(),L.ty(Q2.y)+5*dpr());c.restore();}
@@ -267,9 +276,30 @@ function drawInfo(L,cas,progress){
 
 function drawTitle(L){
   const d=dpr();
-  c.save();c.fillStyle='#c8e0f0';c.font=`600 ${15*dpr()}px sans-serif`;c.textAlign='center';
+  const x=16*dpr(), y=20*dpr(), fs=15*dpr();
+  c.save();c.fillStyle='#c8e0f0';c.font=`600 ${fs}px sans-serif`;c.textAlign='left';
   c.shadowBlur=10*dpr();c.shadowColor='#4cc9ff50';
-  c.fillText('椭圆  E :  x²/9 + y² = 1',W/2,24*dpr());
+  // "椭圆 E : "
+  const t1='椭圆  E :  ';
+  c.fillText(t1,x,y);
+  let cx=x+c.measureText(t1).width;
+  // 分数 x²/9（上下格式）
+  const num='x²', den='9', gap=2*dpr(), barW=fs*0.9;
+  c.font=`italic 600 ${fs*0.85}px sans-serif`;
+  const nw=c.measureText(num).width, dw2=c.measureText(den).width;
+  const fracX=cx+Math.max(nw,dw2)/2;
+  // 分子
+  c.textAlign='center';c.fillText(num,fracX,y-fs*0.35);
+  // 分数线
+  c.strokeStyle='#c8e0f0';c.lineWidth=1*dpr();c.shadowBlur=0;
+  c.beginPath();c.moveTo(fracX-barW/2,y);c.lineTo(fracX+barW/2,y);c.stroke();
+  c.shadowBlur=10*dpr();c.shadowColor='#4cc9ff50';
+  // 分母
+  c.fillText(den,fracX,y+fs*0.7);
+  // " + y² = 1"
+  cx=fracX+Math.max(nw,dw2)/2+4*dpr();
+  c.textAlign='left';c.font=`600 ${fs}px sans-serif`;
+  c.fillText(' +  y² = 1',cx,y);
   c.restore();
 }
 
