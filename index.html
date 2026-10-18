@@ -734,7 +734,7 @@ section[id] { scroll-margin-top: 76px; }
   background: linear-gradient(180deg, var(--c-navy) 0%, var(--c-card) 100%);
   border: 1px solid rgba(194,160,95,.3); border-bottom: 0;
   border-radius: 20px 20px 0 0; text-align: center;
-  padding: 36px 28px calc(32px + env(safe-area-inset-bottom));
+  padding: 24px 28px calc(32px + env(safe-area-inset-bottom));
   animation: sheet-up .35s cubic-bezier(.22,1,.36,1);
   box-shadow: 0 -8px 32px rgba(0,0,0,.4);
 }
@@ -2647,12 +2647,10 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
   <div class="sheet-mask" data-close-sheet></div>
   <div class="sheet-panel">
     <button class="sheet-close" type="button" data-close-sheet aria-label="关闭">×</button>
-    <h3 id="sheetTitle"><span class="sheet-hl">拍张卷子</span>，聊聊<span class="sheet-hl">孩子的情况</span></h3>
     <div class="sheet-qr">
       <!-- 二维码必须 img 位图 + 不加 lazy（微信长按识别的前提）；src 由 JS 从 CONFIG 注入 -->
       <img data-qr alt="王老师微信二维码">
     </div>
-    <p class="sheet-hint">长按上方二维码，选「识别图中二维码」</p>
   </div>
 </div>
 
