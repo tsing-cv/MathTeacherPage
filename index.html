@@ -1740,11 +1740,29 @@ body.sheet-locked { overflow: hidden; overscroll-behavior: none; }
   color: rgba(255,255,255,.5); font-size: 13px; letter-spacing: .06em;
 }
 </style>
-<!-- KaTeX 数学公式渲染（cdn.jsdelivr.net，国内可访问） -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
-  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+<!-- KaTeX 数学公式渲染（本地化，摆脱 CDN 依赖——国内手机网络下 jsdelivr 常加载失败） -->
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<script defer src="assets/katex/katex.min.js"></script>
+<script defer src="assets/katex/contrib/auto-render.min.js"></script>
+<script>
+/* 渲染兜底：defer 脚本就绪后执行，最多重试 5 秒（防弱网下脚本晚到导致公式裸奔） */
+(function(){
+  function tryRender(attempt){
+    if (window.renderMathInElement) {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$',  right: '$',  display: false}
+        ],
+        throwOnError: false
+      });
+    } else if (attempt < 50) {
+      setTimeout(function(){ tryRender(attempt + 1); }, 100);
+    }
+  }
+  tryRender(0);
+})();
+</script>
 </head>
 <body>
 
